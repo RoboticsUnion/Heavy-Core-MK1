@@ -47,6 +47,15 @@ In Progress:
 - Control system: Arduino & ESP32 based
 - Sofware: Custom standalone desktop or mobile application
 
+# Development Roadmap
+
+| Phase | Description | Target |
+| MK1 Alpha | 2 DOF mechanical validation, first project showcase | Completed |
+| MK1 Beta | 4-6 DOF mechanical prototype | Q3 2026 (estimated) |
+| MK1 Software Alpha | Basic motion control & UI | Q3 2026 |
+| MK1 Integrated Demo | Hardware + software functional for demonstration | Q1 2027 (January, HTL Open house) |
+| MK1 Full Prototype | Fully functional 6 DOF with software improvements | Post Open House (future milestone) |
+  
 # Why this project stands out
 
 Heavy-Core is more than a 3D-printed robotic arm.
