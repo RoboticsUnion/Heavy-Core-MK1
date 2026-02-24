@@ -1,0 +1,74 @@
+#####################################
+# Allgemein
+#####################################
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+*.swp
+
+#####################################
+# SolidWorks
+#####################################
+
+# Auto-Recovery / Backup
+*.sldprt.swp
+*.sldasm.swp
+*.slddrw.swp
+*~$*.sld*
+*.bak
+
+# Simulation / Results
+*.cwr
+*.sldsim
+*.sldres
+*.sldstudy
+*.sldanalysis
+
+# Toolbox Cache
+ToolboxBrowser/
+
+# Lokale Benutzerdateien
+*.sldsettings
+*.sldreg
+
+# eDrawings temporär
+*.eprt
+*.easm
+*.edrw
+
+#####################################
+# Python
+#####################################
+
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.env/
+.venv/
+env/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# Test / Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+#####################################
+# VS Code / IDE
+#####################################
+.vscode/
+.idea/
+*.code-workspace
