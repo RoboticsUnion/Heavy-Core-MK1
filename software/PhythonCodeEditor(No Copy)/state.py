@@ -7,6 +7,9 @@ console_user_running = True
 g_code_editor_running = False
 g_code_starter_running = False
 
+
+file = None
+
 # state.py
 
 l1 = None
@@ -27,6 +30,8 @@ timeout = None
 
 L1 = None # not full terminal lines
 L2 = None # terminal lines
+
+raw = None
 
 
 help_txt = (
@@ -67,3 +72,4 @@ g_code_write_help_txt = (
     " G1-s - Fix the speed for G1\n"
     " GD - Drive every axe to a position(R1/W1/W2/R2/W3/W(x/y) example: GD R1 num W2 num W num(x) num(y)\n"
 )
+
