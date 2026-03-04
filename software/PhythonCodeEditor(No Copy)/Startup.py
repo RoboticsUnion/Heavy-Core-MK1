@@ -2,6 +2,7 @@ from colorama import Fore
 import state
 import pasword_gen_sys
 import getpass
+from pathlib import Path
 
 print(r"""
  ____ ___      .__                   _________       _____  __                                                                           
@@ -19,17 +20,40 @@ print(r"""
 """)
 
 
-print(Fore.LIGHTRED_EX,"Welcome User")
+import os
+print(" This is your folder now is it right?: ")
+print( os.getcwd())
 
-pasword_gen_sys.sys_pas()
+import os
+folder_name = input(Fore.GREEN + " Pleas enter your specific folder with the code!: ")
+os.chdir(folder_name)
 
-state.password_user = getpass.getpass(" Enter your password: ") #getpass.getpass
 
-print(Fore.BLUE, "Starting MK1 Software")
+files = ["console_user.py", "functions.py", "G_Code_Editer.py", "G_Code_starter_functions.py", "G_Code_starter.py", "interpreter.py", "pasword_gen_sys.py", "Startup.py", "state.py", "the_great_kinematics.py", "UI_handler.py"]
 
-state.console_user_running = True
-state.g_code_editor_running = False
+print(Fore.GREEN + " Searching Files...")
 
-if __name__ == "__main__":
-    from console_user import main
-    main()
+if any(not Path(f).exists() for f in files):
+    print(Fore.RED + "Attention .py file is not existing E:0001")
+else:
+    print(Fore.GREEN + " All .py file are here...")
+
+    print(Fore.LIGHTRED_EX,"Welcome User")
+
+    pasword_gen_sys.sys_pas()
+
+    state.password_user = getpass.getpass(" Enter your password: ") #getpass.getpass
+
+    print(Fore.BLUE, "Starting MK1 Software")
+
+    state.console_user_running = True
+    state.g_code_editor_running = False
+
+    if __name__ == "__main__":
+        from console_user import main
+        main()
+
+
+
+
+    
