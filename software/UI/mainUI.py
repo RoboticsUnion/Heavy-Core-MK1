@@ -3,6 +3,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout, QHBoxLayout, QStackedWidget
 )
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QShortcut, QKeySequence
 import sys
 
 app = QApplication(sys.argv)
@@ -140,6 +141,9 @@ navbar.addWidget(btn3)
 navbar.addWidget(btn4)
 navbar.addWidget(btn5)
 
+btn_exit = QPushButton("Beenden")
+btn_exit.clicked.connect(app.quit)
+navbar.addWidget(btn_exit)
 
 # ----------------------------------------------------
 # Alles zusammenbauen
@@ -149,5 +153,9 @@ main_layout.addWidget(pages)
 
 main_window.setLayout(main_layout)
 main_window.showFullScreen()
+
+shortcut = QShortcut(QKeySequence("Escape"), main_window)
+shortcut.setContext(Qt.ApplicationShortcut)
+shortcut.activated.connect(app.quit)
 
 sys.exit(app.exec())
