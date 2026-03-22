@@ -1,0 +1,107 @@
+============================================================
+TIME-SYNCHRONIZED BIT CONTROL SYSTEM
+============================================================
+
+SYSTEM ARCHITECTURE
+-------------------
+Axis Cards 1–6  --->  Main Control System (MCS)
+
+Each axis card communicates its health and status to the
+Main Control System using a time-synchronized 4-bit signal
+over digital GPIO lines.
+
+
+COMMUNICATION SEQUENCE
+============================================================
+
+1) STARTUP CABLE INTEGRITY CHECK
+--------------------------------
+Before normal operation begins, each card verifies that the
+signal cable and GPIO lines are working correctly.
+
+Each card transmits the following bit patterns in order:
+
+1111
+0000
+
+The Main Control System checks:
+
+- All HIGH signals received correctly  -> Logic level OK
+- All LOW signals received correctly   -> Ground level OK
+
+If both patterns are correct:
+-> Communication line is valid
+-> System enters normal operation
+
+
+2) STATUS TRANSMISSION PHASE
+----------------------------
+After a successful line check, each card transmits status codes.
+
+Total status cycle duration: 6 seconds
+Each card sends:            1 status word (4 bits)
+Bit time:                   0.25 seconds (250 ms)
+
+
+BIT TIMING EXAMPLE
+------------------
+Time Slot         Transmitted Bit
+---------------------------------
+0.00s – 0.25s  ->  Bit 1
+0.25s – 0.50s  ->  Bit 2
+0.50s – 0.75s  ->  Bit 3
+0.75s – 1.00s  ->  Bit 4
+
+
+STATUS CODE DEFINITIONS
+============================================================
+Bit Pattern     Meaning
+------------------------------------------------------------
+1111            System OK
+0111            Failure Code 01
+1011            Failure Code 02
+1101            Failure Code 03
+1110            Failure Code 04
+Other patterns  Reserved / Undefined Error
+
+
+TIMING OVERVIEW
+============================================================
+Bit duration:           250 ms
+Bits per message:       4
+Message duration:       1 second
+Cards in system:        6
+Full system cycle:      6 seconds
+
+Each card transmits in its assigned time window to avoid overlap.
+
+
+DESIGN CHARACTERISTICS
+============================================================
+Advantages
+----------
+- Very simple hardware (GPIO only)
+- Deterministic timing
+- Easy to decode
+- Low bandwidth required
+- Suitable for safety/status signaling
+
+
+Considerations
+--------------
+- Requires accurate clock timing
+- Noise can corrupt single bits
+- No built-in error correction
+- Cable faults should be monitored continuously
+
+
+RECOMMENDED SAFETY ENHANCEMENTS
+============================================================
+- Add periodic heartbeat signal
+- Add parity bit or checksum
+- Implement timeout detection (no signal = fault)
+- Use fail-safe logic levels
+
+============================================================
+END OF SPECIFICATION
+============================================================
