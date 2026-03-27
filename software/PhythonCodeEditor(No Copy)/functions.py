@@ -176,6 +176,7 @@ def stats(args):
     print(f" w1: {state.w1}°, w2: {state.w2}°, w3: {state.w3}°")
     print(f" tool_x: {state.tool_x}°, tool_y: {state.tool_y}°")
     print(f" tool_length: {state.tool_length}mm")
+    print(f" Compliler name set: {state.file}")
     print(f" Arg test (args are the attributes from the main commands:")
     print(f" {args}")
     print(f" Slices Args (enter number):")
