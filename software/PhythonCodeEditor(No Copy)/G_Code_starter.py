@@ -1,6 +1,6 @@
 from colorama import Fore
 import state
-from G_Code_starter_functions import validate_gcode
+from G_Code_starter_functions import validate_gcode, set_file
 
 def clear_last_line():
     # cursor up + clear line (ANSI)
@@ -18,7 +18,8 @@ def interpret(command, arg2):
 
 
 commands = {
-    "compile": validate_gcode
+    "compile": validate_gcode,
+    "file": set_file
 }
 
 
