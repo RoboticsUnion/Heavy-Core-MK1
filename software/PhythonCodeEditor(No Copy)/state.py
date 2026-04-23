@@ -12,6 +12,70 @@ file = None
 
 # state.py
 
+execute_live = None #set to False when in use
+
+commands_text = "Here you see all existing commands in all cmd outlets"
+
+basic_text = "Here you can get an basic overview of the Heavy Core cmd-control Program"
+
+help_text = "Here you can get an help overview of the whole project"
+
+gui_text = "Here you can get an overview of our GUI-System"
+
+content_text = (
+"CONTENT CREATION GUIDELINES FOR THE PROJECT\n"
+"\n"
+"Content creation is allowed within this project, but strictly limited to the graphical user interface (GUI). "
+"The GUI layer may be modified, redesigned, extended, and visually improved as needed. "
+"Developers are encouraged to adapt layouts, enhance usability, and create custom user experiences, as long as the core system integrity remains untouched.\n"
+"\n"
+"The GUI can be developed using the following libraries:\n"
+"import os\n"
+"import PySide6.QtWidgets as qw\n"
+"import PySide6.QtCore as qc\n"
+"import PySide6.QtGui as qg\n"
+"\n"
+"These libraries provide the standard foundation for building modern desktop interfaces. "
+"QtWidgets (qw) contains essential UI elements such as windows, buttons, labels, layouts, and input fields. "
+"QtCore (qc) handles the application logic, signals and slots, timers, threading, and core functionality. "
+"QtGui (qg) is responsible for graphical rendering, fonts, icons, and advanced visual components. "
+"Together, they allow the creation of structured, responsive, and customizable graphical interfaces.\n"
+"\n"
+"The GUI is only responsible for displaying information and forwarding user input. "
+"All processing, control logic, and hardware interaction are handled in separate files. "
+"The GUI must therefore only pass predefined variables and states to the backend system without modifying core behavior.\n"
+"\n"
+"Custom GUIs may be shared, published, and distributed freely. "
+"In contrast, all other parts of the codebase are strictly protected. "
+"The main system code must not be shared, modified versions must not be distributed, and no part of the backend logic may be republished, not even privately.\n"
+"\n"
+"The GUI is fully customizable and can be built from scratch using the provided libraries. "
+"Developers have full freedom in layout design, structure, and visual style, as long as required system variables and controls remain accessible.\n"
+"\n"
+"SECURITY NOTICE\n"
+"\n"
+"No responsibility is taken if critical safety elements are removed or altered within the GUI. "
+"The interface plays a direct role in system monitoring and control, and removing essential indicators or controls can lead to serious risks. "
+"For safety reasons, the following elements MUST be included in any GUI implementation:\n"
+"\n"
+"- Digital emergency stop (dedicated variable)\n"
+"- Temperature monitoring (voltage converter and motors 1-9)\n"
+"- Load / utilization display\n"
+"- Current / power consumption display\n"
+"- Overload protection indicator\n"
+"- Motor overview and status display\n"
+"- Cooling system control (model dependent: fan on/off or water cooling)\n"
+"\n"
+"It is strongly recommended to treat the GUI not only as a visual layer, but as a critical safety interface. "
+"Removing or hiding safety-relevant information can result in loss of control, hardware damage, or unsafe operating conditions. "
+"Even if customization is allowed, safety visibility and control must always have highest priority!\n"
+"\n"
+"By contributing GUI content, you agree to follow these guidelines and ensure that usability, clarity, and system safety are maintained at all times!\n"
+)
+
+
+clear_buffer = None #set to False when in use
+
 l1 = None
 l2 = None
 l3 = None
@@ -43,7 +107,8 @@ help_txt = (
     " cal: calibrate\n"
     " stat: statistics\n"
     " g-e: G Code editor\n"
-    " g-s: G code start"
+    " g-s: G code start\n"
+    " helpGUI: GUI Window help"
 )
 
 cal_help_txt = (

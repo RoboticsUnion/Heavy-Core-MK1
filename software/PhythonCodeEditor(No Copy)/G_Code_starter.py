@@ -1,6 +1,6 @@
 from colorama import Fore
 import state
-from G_Code_starter_functions import validate_gcode, set_file
+from G_Code_starter_functions import validate_gcode, set_file, recive_save, recive_live
 
 def clear_last_line():
     # cursor up + clear line (ANSI)
@@ -19,7 +19,9 @@ def interpret(command, arg2):
 
 commands = {
     "compile": validate_gcode,
-    "file": set_file
+    "file": set_file,
+    "recive": recive_save,
+    "recive_live": recive_live
 }
 
 

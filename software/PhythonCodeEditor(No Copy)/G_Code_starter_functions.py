@@ -15,10 +15,8 @@ def set_file(arg2):
         print(" Wrong paswort")
         state.file = None
 
-
-
-
 def validate_gcode(arg2):
+
     pas = arg2[0]
 
     if pas != state.password_user:
@@ -102,3 +100,88 @@ def validate_gcode(arg2):
     else:
         print(Fore.RED + f" {len(errors)} error(s) found")
         return {"ok": False, "errors": errors}
+    
+def recive_save(arg2):# execute.dev is not here
+
+    import socket
+    import state
+
+    pas = arg2[0]
+    HOST = str(arg2[1])        
+    PORT = int(arg2[2])
+
+    if pas == state.password_user:
+        print(" RECIVING MODE ENABLED - CONECT CONTROL PAD")
+        input(" Press enter when ready to Conect")
+
+        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server.bind((HOST, PORT))
+        server.listen(1)
+
+        print(f"Warte auf Verbindung auf Port {PORT}...")
+
+        conn, addr = server.accept()
+        print(f"Verbunden mit {addr}")
+
+        buffer = ""
+
+        while True:
+            
+            if state.clear_buffer:
+                open("buffer.txt", "w").close()
+                buffer = "" # clear input in ram
+                state.clear_buffer = False
+
+            data = conn.recv(1024)
+
+            if not data:
+                break
+
+            text = data.decode("utf-8")
+            buffer += text
+
+            while ";" in buffer:
+                part, buffer = buffer.split(";", 1)
+
+                with open("buffer.txt", "a") as f:
+                    f.write(part + "\n")
+
+                print(part)
+
+        conn.close()
+        server.close()
+
+    else:
+        print(" Wrong paswort")
+
+def recive_live(arg2):# not finished
+    import socket
+    import state
+
+    pas = arg2[0]
+    HOST = str(arg2[1])        
+    PORT = int(arg2[2])
+
+    if pas == state.password_user:
+        state.execute_live = True
+        print(" Live recive started")
+        input(" Press enter when ready to connect - CONNECT CONTROLPAD")
+        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server.bind((HOST, PORT))
+
+        print(" conecting...")
+
+        conn, addr = server.accept()
+
+        print(f" Connected to {addr}")
+
+        while True:           
+            def reciving_data():
+                data = conn.recv(1024)
+                g_code_data = data.decode()
+
+            if state.execute_live == True:
+                reciving_data()
+    else:
+        print(" Wrong password")
+    
