@@ -252,3 +252,12 @@ def g_code_start(args):
     else:
         print(Fore.RED, " Wrong Password")
 
+def Help_Gui(args):
+    pas = args[0]
+    from manual import help_GUI
+    if pas == state.password_user:
+        help_GUI()
+        print(" Started Gui-help")
+    else:
+        print(" Wrong pasword")
+    
