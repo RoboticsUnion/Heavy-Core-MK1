@@ -1,6 +1,10 @@
 from time import sleep
 import state
 from colorama import Fore
+import time
+from time import sleep
+import keyboard
+
 
 # ready
 def password(args):
@@ -186,7 +190,7 @@ def stats(args):
     except ValueError:
         print(" Please enter a number")
 
-# ready?
+# ready
 def g_code_editor(args):
     from colorama import Fore
     print(Fore.RED, "--------------------------------------")
@@ -230,8 +234,7 @@ def g_code_editor(args):
 
         print(Fore.RED, " Wrong Password")
 
-
-
+# ready
 def g_code_start(args):
     print(Fore.RED, "--------------------------------------")
     password_u1 = str(args[0])
@@ -252,6 +255,7 @@ def g_code_start(args):
     else:
         print(Fore.RED, " Wrong Password")
 
+# ready
 def Help_Gui(args):
     pas = args[0]
     from manual import help_GUI
@@ -261,3 +265,30 @@ def Help_Gui(args):
     else:
         print(" Wrong pasword")
     
+def clock_show(args):
+    CLEAR_LINE = "\033[K"
+    CURSOR_UP = "\033[1A"
+    pas = args[0]
+    clock_show_bool = True
+    print(" Hold q for closing the clock")
+    if pas == state.password_user:
+        while clock_show_bool:
+            time_local = time.localtime()
+            time_sec = time_local[5]
+            time_min = time_local[4]
+            time_hour = time_local[3]
+            time_year = time_local[0]
+            time_day = time_local[2]
+            time_mon = time_local[1]
+            print(Fore.WHITE + f"Time: {time_hour}H, {time_min}min, {time_sec}s Its the: {time_year}, {time_mon}, {time_day} ", CLEAR_LINE, CURSOR_UP)
+            sleep(1)
+            if keyboard.is_pressed('q'):
+                print(Fore.RED + " Closing...")
+                clock_show_bool = False
+                break
+    else:
+        print(Fore.RED + "Wrong password!")
+
+    
+        
+        
