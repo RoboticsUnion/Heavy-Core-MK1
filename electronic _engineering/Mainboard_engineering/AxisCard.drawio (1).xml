@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="1nRs9nOcXyM5-W9EQxPq">
+    <mxGraphModel dx="1201" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-5" edge="1" parent="1" source="MFIq5vTkRlJLhCzwsuRF-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="MFIq5vTkRlJLhCzwsuRF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-6" edge="1" parent="1" source="MFIq5vTkRlJLhCzwsuRF-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="MFIq5vTkRlJLhCzwsuRF-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-14" edge="1" parent="1" source="MFIq5vTkRlJLhCzwsuRF-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="MFIq5vTkRlJLhCzwsuRF-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-18" edge="1" parent="1" source="MFIq5vTkRlJLhCzwsuRF-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="MFIq5vTkRlJLhCzwsuRF-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="ESP 32" vertex="1">
+          <mxGeometry height="170" width="80" x="280" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="CAN-Bus" vertex="1">
+          <mxGeometry height="60" width="60" x="400" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="STATUS - LED MULTI" vertex="1">
+          <mxGeometry height="60" width="140" x="400" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-13" edge="1" parent="1" source="MFIq5vTkRlJLhCzwsuRF-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="MFIq5vTkRlJLhCzwsuRF-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="IN_OUT-STEPPER MOTOR OUT-CAN IN" vertex="1">
+          <mxGeometry height="60" width="360" x="280" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-16" edge="1" parent="1" source="MFIq5vTkRlJLhCzwsuRF-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="MFIq5vTkRlJLhCzwsuRF-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="3,3V - 5V - Signal converter (Stepper)" vertex="1">
+          <mxGeometry height="60" width="120" x="110" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Bit-timing-out-to-main" vertex="1">
+          <mxGeometry height="60" width="120" x="680" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="MFIq5vTkRlJLhCzwsuRF-19" edge="1" parent="1" source="MFIq5vTkRlJLhCzwsuRF-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.627;entryY=-0.039;entryDx=0;entryDy=0;entryPerimeter=0;" target="MFIq5vTkRlJLhCzwsuRF-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

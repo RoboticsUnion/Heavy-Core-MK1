@@ -1,4 +1,4 @@
-from functions import packet, password, serial, help_functions, calibrate, stats, g_code_editor, g_code_start, Help_Gui
+from functions import packet, password, serial, help_functions, calibrate, stats, g_code_editor, g_code_start, Help_Gui, clock_show
 from colorama import Fore
 
 def interpret(command, args):
@@ -20,5 +20,6 @@ commands = {
     "stat":stats,
     "g-e":g_code_editor,
     "g-s":g_code_start,
-    "helpGUI":Help_Gui
+    "helpGUI":Help_Gui,
+    "clock":clock_show
 }

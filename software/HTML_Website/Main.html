@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Robotics Control Panel</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    background: #2b2b2b;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.tab {
+    padding: 15px 25px;
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.tab:hover {
+    color: #fff;
+    background: #3a3a3a;
+}
+
+.tab.active {
+    color: #fff;
+    border-bottom: 3px solid #4CAF50;
+}
+
+/* CONTENT */
+.content {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* HEADINGS */
+h1 {
+    color: #4CAF50;
+}
+
+h2 {
+    margin-top: 25px;
+    color: #ccc;
+}
+
+/* LIST */
+ul {
+    margin-top: 10px;
+    line-height: 1.8;
+}
+
+code {
+    background: #111;
+    padding: 5px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+</style>
+
+<script>
+function showTab(tabName) {
+    let contents = document.querySelectorAll(".tab-content");
+    contents.forEach(c => c.style.display = "none");
+
+    document.getElementById(tabName).style.display = "block";
+
+    let tabs = document.querySelectorAll(".tab");
+    tabs.forEach(t => t.classList.remove("active"));
+
+    event.target.classList.add("active");
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="tab active" onclick="showTab('home')">Home</div>
+    <div class="tab" onclick="showTab('guidelines')">Community Guidelines</div>
+    <div class="tab" onclick="showTab('projects')">Projects</div>
+    <div class="tab" onclick="showTab('docs')">Documentation</div>
+    <div class="tab" onclick="showTab('about')">About</div>
+</div>
+
+<div class="content">
+
+<!-- HOME -->
+<div id="home" class="tab-content">
+    <div class="card">
+        <h1>Robotics Control Platform</h1>
+        <p>Advanced interface for monitoring, controlling, and developing robotic systems.</p>
+        <img src="C:\Users\david\Documents\Copilot_20260430_102853.png" alt="Bild">
+    </div>
+</div>
+
+<!-- GUIDELINES -->
+<div id="guidelines" class="tab-content" style="display:block;">
+    <div class="card">
+        <h1>Community Guidelines</h1>
+
+        <h2>Content Creation</h2>
+        <p>
+        Content creation is allowed within this project, but strictly limited to the graphical user interface (GUI).
+        The GUI layer may be modified, redesigned, extended, and visually improved as needed.
+        </p>
+
+        <h2>Supported Libraries</h2>
+        <p>The GUI can be developed using:</p>
+        <code>
+import os<br>
+import PySide6.QtWidgets as qw<br>
+import PySide6.QtCore as qc<br>
+import PySide6.QtGui as qg
+        </code>
+
+        <h2>Security Notice</h2>
+        <p>The following safety elements MUST be included:</p>
+
+        <ul>
+            <li>Digital emergency stop</li>
+            <li>Temperature monitoring (motors & voltage)</li>
+            <li>Load / utilization display</li>
+            <li>Power consumption display</li>
+            <li>Overload protection indicator</li>
+            <li>Motor status overview</li>
+            <li>Cooling system control</li>
+        </ul>
+
+        <p><strong>By contributing, you agree to follow these guidelines.</strong></p>
+    </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="tab-content" style="display:none;">
+    <div class="card">
+        <h1>Projects</h1>
+        <p>Coming soon...</p>
+    </div>
+</div>
+
+<!-- DOCS -->
+<div id="docs" class="tab-content" style="display:none;">
+    <div class="card">
+        <h1>Documentation</h1>
+        <p>Technical documentation will be available here.</p>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="tab-content" style="display:none;">
+    <div class="card">
+        <h1>About</h1>
+        <p>Robotics development platform focused on performance, safety, and scalability.</p>
+    </div>
+</div>
+
+</div>
+
+<div class="footer">
+    © 2026 Robotics Systems
+</div>
+
+</body>
+</html>

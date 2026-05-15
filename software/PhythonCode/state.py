@@ -75,6 +75,8 @@ content_text = (
 
 
 clear_buffer = None #set to False when in use
+live_recive_on = None #set to true when in use
+live_recive_while = None #while loop stop
 
 l1 = None
 l2 = None
@@ -136,5 +138,9 @@ g_code_write_help_txt = (
     " G1 - Drive the arm at a fixed speed to a position(x/y/z)\n"
     " G1-s - Fix the speed for G1\n"
     " GD - Drive every axe to a position(R1/W1/W2/R2/W3/W(x/y) example: GD R1 num W2 num W num(x) num(y)\n"
+)
+
+help_g_code_starter = (
+    "This is the help page for the recive/start section\n"
 )
 

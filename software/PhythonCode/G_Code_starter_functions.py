@@ -3,6 +3,10 @@ import re
 import os
 import state
 
+
+state.live_recive_on = True 
+state.live_recive_while = True
+
 init()
 
 
@@ -155,6 +159,7 @@ def recive_save(arg2):# execute.dev is not here
         print(" Wrong paswort")
 
 def recive_live(arg2):# not finished
+
     import socket
     import state
 
@@ -175,13 +180,32 @@ def recive_live(arg2):# not finished
 
         print(f" Connected to {addr}")
 
-        while True:           
+        while state.live_recive_while:           
             def reciving_data():
                 data = conn.recv(1024)
                 g_code_data = data.decode()
 
             if state.execute_live == True:
                 reciving_data()
+            elif state.live_recive_on == False:
+
+                state.live_recive_on = False 
+                state.live_recive_while = False
+                state.execute_live  = False
+                break
+
     else:
         print(" Wrong password")
     
+def help_g_code_starter(arg2):
+
+    pas = arg2[0]
+
+    if pas ==  state.password_user:
+        print(state.help_g_code_starter)
+    else:
+        print(Fore.RED + " Wrong password")
+
+
+def load_code(arg2):
+    print(" Loading code activ")
