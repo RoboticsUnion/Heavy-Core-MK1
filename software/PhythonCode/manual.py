@@ -48,7 +48,7 @@ def help_GUI():
     # ---------------- TITLE ----------------
     def center_label(frame, text):
         inner = tk.Frame(frame)
-        inner.place(relx=0.5, rely=0.1, anchor="center")
+        inner.place(relx=0.5, rely=0.08, anchor="center")
 
         tk.Label(
             inner,
@@ -58,18 +58,51 @@ def help_GUI():
             justify="center"
         ).pack()
 
-    # ---------------- TEXT ----------------
+    # ---------------- SCROLL TEXT ----------------
     def center_label_normal(frame, text):
-        inner = tk.Frame(frame)
-        inner.place(relx=0.5, rely=0.5, anchor="center")
+        outer = tk.Frame(frame)
+        outer.place(
+            relx=0.5,
+            rely=0.55,
+            anchor="center",
+            relwidth=0.92,
+            relheight=0.78
+        )
 
-        tk.Label(
-            inner,
-            text=text,
+        text_box = tk.Text(
+            outer,
             font=("Arial", 10),
-            wraplength=700,
-            justify="center"
-        ).pack()
+            wrap="word",
+            padx=10,
+            pady=10
+        )
+
+        scroll_y = tk.Scrollbar(
+            outer,
+            orient="vertical",
+            command=text_box.yview
+        )
+
+        scroll_x = tk.Scrollbar(
+            outer,
+            orient="horizontal",
+            command=text_box.xview
+        )
+
+        text_box.configure(
+            yscrollcommand=scroll_y.set,
+            xscrollcommand=scroll_x.set
+        )
+
+        text_box.grid(row=0, column=0, sticky="nsew")
+        scroll_y.grid(row=0, column=1, sticky="ns")
+        scroll_x.grid(row=1, column=0, sticky="ew")
+
+        outer.grid_rowconfigure(0, weight=1)
+        outer.grid_columnconfigure(0, weight=1)
+
+        text_box.insert("1.0", text)
+        text_box.configure(state="disabled")
 
     # ---------------- CONTENT ----------------
     center_label(frame1, "Page 1\nCMD - Basics")

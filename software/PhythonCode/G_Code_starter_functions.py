@@ -3,6 +3,7 @@ import re
 import os
 import state
 
+import socket
 
 state.live_recive_on = True 
 state.live_recive_while = True
@@ -208,4 +209,31 @@ def help_g_code_starter(arg2):
 
 
 def load_code(arg2):
-    print(" Loading code activ")
+    print("Loading code active")
+
+    pas = arg2[0]
+    HOST = arg2[1]
+    PORT = arg2[2]
+    file_in = arg2[3]
+
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect((HOST, PORT))
+
+    if pas == state.password_user:
+
+        with open(file_in, "r") as file:
+            data = file.read()
+
+        commands = data.split(";")
+
+        for cmd in commands:
+            cmd = cmd.strip()
+
+            if cmd:
+                print(cmd)
+                client.send((cmd + ";").encode())
+
+        client.close()
+
+    else:
+        print(Fore.RED + "Wrong password!")
