@@ -1,191 +1,693 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Robotics Control Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heavy-Core-MK1 Robotics Control Platform</title>
 
 <style>
+:root {
+    --bg: #171918;
+    --panel: #242927;
+    --panel-soft: #2d3431;
+    --text: #e8ece9;
+    --muted: #b8c2bd;
+    --line: #3d4743;
+    --accent: #4CAF50;
+    --accent-2: #5fc6d1;
+    --warn: #e4b451;
+    --danger: #ff6b6b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
 }
 
-/* NAVBAR */
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     display: flex;
-    background: #2b2b2b;
-    padding: 0 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 0 18px;
+    background: #202421;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 
 .tab {
-    padding: 15px 25px;
+    appearance: none;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    padding: 15px 20px 12px;
+    background: transparent;
+    color: #aab5b0;
+    font: inherit;
     cursor: pointer;
-    color: #aaa;
-    transition: 0.3s;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
-.tab:hover {
-    color: #fff;
-    background: #3a3a3a;
+.tab:hover,
+.tab:focus-visible {
+    color: #ffffff;
+    background: #2b312e;
+    outline: none;
 }
 
 .tab.active {
-    color: #fff;
-    border-bottom: 3px solid #4CAF50;
+    color: #ffffff;
+    border-bottom-color: var(--accent);
 }
 
-/* CONTENT */
 .content {
-    padding: 40px;
-    max-width: 900px;
-    margin: auto;
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 34px 0 46px;
 }
 
 .card {
-    background: #2a2a2a;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    background: var(--panel);
+    padding: clamp(22px, 4vw, 36px);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.34);
 }
 
-/* HEADINGS */
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 28px;
+    align-items: center;
+}
+
+.media-grid,
+.info-grid,
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    gap: 16px;
+}
+
+.info-box {
+    min-height: 100%;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel-soft);
+}
+
+.metric {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--accent-2);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
 h1 {
-    color: #4CAF50;
+    margin: 0 0 14px;
+    color: var(--accent);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.12;
 }
 
 h2 {
-    margin-top: 25px;
-    color: #ccc;
+    margin: 30px 0 10px;
+    color: #f2f6f3;
+    font-size: 1.34rem;
 }
 
-/* LIST */
-ul {
-    margin-top: 10px;
-    line-height: 1.8;
+h3 {
+    margin: 0 0 8px;
+    color: #f5f7f6;
+    font-size: 1.05rem;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+.lead {
+    color: var(--muted);
+    font-size: 1.12rem;
+}
+
+ul,
+ol {
+    margin: 10px 0 0;
+    padding-left: 22px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+code,
+pre {
+    background: #101211;
+    border: 1px solid #303734;
+    border-radius: 8px;
+    color: #e6f5ea;
 }
 
 code {
-    background: #111;
-    padding: 5px 10px;
-    border-radius: 6px;
-    display: inline-block;
+    padding: 3px 7px;
 }
 
-/* FOOTER */
+pre {
+    overflow-x: auto;
+    padding: 16px;
+    white-space: pre-wrap;
+}
+
+pre code {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.project-image {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.38);
+}
+
+.logo {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.timeline {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+}
+
+.timeline th,
+.timeline td {
+    padding: 12px;
+    border: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+}
+
+.timeline th {
+    background: #1e2320;
+    color: var(--accent-2);
+}
+
+.badge {
+    display: inline-block;
+    margin: 4px 6px 4px 0;
+    padding: 4px 9px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #1c211f;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.callout {
+    margin-top: 18px;
+    padding: 16px;
+    border-left: 4px solid var(--warn);
+    border-radius: 8px;
+    background: #2b2a22;
+}
+
+.danger {
+    border-left-color: var(--danger);
+    background: #302425;
+}
+
 .footer {
     text-align: center;
     padding: 20px;
-    color: #666;
+    border-top: 1px solid var(--line);
+    color: #7f8a85;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        padding: 0 8px;
+    }
+
+    .tab {
+        flex: 1 1 auto;
+        padding-inline: 10px;
+        font-size: 0.95rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        display: block;
+        overflow-x: auto;
+    }
 }
 </style>
 
 <script>
-function showTab(tabName) {
-    let contents = document.querySelectorAll(".tab-content");
-    contents.forEach(c => c.style.display = "none");
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll("[data-tab-target]");
+    const contents = document.querySelectorAll(".tab-content");
 
-    document.getElementById(tabName).style.display = "block";
+    function showTab(tabName) {
+        contents.forEach((content) => {
+            content.hidden = content.id !== tabName;
+        });
 
-    let tabs = document.querySelectorAll(".tab");
-    tabs.forEach(t => t.classList.remove("active"));
+        tabs.forEach((tab) => {
+            const isActive = tab.dataset.tabTarget === tabName;
+            tab.classList.toggle("active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+        });
+    }
 
-    event.target.classList.add("active");
-}
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => showTab(tab.dataset.tabTarget));
+    });
+
+    showTab("home");
+});
 </script>
-
 </head>
 
 <body>
+<nav class="navbar" aria-label="Main navigation">
+    <button class="tab active" type="button" data-tab-target="home" aria-selected="true">Home</button>
+    <button class="tab" type="button" data-tab-target="guidelines" aria-selected="false">Community Guidelines</button>
+    <button class="tab" type="button" data-tab-target="projects" aria-selected="false">Projects</button>
+    <button class="tab" type="button" data-tab-target="docs" aria-selected="false">Documentation</button>
+    <button class="tab" type="button" data-tab-target="about" aria-selected="false">About</button>
+</nav>
 
-<div class="navbar">
-    <div class="tab active" onclick="showTab('home')">Home</div>
-    <div class="tab" onclick="showTab('guidelines')">Community Guidelines</div>
-    <div class="tab" onclick="showTab('projects')">Projects</div>
-    <div class="tab" onclick="showTab('docs')">Documentation</div>
-    <div class="tab" onclick="showTab('about')">About</div>
-</div>
+<main class="content">
+    <section id="home" class="tab-content">
+        <div class="card">
+            <div class="hero-grid">
+                <div>
+                    <h1>Heavy-Core-MK1 Robotics Platform</h1>
+                    <p class="lead">
+                        Heavy-Core-MK1 is a modular robotic arm project that combines mechanical engineering,
+                        electronics, firmware, and custom control software into one expandable development platform.
+                        The long-term goal is a scalable and affordable 6-DOF robotic arm that can be upgraded with
+                        different tools, tested safely, and used as a foundation for future automation experiments.
+                    </p>
+                    <p>
+                        The project is currently in an alpha-style development stage. The first two axes have already
+                        been designed in CAD, printed, assembled, and functionally tested with stepper motor driven
+                        motion. At the same time, the software side is being developed around a control GUI, a Python
+                        robot-control layer, G-code tooling, calibration commands, and firmware experiments for the
+                        embedded controllers.
+                    </p>
+                    <div>
+                        <span class="badge">Target: 6 DOF</span>
+                        <span class="badge">Current: 2 tested axes</span>
+                        <span class="badge">Stepper motor based</span>
+                        <span class="badge">Arduino and ESP32 control</span>
+                        <span class="badge">Custom software stack</span>
+                    </div>
+                </div>
+                <img class="project-image logo" src="pictures_web/Rootics_union_logo.png" alt="Robotics Union logo">
+            </div>
 
-<div class="content">
+            <h2>What This Control Panel Represents</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <span class="metric">Mechanical Core</span>
+                    <h3>Arm, axes, and gearboxes</h3>
+                    <p>
+                        The repository contains CAD, assemblies, STL exports, bearings, belt drive assets, encoder
+                        mounts, and first gearbox concepts. Axis 1 and Axis 2 are the first validated mechanical
+                        milestones, with ongoing work focused on the remaining axes and improved gearbox performance.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">Software Core</span>
+                    <h3>Control, calibration, and G-code</h3>
+                    <p>
+                        The Python control code includes a startup flow, password-protected commands, serial setup,
+                        calibration values, status output, a G-code editor, and a G-code starter that can validate
+                        supported movement commands before execution.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">Electronics Core</span>
+                    <h3>Firmware and axis communication</h3>
+                    <p>
+                        The embedded side is planned around Arduino and ESP32 controllers, CAN-capable firmware
+                        experiments, AS5600 encoder tests, stepper control libraries, and a simple time-synchronized
+                        status signaling concept for axis cards.
+                    </p>
+                </div>
+            </div>
 
-<!-- HOME -->
-<div id="home" class="tab-content">
-    <div class="card">
-        <h1>Robotics Control Platform</h1>
-        <p>Advanced interface for monitoring, controlling, and developing robotic systems.</p>
-        <img src="C:\Users\david\Documents\Copilot_20260430_102853.png" alt="Bild">
-    </div>
-</div>
+            <div class="callout">
+                <strong>Current focus:</strong> finish the remaining axis designs, improve the custom gearboxes,
+                continue the GUI and backend software, and bring hardware, firmware, and control logic together into
+                a stable integrated demonstration.
+            </div>
+        </div>
+    </section>
 
-<!-- GUIDELINES -->
-<div id="guidelines" class="tab-content" style="display:block;">
-    <div class="card">
-        <h1>Community Guidelines</h1>
+    <section id="guidelines" class="tab-content" hidden>
+        <div class="card">
+            <h1>Community Guidelines</h1>
+            <p class="lead">
+                Contributions to Heavy-Core-MK1 should make the project easier to understand, safer to operate, and
+                clearer to develop. The repository already separates GUI work, backend control logic, firmware, CAD,
+                and documentation, so every change should respect those boundaries.
+            </p>
 
-        <h2>Content Creation</h2>
-        <p>
-        Content creation is allowed within this project, but strictly limited to the graphical user interface (GUI).
-        The GUI layer may be modified, redesigned, extended, and visually improved as needed.
-        </p>
+            <h2>Content Creation Scope</h2>
+            <p>
+                Content creation is allowed inside this project, but it is limited to the graphical user interface
+                and documentation-facing presentation layers. Contributors may redesign screens, improve layout,
+                add clearer status areas, create better help pages, and make the operator experience more readable.
+                The GUI can be modified, redesigned, extended, and visually improved as long as the core control
+                logic and safety behavior are not weakened.
+            </p>
+            <p>
+                The GUI should display information, collect user input, and forward intended commands to the backend.
+                It should not silently change calibration data, bypass password checks, hide important status values,
+                remove safety warnings, or replace backend validation with untested visual-only logic. Robot movement,
+                G-code validation, serial communication, live receiving, calibration, and firmware control must remain
+                traceable and understandable.
+            </p>
 
-        <h2>Supported Libraries</h2>
-        <p>The GUI can be developed using:</p>
-        <code>
-import os<br>
-import PySide6.QtWidgets as qw<br>
-import PySide6.QtCore as qc<br>
-import PySide6.QtGui as qg
-        </code>
+            <h2>Supported GUI Libraries</h2>
+            <p>
+                The current GUI and manual experiments use Python with PySide6. These imports are the approved base
+                for GUI work in the existing Python prototype:
+            </p>
+            <pre><code>import os
+import PySide6.QtWidgets as qw
+import PySide6.QtCore as qc
+import PySide6.QtGui as qg</code></pre>
+            <p>
+                <code>QtWidgets</code> should be used for windows, buttons, labels, tabs, lists, inputs, and control
+                surfaces. <code>QtCore</code> should handle signals, timers, state updates, and application behavior.
+                <code>QtGui</code> should be used for icons, fonts, colors, images, and rendering details. Keeping the
+                GUI on these libraries makes the interface easier to maintain and keeps the software stack consistent.
+            </p>
 
-        <h2>Security Notice</h2>
-        <p>The following safety elements MUST be included:</p>
+            <h2>Required Safety Elements</h2>
+            <p>
+                The interface is not only decoration. For a robotic arm, the operator screen is part of the safety
+                concept because it shows what the robot is doing, which limits are active, and whether the system is
+                still in a controllable state. Every future GUI must keep the following elements visible and easy to
+                reach:
+            </p>
+            <ul>
+                <li>Digital emergency stop with a dedicated, obvious control state.</li>
+                <li>Temperature monitoring for motors, voltage converters, and other heat-critical components.</li>
+                <li>Load or utilization display so the operator can see when an axis is working near its limit.</li>
+                <li>Current and power consumption display for diagnosing stress, stalls, and electrical issues.</li>
+                <li>Overload protection indicator with a clear safe, warning, and fault state.</li>
+                <li>Motor overview with status for every connected axis and actuator.</li>
+                <li>Cooling system control for fans or water cooling, depending on the installed hardware version.</li>
+            </ul>
 
-        <ul>
-            <li>Digital emergency stop</li>
-            <li>Temperature monitoring (motors & voltage)</li>
-            <li>Load / utilization display</li>
-            <li>Power consumption display</li>
-            <li>Overload protection indicator</li>
-            <li>Motor status overview</li>
-            <li>Cooling system control</li>
-        </ul>
+            <div class="callout danger">
+                Removing safety-relevant information can make the robot harder to stop, harder to diagnose, and easier
+                to damage. GUI freedom is welcome, but safety visibility, clear operator feedback, and predictable
+                command flow have priority over visual style.
+            </div>
+        </div>
+    </section>
 
-        <p><strong>By contributing, you agree to follow these guidelines.</strong></p>
-    </div>
-</div>
+    <section id="projects" class="tab-content" hidden>
+        <div class="card">
+            <h1>Projects</h1>
+            <p class="lead">
+                Heavy-Core-MK1 is not a single file or one isolated robot part. It is a growing set of connected
+                subprojects that together form the mechanical arm, the control electronics, the operator software,
+                and the documentation needed to build and test the platform.
+            </p>
 
-<!-- PROJECTS -->
-<div id="projects" class="tab-content" style="display:none;">
-    <div class="card">
-        <h1>Projects</h1>
-        <p>Coming soon...</p>
-    </div>
-</div>
+            <h2>Active Development Areas</h2>
+            <div class="status-grid">
+                <div class="info-box">
+                    <span class="metric">MK1 Alpha</span>
+                    <h3>Two-axis mechanical validation</h3>
+                    <p>
+                        The first two axes have been designed, printed, assembled, and successfully tested. This phase
+                        validates the early structure, torque calculations, stepper motor integration, and custom
+                        gearbox approach before the arm expands toward the full 6-DOF target.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">CAD and STL</span>
+                    <h3>Printable and machinable parts</h3>
+                    <p>
+                        The mechanical folders contain SolidWorks parts and assemblies, STL exports, base components,
+                        elbow components, shoulder parts, cycloidal drive pieces, encoder mounts, belt drive assets,
+                        bearings, spacers, shafts, brackets, plates, and motor mounting geometry.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">Control Software</span>
+                    <h3>Command system and GUI prototypes</h3>
+                    <p>
+                        The Python software includes a console command loop, interpreter, shared state module,
+                        password workflow, calibration commands, serial configuration, stats output, G-code editor,
+                        G-code validation, TCP receive mode, and a PySide6 manual/help GUI prototype.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">Embedded Work</span>
+                    <h3>Firmware and sensor experiments</h3>
+                    <p>
+                        The firmware area contains Arduino and ESP32 startup files, an AS5600 magnetic encoder test,
+                        and planned library support for stepper drivers, CAN bus, PID control, FreeRTOS tasks,
+                        displays, EEPROM, timers, and sensor integration.
+                    </p>
+                </div>
+            </div>
 
-<!-- DOCS -->
-<div id="docs" class="tab-content" style="display:none;">
-    <div class="card">
-        <h1>Documentation</h1>
-        <p>Technical documentation will be available here.</p>
-    </div>
-</div>
+            <h2>Development Roadmap</h2>
+            <table class="timeline">
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Description</th>
+                        <th>Status or Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MK1 Alpha</td>
+                        <td>2-DOF mechanical validation, first assembled axes, first showcase-ready project state.</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>MK1 Beta</td>
+                        <td>Expansion toward a 4-DOF to 6-DOF mechanical prototype with improved axis modules.</td>
+                        <td>Estimated Q3 2026</td>
+                    </tr>
+                    <tr>
+                        <td>MK1 Software Alpha</td>
+                        <td>Basic motion control, operator interface, calibration workflow, and safer command handling.</td>
+                        <td>Estimated Q3 2026</td>
+                    </tr>
+                    <tr>
+                        <td>MK1 Integrated Demo</td>
+                        <td>Hardware and software working together for a demonstrable robotic arm system.</td>
+                        <td>Estimated January 2027, HTL Open House</td>
+                    </tr>
+                    <tr>
+                        <td>MK1 Full Prototype</td>
+                        <td>Full 6-DOF arm with stronger software, better mechanics, and more polished safety features.</td>
+                        <td>Future milestone</td>
+                    </tr>
+                </tbody>
+            </table>
 
-<!-- ABOUT -->
-<div id="about" class="tab-content" style="display:none;">
-    <div class="card">
-        <h1>About</h1>
-        <p>Robotics development platform focused on performance, safety, and scalability.</p>
-    </div>
-</div>
+            <h2>Next Engineering Goals</h2>
+            <ul>
+                <li>Complete the remaining arm axes and improve the strength-to-weight ratio of the structure.</li>
+                <li>Optimize the gearbox designs so the arm can move with better torque, precision, and repeatability.</li>
+                <li>Connect the desktop control layer with the robot-control layer and embedded axis controllers.</li>
+                <li>Improve the GUI so status, calibration, G-code validation, and safety indicators are easy to read.</li>
+                <li>Test communication between the control PC, ESP32 or Arduino hardware, motor drivers, and sensors.</li>
+            </ul>
+        </div>
+    </section>
 
-</div>
+    <section id="docs" class="tab-content" hidden>
+        <div class="card">
+            <h1>Documentation</h1>
+            <p class="lead">
+                The repository is organized so that mechanical design, electronics, software, firmware, and project
+                explanation can develop together. This documentation page summarizes where the important information
+                lives and what each part of the project currently contains.
+            </p>
 
-<div class="footer">
-    © 2026 Robotics Systems
-</div>
+            <h2>Repository Map</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <span class="metric">Root README</span>
+                    <h3>Project overview</h3>
+                    <p>
+                        The main README explains the Heavy-Core-MK1 vision, the target 6-DOF robotic arm, the current
+                        2-DOF validation state, the custom control software idea, completed work, active work, and
+                        preliminary technical specifications.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">software</span>
+                    <h3>Control stack</h3>
+                    <p>
+                        The software folder describes three planned layers: RoboticsUnion Control GUI, RoboticsUnion
+                        Robot Control, and RoboticsUnion Firmware. The Python prototype currently holds the command
+                        system, calibration commands, G-code tools, manual GUI, and shared state text.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">mechanical</span>
+                    <h3>CAD, assemblies, and STL exports</h3>
+                    <p>
+                        Mechanical files are separated into CAD, assemblies, STL exports, and reusable assets. This
+                        includes base, shoulder, elbow, cycloidal drive, belt drive, bearing, encoder, stepper motor,
+                        screw, bolt, and nut resources used to design the arm.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">electronic engineering</span>
+                    <h3>Mainboard and communication concepts</h3>
+                    <p>
+                        The electronics area contains mainboard and axis-card concept drawings. The C++ documentation
+                        also describes a simple synchronized 4-bit status system that can report OK and fault codes
+                        from axis cards to the main control system.
+                    </p>
+                </div>
+            </div>
 
+            <h2>Software Command Notes</h2>
+            <p>
+                The current Python control prototype starts from <code>Startup.py</code>, checks that the expected
+                project files exist, creates a password workflow, and then runs the main command loop from
+                <code>console_user.py</code>. Commands are mapped through <code>interpreter.py</code> into functions
+                for package checks, password recovery, serial setup, calibration, status output, G-code editing,
+                G-code starting, manual GUI display, and a live clock.
+            </p>
+            <p>
+                The G-code starter can select a file, validate supported commands, and receive command data through a
+                TCP connection. The compiler currently accepts <code>G0</code> with X/Y/Z movement, <code>G1</code>
+                with X/Y/Z/F movement, and <code>G78</code> with X/Y/F/S parameters. Comments in parentheses and text
+                after a semicolon are ignored during validation.
+            </p>
+
+            <h2>Important Documentation Themes</h2>
+            <ul>
+                <li>Always calibrate link lengths, rotations, wrist angles, and tool offsets before movement tests.</li>
+                <li>Use status output to check stored calibration values, selected G-code file, and terminal state.</li>
+                <li>Keep unfinished live-receive features away from real hardware until they are tested safely.</li>
+                <li>Document every axis module with CAD source, exported STL, assembly notes, wiring notes, and test results.</li>
+                <li>Update the website whenever the roadmap, tested axes, firmware, or safety interface changes.</li>
+            </ul>
+
+            <div class="media-grid">
+                <img class="project-image" src="../../docs/Images/ArmAssmb_Img1.png" alt="Heavy-Core-MK1 arm assembly image 1">
+                <img class="project-image" src="../../docs/Images/ArmAssmb_Img2.png" alt="Heavy-Core-MK1 arm assembly image 2">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="tab-content" hidden>
+        <div class="card">
+            <h1>About Heavy-Core-MK1</h1>
+            <p class="lead">
+                Heavy-Core-MK1 is built around the idea that a robotic arm should be more than a collection of printed
+                parts. It should be a complete robotics ecosystem where structure, drives, electronics, software,
+                safety, and documentation are designed together from the beginning.
+            </p>
+
+            <h2>Project Vision</h2>
+            <p>
+                The project aims to create a 6-DOF robotic arm that can grow over time. The arm should support
+                interchangeable end effectors, use a structure optimized for strength and weight, rely on custom
+                control software, and eventually support more advanced automation features. The platform is meant to
+                be affordable enough for learning and experimentation while still being serious enough to teach real
+                engineering tradeoffs.
+            </p>
+            <p>
+                Heavy-Core-MK1 is also a learning platform. Mechanical design decisions affect motor loads and
+                gearbox requirements. Electronics decisions affect sensor feedback and firmware timing. Software
+                decisions affect operator safety, calibration accuracy, and how movement commands are checked before
+                they reach the robot. Bringing all of those pieces together is the point of the project.
+            </p>
+
+            <h2>Why The Project Stands Out</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <span class="metric">Integrated Engineering</span>
+                    <p>
+                        The repo does not treat mechanics, electronics, and software as separate worlds. Each part is
+                        designed to support the others, from axis modules and encoder mounts to command validation and
+                        future operator safety screens.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">Modular Growth</span>
+                    <p>
+                        The early 2-DOF test stage gives the project a real base before scaling to more axes. This
+                        makes it possible to validate torque, motion, assembly, and software behavior before committing
+                        to the full 6-DOF prototype.
+                    </p>
+                </div>
+                <div class="info-box">
+                    <span class="metric">Custom Control</span>
+                    <p>
+                        The control software is being developed specifically for this arm. Instead of relying only on
+                        simple position commands, the roadmap includes feedback, inverse kinematics, simulation,
+                        collision awareness, overload prevention, and expandable control architecture.
+                    </p>
+                </div>
+            </div>
+
+            <h2>Technical Identity</h2>
+            <ul>
+                <li><strong>Robot type:</strong> modular robotic arm platform.</li>
+                <li><strong>Target motion:</strong> full 6-DOF movement with upgradeable end effectors.</li>
+                <li><strong>Current prototype:</strong> first two axes mechanically designed, assembled, and tested.</li>
+                <li><strong>Actuation:</strong> stepper motor based development with custom gearbox work.</li>
+                <li><strong>Materials:</strong> aluminum and PLA now, with stronger printed materials planned.</li>
+                <li><strong>Control hardware:</strong> Arduino and ESP32 based development path.</li>
+                <li><strong>Software:</strong> custom desktop or mobile control application with Python and C++ components.</li>
+            </ul>
+
+            <div class="callout">
+                Heavy-Core-MK1 is still growing, but its direction is clear: build a capable, understandable, and
+                expandable robotics platform where every subsystem can be improved without losing the project vision.
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    &copy; 2026 Robotics Systems - Heavy-Core-MK1
+</footer>
 </body>
 </html>

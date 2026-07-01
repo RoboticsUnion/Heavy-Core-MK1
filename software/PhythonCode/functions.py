@@ -288,7 +288,3 @@ def clock_show(args):
                 break
     else:
         print(Fore.RED + "Wrong password!")
-
-    
-        
-        
