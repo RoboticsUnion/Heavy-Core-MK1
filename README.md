@@ -1,4 +1,3 @@
-This project is currently paused :( but we are looking forward to work on it as soon as possible.
 # Heavy-Core-MK1
 Heavy-Core-MK1 is the development of a modular robotic arm platform.
 The goal is to create a scalable, affordable robotics ecosystem where hardware and software are engineered together from the ground up.
