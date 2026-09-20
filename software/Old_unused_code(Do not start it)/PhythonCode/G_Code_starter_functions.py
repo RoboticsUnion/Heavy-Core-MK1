@@ -207,7 +207,6 @@ def help_g_code_starter(arg2):
     else:
         print(Fore.RED + " Wrong password")
 
-
 def load_code(arg2):
     print("Loading code active")
 
