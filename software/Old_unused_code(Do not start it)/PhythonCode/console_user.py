@@ -2,7 +2,6 @@ import state
 state.L1 = 0
 state.L2 = 0
 
-
 console_user_running = True
 
 from interpreter import interpret

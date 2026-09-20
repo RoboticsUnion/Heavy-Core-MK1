@@ -68,7 +68,6 @@ def startup_fc():
     main()
     return True
 
-
 # ---- Start ----
 try:
     ok = startup_fc()
