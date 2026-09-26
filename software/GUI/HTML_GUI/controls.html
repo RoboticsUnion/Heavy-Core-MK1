@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Robotics Union Software ©">
+    <title>Robotics Union Control Software (based on HTML5)</title>
+    
+    <!-- Styling preset-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="button-row">
+        <a href="text-editor.html" class="main-options">Text-Editor</a>
+        <a href="controls.html" class="main-options">Controls</a>
+        <a href="settings.html" class="main-options">Settings</a>
+        <a href="rsd.html" class="main-options">RSD</a>
+        <a href="chamber.html" class="main-options">Chamber adjustments</a>
+        <a href="Main_page.html" class="main-options">Main Page</a>
+    </div>
+
+    <h1 class="titels">Manual Robot Control</h1>
+
+    <div class="control-container">
+        
+        <!-- Gruppe 1: System-Befehle -->
+        <h3 class="undertitle_text">System Commands</h3>
+        <div class="control-group">
+            <button class="cmd-btn_send-command" data-cmd="HAA">Home All Axes</button>
+            <button class="cmd-btn_send-command" data-cmd="ENAM">Enable Motors</button>
+            <button class="cmd-btn_send-command" data-cmd="DISM">Disable Motors</button>
+            <button class="cmd-btn_send-command" data-cmd="ENAC">Enable Axis Controller</button>
+            <button class="cmd-btn_send-command" data-cmd="DISC">Disable Axis Controller</button>
+
+        </div>
+
+        <h2 class="undertitle_text">Jogging (Manual Motion)</h2>
+        <div class="jogging-grid">
+            <button class="main-options send-command" data-cmd="MOVE X10">X +10mm</button>
+            <button class="main-options send-command" data-cmd="MOVE Y10">Y +10mm</button>
+            <button class="main-options send-command" data-cmd="MOVE Z10">Z +10mm</button>
+            <button class="main-options send-command" data-cmd="MOVE X-10">X -10mm</button>
+            <button class="main-options send-command" data-cmd="MOVE Y-10">Y -10mm</button>
+            <button class="main-options send-command" data-cmd="MOVE Z-10">Z -10mm</button>
+        </div>
+
+
+
+        <!-- Gruppe 3: Sicherheit -->
+        <h3 class="undertitle_text" style="color: red;">Safety</h3>
+        <div class="control-group">
+            <button class="cmd-btn_send-command" data-cmd="XSTOPX" style="background-color: red; color: rgb(0, 0, 0);">EMERGENCY STOP</button>
+        </div>
+
+    </div>
+
+    <!-- Statusanzeige für die USB-Verbindung -->
+    <p id="response" class="normal_text" style="color: grey; margin-top: 20px; ">Status: Not Connected</p>
+
+    <!-- JavaScript für die serielle USB-Übertragung -->
+    <script>
+    let port;
+    let writer;
+
+    // Funktion initialisiert die serielle USB-Schnittstelle beim ersten Klick
+    async function connectSerial() {
+        const statusText = document.getElementById('response');
+        if (!port) {
+            try {
+                statusText.innerText = "Status: Please select your COM-Port...";
+                port = await navigator.serial.requestPort();
+                await port.open({ baudRate: 115200 }); // Baudrate passend zur C++ Firmware
+                
+                const textEncoder = new TextEncoderStream();
+                textEncoder.readable.pipeTo(port.writable);
+                writer = textEncoder.writable.getWriter();
+                
+                statusText.innerText = "Status: Connected to Robot!";
+                statusText.style.color = "green";
+                return true;
+            } catch (error) {
+                statusText.innerText = "Connection Error: " + error.message;
+                statusText.style.color = "red";
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Sucht alle Elemente mit der Klasse 'send-command'
+    const commandButtons = document.querySelectorAll('.send-command');
+
+    // Fügt jedem Button automatisch die Sende-Logik hinzu
+    commandButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            // Verbindung prüfen/öffnen
+            const isConnected = await connectSerial();
+            if (!isConnected) return;
+
+            // Liest den G-Code aus dem 'data-cmd'-Attribut aus
+            const gcodeSignal = button.getAttribute('data-cmd');
+
+            try {
+                // Befehl inklusive Zeilenumbruch an das C++ Programm senden
+                await writer.write(gcodeSignal + "\n");
+                
+                document.getElementById('response').innerText = `Status: Sent "${gcodeSignal}"`;
+                document.getElementById('response').style.color = "green";
+            } catch (error) {
+                document.getElementById('response').innerText = "Transmission Error: " + error.message;
+                document.getElementById('response').style.color = "red";
+            }
+        });
+    });
+    </script>
+    
+</body>
+</html>

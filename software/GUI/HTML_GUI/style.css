@@ -1,0 +1,203 @@
+/* --- BASIS LAYOUT --- */
+body {
+    border: 2px solid #111111;
+    border-radius: 6px;
+    padding: 35px;
+    margin: 20px;
+    background-color: #fafafa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e1e1e;
+}
+
+/* --- NAVIGATION & BUTTONS --- */
+.button-row {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 15px;                   
+    margin-bottom: 40px;
+    align-items: center;
+    flex-wrap: wrap; /* Verhindert das Herausragen auf kleineren Bildschirmen */
+}         
+
+.main-options {
+    height: 40px;                
+    min-width: 140px; /* Nutzt eine stabile Mindestbreite statt starrer % */
+    padding: 0 20px;
+    color: #ffffff;
+    background-color: #4a4a4a; /* Etwas weicheres, moderneres Dunkelgrau */
+    border: 2px solid #111111;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.main-options:hover {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+/* --- TEXTE & TITEL --- */
+.titels {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Einheitliche Schriftart */
+    letter-spacing: 0.5px;
+}
+
+.under_main_titels {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.undertitle_text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.normal_text {
+    font-size: 15px;
+    color: #333333;
+    margin-bottom: 12px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* --- COMMAND / BEFEHLS BUTTONS --- */
+.cmd-btn_send-command {
+    height: 40px; /* Auf Standardhöhe mit .main-options gebracht für Symmetrie */               
+    min-width: 160px;                  
+    padding: 0 25px;
+    color: #ffffff;
+    background-color: #2b2b2b;
+    border: 2px solid #111111;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+    box-sizing: border-box; 
+    transition: background-color 0.2s ease;
+}
+
+.cmd-btn_send-command:hover {
+    background-color: #555555;
+}
+
+/* --- TABELLEN --- */
+.roadmap-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    border: 2px solid #111111;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+.roadmap-table th, .roadmap-table td {
+    border: 1px solid #cccccc; /* Dünnere Innenlinien für einen cleanen Look */
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.roadmap-table th {
+    background-color: #4a4a4a;
+    color: white;
+    font-weight: 600;
+    border-bottom: 2px solid #111111;
+}
+
+.roadmap-table tr:nth-child(even) {
+    background-color: #f8f9fa; /* Moderneres, leichteres Grau */
+}
+
+/* --- LAYOUTS & GRIDS (JOGGING & ACHSEN) --- */
+.control-group {
+    margin-bottom: 20px;
+}
+
+.jogging-grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content); 
+    gap: 15px 30px; 
+    margin-bottom: 40px;
+}
+
+.jogging-grid .main-options {
+    width: auto;          
+    padding: 0 25px;      
+    white-space: nowrap;  
+}
+
+/* --- NEU: ERGÄNZUNG FÜR DAS RSD (SENSOR) GRID --- */
+.control-panel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    background: #f0f0f0;
+    padding: 15px 20px;
+    border: 2px solid #111111;
+    border-radius: 4px;
+}
+
+.axis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.axis-card {
+    border: 2px solid #111111;
+    border-radius: 4px;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.axis-card h3 {
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 2px solid #111111;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+}
+
+.data-field {
+    margin: 8px 0;
+    font-size: 14px;
+    font-family: 'Consolas', 'Courier New', monospace; /* Professioneller für Sensordaten */
+    color: #444444;
+}
+
+.data-field span {
+    font-weight: 600;
+    color: #111111;
+}
+
+select.main-options {
+    width: auto;
+    padding: 0 10px;
+    background-color: #ffffff;
+    color: #111111;
+}
+
+
+/* ========================================================= BASIS LAYOUT ========================================================= */ body { border: 2px solid #111111; border-radius: 6px; padding: 35px; margin: 20px; background-color: #fafafa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e1e1e; } /* ========================================================= NAVIGATION & BUTTONS ========================================================= */ .button-row { display: flex; justify-content: flex-start; gap: 15px; margin-bottom: 40px; align-items: center; flex-wrap: wrap; } .main-options { height: 40px; min-width: 140px; padding: 0 20px; color: #ffffff; background-color: #4a4a4a; border: 2px solid #111111; border-radius: 4px; cursor: pointer; font-weight: 600; text-align: center; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; box-sizing: border-box; transition: background-color 0.2s ease, color 0.2s ease; } .main-options:hover { background-color: #222222; color: #ffffff; } /* ========================================================= TEXTE & TITEL ========================================================= */ .titels { font-size: 28px; font-weight: bold; margin-bottom: 20px; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; letter-spacing: 0.5px; } .under_main_titels { font-size: 18px; color: #555555; margin-bottom: 15px; text-align: center; } .undertitle_text { font-size: 18px; font-weight: 600; margin-top: 30px; margin-bottom: 10px; text-align: left; } .normal_text { font-size: 15px; color: #333333; margin-bottom: 12px; text-align: left; line-height: 1.6; } /* ========================================================= SETTINGS ========================================================= */ .settings-section { margin-bottom: 35px; } .settings-table { width: 100%; border-collapse: collapse; border: 2px solid #111111; margin-top: 15px; margin-bottom: 20px; background-color: #ffffff; } .settings-table th, .settings-table td { border: 1px solid #cccccc; padding: 12px 16px; text-align: left; vertical-align: middle; } .settings-table th { background-color: #4a4a4a; color: #ffffff; font-weight: 600; border-bottom: 2px solid #111111; } .settings-table tr:nth-child(even) { background-color: #f8f9fa; } /* ========================================================= SETTINGS INPUTS ========================================================= */ .settings-input, .settings-select { height: 40px; min-width: 220px; padding: 0 10px; background-color: #ffffff; color: #111111; border: 2px solid #111111; border-radius: 4px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; box-sizing: border-box; } .settings-input:focus, .settings-select:focus { outline: none; border-color: #4a4a4a; } /* ========================================================= SETTINGS BUTTON ========================================================= */ .settings-save { height: 40px; min-width: 180px; padding: 0 20px; color: #ffffff; background-color: #2b2b2b; border: 2px solid #111111; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; transition: background-color 0.2s ease; } .settings-save:hover { background-color: #555555; } /* ========================================================= STATUS ========================================================= */ .settings-status { margin-top: 15px; padding: 10px 15px; border: 2px solid #111111; border-radius: 4px; background-color: #f0f0f0; font-size: 15px; display: none; } .settings-status.visible { display: block; } /* ========================================================= RESPONSIVE ========================================================= */ @media (max-width: 700px) { body { padding: 20px; margin: 10px; } .settings-table { display: block; overflow-x: auto; } .settings-input, .settings-select { min-width: 180px; } }
