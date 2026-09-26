@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Robotics Union Software ©">
+    <title>Robotics Union Control Software (based on HTML5)</title>
+
+    <style>
+        /* --- BASIS LAYOUT --- */
+        body {
+            border: 2px solid #111111;
+            border-radius: 6px;
+            padding: 35px;
+            margin: 20px;
+            background-color: #fafafa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #1e1e1e;
+        }
+
+        /* --- NAVIGATION & BUTTONS --- */
+        .button-row {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-bottom: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .main-options {
+            height: 40px;
+            min-width: 140px;
+            padding: 0 20px;
+            color: #ffffff;
+            background-color: #4a4a4a;
+            border: 2px solid #111111;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-sizing: border-box;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .main-options:hover {
+            background-color: #222222;
+            color: #ffffff;
+        }
+
+        .titels {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- COMMAND BUTTONS & PANEL --- */
+        .cmd-btn_send-command {
+            height: 40px;
+            min-width: 160px;
+            padding: 0 25px;
+            color: #ffffff;
+            background-color: #2b2b2b;
+            border: 2px solid #111111;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-sizing: border-box;
+            transition: background-color 0.2s ease;
+        }
+
+        .cmd-btn_send-command:hover {
+            background-color: #555555;
+        }
+
+        .control-panel {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+            background: #f0f0f0;
+            padding: 15px 20px;
+            border: 2px solid #111111;
+            border-radius: 4px;
+        }
+
+        .control-panel label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        select.main-options {
+            width: auto;
+            padding: 0 10px;
+            background-color: #ffffff;
+            color: #111111;
+        }
+
+        /* --- SENSOR GRID & CARDS --- */
+        .axis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .axis-card {
+            border: 2px solid #111111;
+            border-radius: 4px;
+            padding: 20px;
+            background: #ffffff;
+        }
+
+        .axis-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+            border-bottom: 2px solid #111111;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+        }
+
+        .data-field {
+            margin: 8px 0;
+            font-size: 14px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #444444;
+        }
+
+        .data-field span {
+            font-weight: 600;
+            color: #111111;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <div class="button-row">
+        <a href="text-editor.html" class="main-options">Text-Editor</a>
+        <a href="controls.html" class="main-options">Controls</a>
+        <a href="settings.html" class="main-options">Settings</a>
+        <a href="rsd.html" class="main-options">RSD</a>
+        <a href="chamber.html" class="main-options">Chamber</a>
+        <a href="Main_page.html" class="main-options">Main Page</a>
+    </div>
+
+    <!-- TITLE -->
+    <div class="titels">
+        Raw Sensor Data (RSD)
+    </div>
+
+    <!-- CONTROL PANEL -->
+    <div class="control-panel">
+
+        <button
+            id="connectBtn"
+            class="cmd-btn_send-command"
+            style="background-color: #2e7d32;">
+            Connect Serial
+        </button>
+
+        <button
+            id="readSensorBtn"
+            class="cmd-btn_send-command">
+            Read Sensor Data
+        </button>
+
+        <div
+            style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-left: auto;
+            ">
+
+            <label for="axisSelect">
+                Achsen:
+            </label>
+
+            <select
+                id="axisSelect"
+                class="main-options"
+                style="height: 40px; min-width: 100px;">
+
+                <option value="ALL">ALL</option>
+                <option value="1">1</option>
+                <option value="1,2">1,2</option>
+                <option value="1,2,3">1,2,3</option>
+                <option value="1,2,3,4">1,2,3,4</option>
+                <option value="1,2,3,4,5">1,2,3,4,5</option>
+                <option value="1,2,3,4,5,6">1,2,3,4,5,6</option>
+
+            </select>
+        </div>
+    </div>
+
+    <!-- AXIS DATA -->
+    <div class="axis-grid">
+
+        <!-- Achse 1 -->
+        <div class="axis-card">
+            <h3>Achse 1</h3>
+
+            <div class="data-field">
+                Position:
+                <span id="a1-pos">-</span>
+            </div>
+
+            <div class="data-field">
+                Motor Temp:
+                <span id="a1-temp">-</span> °C
+            </div>
+
+            <div class="data-field">
+                Load Cell:
+                <span id="a1-load">-</span> N
+            </div>
+
+            <div class="data-field">
+                MPU/IMU:
+                <span id="a1-mpu">-</span>
+            </div>
+        </div>
+
+        <!-- Achse 2 -->
+        <div class="axis-card">
+            <h3>Achse 2</h3>
+
+            <div class="data-field">
+                Position 1:
+                <span id="a2-pos1">-</span>
+            </div>
+
+            <div class="data-field">
+                Position 2:
+                <span id="a2-pos2">-</span>
+            </div>
+
+            <div class="data-field">
+                Motor Temp 1:
+                <span id="a2-temp1">-</span> °C
+            </div>
+
+            <div class="data-field">
+                Motor Temp 2:
+                <span id="a2-temp2">-</span> °C
+            </div>
+
+            <div class="data-field">
+                Load Cell:
+                <span id="a2-load">-</span> N
+            </div>
+        </div>
+
+        <!-- Achse 3 -->
+        <div class="axis-card">
+            <h3>Achse 3</h3>
+
+            <div class="data-field">
+                Position:
+                <span id="a3-pos">-</span>
+            </div>
+
+            <div class="data-field">
+                Motor Temp:
+                <span id="a3-temp">-</span> °C
+            </div>
+
+            <div class="data-field">
+                Load Cell:
+                <span id="a3-load">-</span> N
+            </div>
+        </div>
+
+        <!-- Achse 4 -->
+        <div class="axis-card">
+            <h3>Achse 4</h3>
+
+            <div class="data-field">
+                Position:
+                <span id="a4-pos">-</span>
+            </div>
+
+            <div class="data-field">
+                Motor Temp:
+                <span id="a4-temp">-</span> °C
+            </div>
+
+            <div class="data-field">
+                Load Cell:
+                <span id="a4-load">-</span> N
+            </div>
+
+            <div class="data-field">
+                MPU/IMU:
+                <span id="a4-mpu">-</span>
+            </div>
+        </div>
+
+        <!-- Achse 5 -->
+        <div class="axis-card">
+            <h3>Achse 5</h3>
+
+            <div class="data-field">
+                Position:
+                <span id="a5-pos">-</span>
+            </div>
+
+            <div class="data-field">
+                Motor Temp:
+                <span id="a5-temp">-</span> °C
+            </div>
+
+            <div class="data-field">
+                Load Cell:
+                <span id="a5-load">-</span> N
+            </div>
+        </div>
+
+        <!-- Achse 6 -->
+        <div class="axis-card">
+            <h3>Achse 6</h3>
+
+            <div class="data-field">
+                Position:
+                <span id="a6-pos">-</span>
+            </div>
+
+            <div class="data-field">
+                Motor Temp:
+                <span id="a6-temp">-</span> °C
+            </div>
+
+            <div class="data-field">
+                Load Cell:
+                <span id="a6-load">-</span> N
+            </div>
+
+            <div class="data-field">
+                MPU/IMU:
+                <span id="a6-mpu">-</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        let port = null;
+        let writer = null;
+        let reader = null;
+
+
+        /* =========================================================
+           SERIAL VERBINDUNG
+           ========================================================= */
+
+        document
+            .getElementById("connectBtn")
+            .addEventListener("click", async () => {
+
+                try {
+
+                    // Prüfen, ob Web Serial unterstützt wird
+                    if (!("serial" in navigator)) {
+                        alert(
+                            "Web Serial wird von diesem Browser nicht unterstützt."
+                        );
+                        return;
+                    }
+
+                    // Serial Port auswählen
+                    port = await navigator.serial.requestPort();
+
+                    // Verbindung öffnen
+                    await port.open({
+                        baudRate: 115200
+                    });
+
+                    // Writer holen
+                    writer = port.writable.getWriter();
+
+                    // Button ändern
+                    const btn = document.getElementById("connectBtn");
+
+                    btn.textContent = "Connected";
+                    btn.style.backgroundColor = "#1b5e20";
+
+                    // Automatisches Lesen starten
+                    readLoop();
+
+                } catch (error) {
+
+                    console.error(
+                        "Verbindungsfehler:",
+                        error
+                    );
+
+                    alert(
+                        "Serielle Verbindung fehlgeschlagen."
+                    );
+                }
+            });
+
+
+        /* =========================================================
+           SENSOR-DATEN ANFORDERN
+           ========================================================= */
+
+        document
+            .getElementById("readSensorBtn")
+            .addEventListener("click", async () => {
+
+                const selectedVal =
+                    document.getElementById("axisSelect").value;
+
+                const command =
+                    `READ SENSOR DATA ${selectedVal}\n`;
+
+                if (writer) {
+
+                    try {
+
+                        const encoder =
+                            new TextEncoder();
+
+                        await writer.write(
+                            encoder.encode(command)
+                        );
+
+                    } catch (error) {
+
+                        console.error(
+                            "Fehler beim Senden:",
+                            error
+                        );
+
+                    }
+
+                } else {
+
+                    alert(
+                        `Nicht verbunden! Befehl: "${command.trim()}"`
+                    );
+                }
+            });
+
+
+        /* =========================================================
+           SERIAL READ LOOP
+           ========================================================= */
+
+        async function readLoop() {
+
+            if (!port || !port.readable) {
+                console.error(
+                    "Kein lesbarer Serial-Port vorhanden."
+                );
+                return;
+            }
+
+            const textDecoder =
+                new TextDecoderStream();
+
+            const readableStreamClosed =
+                port.readable.pipeTo(
+                    textDecoder.writable
+                );
+
+            reader =
+                textDecoder.readable.getReader();
+
+            let buffer = "";
+
+            try {
+
+                while (true) {
+
+                    const {
+                        value,
+                        done
+                    } = await reader.read();
+
+                    if (done) {
+                        break;
+                    }
+
+                    if (!value) {
+                        continue;
+                    }
+
+                    // Neue Daten an den Buffer anhängen
+                    buffer += value;
+
+
+                    /*
+                     * Verarbeitet vollständige Zeilen.
+                     *
+                     * Beispiel:
+                     *
+                     * AXIS:1,125.4,42,15.3,OK
+                     *
+                     */
+
+                    while (buffer.includes("\n")) {
+
+                        const lineIndex =
+                            buffer.indexOf("\n");
+
+                        const currentLine =
+                            buffer
+                                .substring(0, lineIndex)
+                                .trim();
+
+                        // Bereits verarbeitete Zeile entfernen
+                        buffer =
+                            buffer.substring(
+                                lineIndex + 1
+                            );
+
+
+                        // Nur AXIS-Daten verarbeiten
+                        if (
+                            currentLine.startsWith("AXIS:")
+                        ) {
+
+                            parseAxisData(
+                                currentLine
+                            );
+                        }
+                    }
+                }
+
+            } catch (error) {
+
+                console.error(
+                    "Fehler beim Lesen der seriellen Daten:",
+                    error
+                );
+
+            } finally {
+
+                if (reader) {
+                    reader.releaseLock();
+                    reader = null;
+                }
+
+                console.log(
+                    "Serial Reader beendet."
+                );
+            }
+        }
+
+
+        /* =========================================================
+           ACHSEN-DATEN VERARBEITEN
+           ========================================================= */
+
+        function parseAxisData(line) {
+
+            /*
+             * "AXIS:" entfernen
+             *
+             * Beispiel:
+             *
+             * AXIS:1,125.4,42,15.3,OK
+             *
+             * wird zu:
+             *
+             * 1,125.4,42,15.3,OK
+             */
+
+            const rawData =
+                line.replace("AXIS:", "");
+
+            // Daten am Komma trennen
+            const parts =
+                rawData.split(",");
+
+            // Erste Zahl ist die Achs-ID
+            const axisNum =
+                parts[0].trim();
+
+
+            /* =====================================================
+               ACHSE 1 / 4 / 6
+
+               Erwartetes Format:
+
+               AXIS:1,Position,MotorTemp,LoadCell,MPUData
+
+               bzw.
+
+               AXIS:4,Position,MotorTemp,LoadCell,MPUData
+
+               AXIS:6,Position,MotorTemp,LoadCell,MPUData
+               ===================================================== */
+
+            if (
+                axisNum === "1" ||
+                axisNum === "4" ||
+                axisNum === "6"
+            ) {
+
+                const position =
+                    document.getElementById(
+                        `a${axisNum}-pos`
+                    );
+
+                const temperature =
+                    document.getElementById(
+                        `a${axisNum}-temp`
+                    );
+
+                const load =
+                    document.getElementById(
+                        `a${axisNum}-load`
+                    );
+
+                const mpu =
+                    document.getElementById(
+                        `a${axisNum}-mpu`
+                    );
+
+
+                if (position) {
+                    position.textContent =
+                        parts[1] || "-";
+                }
+
+                if (temperature) {
+                    temperature.textContent =
+                        parts[2] || "-";
+                }
+
+                if (load) {
+                    load.textContent =
+                        parts[3] || "-";
+                }
+
+                if (mpu) {
+                    mpu.textContent =
+                        parts[4] || "-";
+                }
+            }
+
+
+            /* =====================================================
+               ACHSE 2
+
+               Erwartetes Format:
+
+               AXIS:2,
+               Position1,
+               Position2,
+               MotorTemp1,
+               MotorTemp2,
+               LoadCell
+               ===================================================== */
+
+            else if (axisNum === "2") {
+
+                const pos1 =
+                    document.getElementById(
+                        "a2-pos1"
+                    );
+
+                const pos2 =
+                    document.getElementById(
+                        "a2-pos2"
+                    );
+
+                const temp1 =
+                    document.getElementById(
+                        "a2-temp1"
+                    );
+
+                const temp2 =
+                    document.getElementById(
+                        "a2-temp2"
+                    );
+
+                const load =
+                    document.getElementById(
+                        "a2-load"
+                    );
+
+
+                if (pos1) {
+                    pos1.textContent =
+                        parts[1] || "-";
+                }
+
+                if (pos2) {
+                    pos2.textContent =
+                        parts[2] || "-";
+                }
+
+                if (temp1) {
+                    temp1.textContent =
+                        parts[3] || "-";
+                }
+
+                if (temp2) {
+                    temp2.textContent =
+                        parts[4] || "-";
+                }
+
+                if (load) {
+                    load.textContent =
+                        parts[5] || "-";
+                }
+            }
+
+
+            /* =====================================================
+               ACHSE 3 / 5
+
+               Erwartetes Format:
+
+               AXIS:3,Position,MotorTemp,LoadCell
+
+               bzw.
+
+               AXIS:5,Position,MotorTemp,LoadCell
+               ===================================================== */
+
+            else if (
+                axisNum === "3" ||
+                axisNum === "5"
+            ) {
+
+                const position =
+                    document.getElementById(
+                        `a${axisNum}-pos`
+                    );
+
+                const temperature =
+                    document.getElementById(
+                        `a${axisNum}-temp`
+                    );
+
+                const load =
+                    document.getElementById(
+                        `a${axisNum}-load`
+                    );
+
+
+                if (position) {
+                    position.textContent =
+                        parts[1] || "-";
+                }
+
+                if (temperature) {
+                    temperature.textContent =
+                        parts[2] || "-";
+                }
+
+                if (load) {
+                    load.textContent =
+                        parts[3] || "-";
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

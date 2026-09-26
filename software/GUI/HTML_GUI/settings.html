@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Robotics Union - Settings</title>
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
+
+    <div class="button-row">
+        <a href="text-editor.html" class="main-options">Text-Editor</a>
+        <a href="controls.html" class="main-options">Controls</a>
+        <a href="settings.html" class="main-options">Settings</a>
+        <a href="rsd.html" class="main-options">RSD</a>
+        <a href="chamber.html" class="main-options">Chamber adjustments</a>
+        <a href="Main_page.html" class="main-options">Main Page</a>
+    </div>
+
+
+    <!-- =========================================================
+         TITLE
+    ========================================================= -->
+
+    <div class="titels">
+        Settings
+    </div>
+
+
+    <div class="under_main_titels">
+        Robotics Union Control Software
+    </div>
+
+
+    <!-- =========================================================
+         APPEARANCE SETTINGS
+    ========================================================= -->
+
+    <div class="settings-section">
+
+        <div class="undertitle_text">
+            Appearance
+        </div>
+
+
+        <p class="normal_text">
+            Einstellungen für das Erscheinungsbild der Weboberfläche.
+        </p>
+
+
+        <table class="settings-table">
+
+            <tr>
+                <th>
+                    Setting
+                </th>
+
+                <th>
+                    Value
+                </th>
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    UI Theme
+                </td>
+
+                <td>
+
+                    <select
+                        id="uiTheme"
+                        class="settings-select"
+                    >
+
+                        <option value="light">
+                            Light
+                        </option>
+
+                        <option value="dark">
+                            Dark
+                        </option>
+
+                        <option value="high-contrast">
+                            High Contrast
+                        </option>
+
+                    </select>
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Data Refresh (ms)
+                </td>
+
+                <td>
+
+                    <input
+                        type="number"
+                        id="uiRefresh"
+                        class="settings-input"
+                        min="50"
+                        step="50"
+                        value="200"
+                    >
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- =========================================================
+         UI BEHAVIOR
+    ========================================================= -->
+
+    <div class="settings-section">
+
+        <div class="undertitle_text">
+            UI Behavior
+        </div>
+
+
+        <p class="normal_text">
+            Einstellungen für das Verhalten der Weboberfläche.
+        </p>
+
+
+        <table class="settings-table">
+
+            <tr>
+
+                <th>
+                    Setting
+                </th>
+
+                <th>
+                    Value
+                </th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Popups / Alerts
+                </td>
+
+                <td>
+
+                    <select
+                        id="uiAlerts"
+                        class="settings-select"
+                    >
+
+                        <option value="all">
+                            All
+                        </option>
+
+                        <option value="errors">
+                            Errors only
+                        </option>
+
+                        <option value="none">
+                            None
+                        </option>
+
+                    </select>
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+                    Web Dev Console Log
+                </td>
+
+                <td>
+
+                    <select
+                        id="uiConsole"
+                        class="settings-select"
+                    >
+
+                        <option value="enabled">
+                            Enabled
+                        </option>
+
+                        <option value="disabled">
+                            Disabled
+                        </option>
+
+                    </select>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- =========================================================
+         SAVE
+    ========================================================= -->
+
+    <div class="settings-section">
+
+        <div class="undertitle_text">
+            Save Configuration
+        </div>
+
+
+        <p class="normal_text">
+            Speichert die Einstellungen lokal in diesem Browser.
+        </p>
+
+
+        <button
+            id="saveButton"
+            class="settings-save"
+            type="button"
+        >
+            Save UI Configuration
+        </button>
+
+
+        <div
+            id="statusMessage"
+            class="settings-status"
+        ></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+
+        /* =========================================================
+           DEFAULT SETTINGS
+        ========================================================= */
+
+        const DEFAULT_SETTINGS = {
+
+            theme: "light",
+
+            refresh: 200,
+
+            alerts: "all",
+
+            console: "enabled"
+
+        };
+
+
+        /* =========================================================
+           ELEMENTE
+        ========================================================= */
+
+        const uiTheme =
+            document.getElementById("uiTheme");
+
+
+        const uiRefresh =
+            document.getElementById("uiRefresh");
+
+
+        const uiAlerts =
+            document.getElementById("uiAlerts");
+
+
+        const uiConsole =
+            document.getElementById("uiConsole");
+
+
+        const saveButton =
+            document.getElementById("saveButton");
+
+
+        const statusMessage =
+            document.getElementById("statusMessage");
+
+
+        /* =========================================================
+           SETTINGS LADEN
+        ========================================================= */
+
+        function loadSettings() {
+
+            const theme =
+                localStorage.getItem("ui_theme")
+                || DEFAULT_SETTINGS.theme;
+
+
+            const refresh =
+                localStorage.getItem("ui_refresh")
+                || DEFAULT_SETTINGS.refresh;
+
+
+            const alerts =
+                localStorage.getItem("ui_alerts")
+                || DEFAULT_SETTINGS.alerts;
+
+
+            const consoleLog =
+                localStorage.getItem("ui_console")
+                || DEFAULT_SETTINGS.console;
+
+
+            uiTheme.value = theme;
+
+            uiRefresh.value = refresh;
+
+            uiAlerts.value = alerts;
+
+            uiConsole.value = consoleLog;
+
+        }
+
+
+        /* =========================================================
+           SETTINGS SPEICHERN
+        ========================================================= */
+
+        function saveSettings() {
+
+            const refreshValue =
+                parseInt(uiRefresh.value, 10);
+
+
+            if (
+                isNaN(refreshValue)
+                || refreshValue < 50
+            ) {
+
+                showStatus(
+                    "Data Refresh must be at least 50 ms.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            localStorage.setItem(
+                "ui_theme",
+                uiTheme.value
+            );
+
+
+            localStorage.setItem(
+                "ui_refresh",
+                refreshValue
+            );
+
+
+            localStorage.setItem(
+                "ui_alerts",
+                uiAlerts.value
+            );
+
+
+            localStorage.setItem(
+                "ui_console",
+                uiConsole.value
+            );
+
+
+            showStatus(
+                "UI Configuration saved.",
+                "success"
+            );
+
+
+            if (
+                uiConsole.value === "enabled"
+            ) {
+
+                console.log(
+                    "Robotics Union UI Configuration saved."
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           STATUS MESSAGE
+        ========================================================= */
+
+        function showStatus(
+            message,
+            type
+        ) {
+
+            statusMessage.textContent =
+                message;
+
+
+            statusMessage.className =
+                "settings-status visible";
+
+
+            if (type === "error") {
+
+                statusMessage.style.backgroundColor =
+                    "#eeeeee";
+
+            }
+
+            else {
+
+                statusMessage.style.backgroundColor =
+                    "#f0f0f0";
+
+            }
+
+
+            setTimeout(
+                function () {
+
+                    statusMessage.className =
+                        "settings-status";
+
+                },
+                3000
+            );
+
+        }
+
+
+        /* =========================================================
+           SAVE BUTTON
+        ========================================================= */
+
+        saveButton.addEventListener(
+            "click",
+            saveSettings
+        );
+
+
+        /* =========================================================
+           PAGE START
+        ========================================================= */
+
+        loadSettings();
+
+
+    </script>
+
+
+</body>
+
+</html>
