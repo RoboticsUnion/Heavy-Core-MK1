@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,67 +9,382 @@
     <!-- Styling preset-->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="button-row">
-        <a href="text-editor.html" class="main-options">Text-Editor</a>
-        <a href="controls.html" class="main-options">Controls</a>
-        <a href="settings.html" class="main-options">Settings</a>
-        <a href="rsd.html" class="main-options">RSD</a>
-        <a href="chamber.html" class="main-options">Chamber adjustments</a>
-        <a href="Main_page.html" class="main-options">Main Page</a>
+
+        <a href="text-editor.html" class="main-options">
+            Text-Editor
+        </a>
+
+        <a href="controls.html" class="main-options">
+            Controls
+        </a>
+
+        <a href="settings.html" class="main-options">
+            Settings
+        </a>
+
+        <a href="rsd.html" class="main-options">
+            RSD
+        </a>
+
+        <a href="chamber.html" class="main-options">
+            Chamber
+        </a>
+
+        <a href="Main_page.html" class="main-options">
+            Main Page
+        </a>
+
     </div>
 
-    <h2 class="undertitle_text">G-Code Editor</h2>
-    
-   
-    <textarea id="gcode-input" rows="20" style="width: 100%; font-family: 'Courier New', Courier, monospace; font-size: 14px; padding: 10px; box-sizing: border-box; resize: vertical; border: 2px solid #111111; border-radius: 5px;"></textarea>
-    
 
-    <button id="send-gcode" class="main-options" style="margin-top: 15px; width: auto; padding: 0 20px;">Send G-Code</button>
-
-    
-    <p id="response" class="normal_text" style="color: grey; margin-top: 5px;">Status: Not Connected</p>
-    <p class="normal_text" style="color: grey; margin-top: 5px;">Note: Please code in DialogiXMove there is no check for correct writing.©</p>
+    <h2 class="undertitle_text">
+        G-Code Editor
+    </h2>
 
 
-   
+    <!-- =====================================================
+         G-CODE EDITOR
+    ====================================================== -->
+
+    <textarea
+        id="gcode-input"
+        rows="20"
+        style="
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: vertical;
+            border: 2px solid #111111;
+            border-radius: 5px;
+        "
+    ></textarea>
+
+
+    <!-- =====================================================
+         SEND BUTTON
+    ====================================================== -->
+
+    <button
+        id="send-gcode"
+        class="main-options"
+        style="margin-top: 15px; width: auto; padding: 0 20px;"
+    >
+        Send G-Code
+    </button>
+
+
+    <!-- =====================================================
+         SAVE BUTTON
+    ====================================================== -->
+
+    <button
+        id="save-gcode"
+        class="main-options"
+        style="margin-top: 15px; width: auto; padding: 0 20px;"
+    >
+        Save G-Code
+    </button>
+
+
+    <!-- =====================================================
+         FILE NAME
+    ====================================================== -->
+
+    <input
+        type="text"
+        id="gcode-name"
+        size="10"
+        placeholder="G-Code Name"
+        style="
+            height: 40px;
+            margin-top: 15px;
+            padding: 0 10px;
+            border: 2px solid #111111;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        "
+    >
+
+
+    <!-- =====================================================
+         CLEAR BUTTON
+    ====================================================== -->
+
+    <button
+        id="clear-gcode"
+        class="main-options"
+        style="margin-top: 15px; width: auto; padding: 0 20px;"
+    >
+        Clear G-Code
+    </button>
+
+
+    <!-- =====================================================
+         STATUS
+    ====================================================== -->
+
+    <p
+        id="response"
+        class="normal_text"
+        style="color: grey; margin-top: 5px;"
+    >
+        Status: Not Connected
+    </p>
+
+
+    <p
+        class="normal_text"
+        style="color: grey; margin-top: 5px;"
+    >
+        Note: Please code in DialogiXMove there is no check for correct writing.©
+    </p>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
     <script>
-    let port;
-    let writer;
 
-   
-    document.getElementById('send-gcode').addEventListener('click', async () => {
-        const status = document.getElementById('response'); // ID angepasst an 'response'
-        const gcodeText = document.getElementById('gcode-input').value;
+        let port;
+        let writer;
 
-        try {
-            
-            if (!port) {
-                status.innerText = "Status: Warte auf Port-Auswahl...";
-                port = await navigator.serial.requestPort();
-                await port.open({ baudRate: 115200 }); // Baudrate passend zum C++ Programm
-                
-                const textEncoder = new TextEncoderStream();
-                textEncoder.readable.pipeTo(port.writable);
-                writer = textEncoder.writable.getWriter();
-            }
 
-            status.innerText = "Status: Sende G-Code...";
-            status.style.color = "orange";
-            
-            
-            await writer.write(gcodeText + "\n"); 
-            
-            status.innerText = "Status: G-Code erfolgreich gesendet!";
-            status.style.color = "green";
+        /* =====================================================
+           SEND G-CODE
+        ====================================================== */
 
-        } catch (error) {
-            status.innerText = "Status Fehler: " + error.message;
-            status.style.color = "red";
-        }
-    });
+        document
+            .getElementById('send-gcode')
+            .addEventListener('click', async () => {
+
+                const status =
+                    document.getElementById('response');
+
+                const gcodeText =
+                    document.getElementById('gcode-input').value;
+
+
+                try {
+
+                    if (!port) {
+
+                        status.innerText =
+                            "Status: Warte auf Port-Auswahl...";
+
+                        port =
+                            await navigator.serial.requestPort();
+
+
+                        await port.open({
+                            baudRate: 115200
+                        });
+
+
+                        const textEncoder =
+                            new TextEncoderStream();
+
+
+                        textEncoder.readable.pipeTo(
+                            port.writable
+                        );
+
+
+                        writer =
+                            textEncoder.writable.getWriter();
+
+                    }
+
+
+                    status.innerText =
+                        "Status: Sende G-Code...";
+
+                    status.style.color =
+                        "orange";
+
+
+                    await writer.write(
+                        gcodeText + "\n"
+                    );
+
+
+                    status.innerText =
+                        "Status: G-Code erfolgreich gesendet!";
+
+                    status.style.color =
+                        "green";
+
+                }
+
+
+                catch (error) {
+
+                    status.innerText =
+                        "Status Fehler: "
+                        + error.message;
+
+                    status.style.color =
+                        "red";
+
+                }
+
+            });
+
+
+
+        /* =====================================================
+           SAVE G-CODE
+        ====================================================== */
+
+        document
+            .getElementById('save-gcode')
+            .addEventListener('click', () => {
+
+                const gcodeText =
+                    document.getElementById('gcode-input').value;
+
+
+                const fileNameInput =
+                    document.getElementById('gcode-name');
+
+
+                let fileName =
+                    fileNameInput.value.trim();
+
+
+                /* ---------------------------------------------
+                   Prüfen ob ein Dateiname vorhanden ist
+                --------------------------------------------- */
+
+                if (fileName === "") {
+
+                    fileName = "G-Code";
+
+                }
+
+
+                /* ---------------------------------------------
+                   .gcode automatisch hinzufügen
+                --------------------------------------------- */
+
+                if (
+                    !fileName.toLowerCase().endsWith(".gcode")
+                ) {
+
+                    fileName += ".gcode";
+
+                }
+
+
+                /* ---------------------------------------------
+                   Datei erstellen
+                --------------------------------------------- */
+
+                const blob =
+                    new Blob(
+                        [gcodeText],
+                        {
+                            type: "text/plain"
+                        }
+                    );
+
+
+                const downloadURL =
+                    URL.createObjectURL(blob);
+
+
+                /* ---------------------------------------------
+                   Download-Link erstellen
+                --------------------------------------------- */
+
+                const downloadLink =
+                    document.createElement("a");
+
+
+                downloadLink.href =
+                    downloadURL;
+
+
+                downloadLink.download =
+                    fileName;
+
+
+                document.body.appendChild(
+                    downloadLink
+                );
+
+
+                downloadLink.click();
+
+
+                document.body.removeChild(
+                    downloadLink
+                );
+
+
+                URL.revokeObjectURL(
+                    downloadURL
+                );
+
+
+                /* ---------------------------------------------
+                   Status
+                --------------------------------------------- */
+
+                const status =
+                    document.getElementById('response');
+
+
+                status.innerText =
+                    'Status: "' + fileName + '" gespeichert.';
+
+
+                status.style.color =
+                    "green";
+
+            });
+
+
+
+        /* =====================================================
+           CLEAR G-CODE
+        ====================================================== */
+
+        document
+            .getElementById('clear-gcode')
+            .addEventListener('click', () => {
+
+                const gcodeInput =
+                    document.getElementById('gcode-input');
+
+
+                gcodeInput.value =
+                    "";
+
+
+                const status =
+                    document.getElementById('response');
+
+
+                status.innerText =
+                    "Status: G-Code Editor geleert.";
+
+
+                status.style.color =
+                    "grey";
+
+            });
+
     </script>
-    
+
 </body>
 </html>
+
