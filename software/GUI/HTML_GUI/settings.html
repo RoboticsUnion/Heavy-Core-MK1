@@ -1,489 +1,599 @@
-
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Robotics Union - Settings</title>
 
-
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
+<!-- Navigation -->
+<div class="button-row">
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================= -->
+    <a href="text-editor.html" class="main-options">
+        Text-Editor
+    </a>
 
-    <div class="button-row">
-        <a href="text-editor.html" class="main-options">Text-Editor</a>
-        <a href="controls.html" class="main-options">Controls</a>
-        <a href="settings.html" class="main-options">Settings</a>
-        <a href="rsd.html" class="main-options">RSD</a>
-        <a href="chamber.html" class="main-options">Chamber</a>
-        <a href="Main_page.html" class="main-options">Main Page</a>
-    </div>
+    <a href="controls.html" class="main-options">
+        Controls
+    </a>
 
-
-    <!-- =========================================================
-         TITLE
-    ========================================================= -->
-
-    <div class="titels">
+    <a href="settings.html" class="main-options">
         Settings
-    </div>
+    </a>
 
+    <a href="rsd.html" class="main-options">
+        RSD
+    </a>
 
-    <div class="under_main_titels">
-        Robotics Union Control Software
-    </div>
+    <a href="chamber.html" class="main-options">
+        Chamber
+    </a>
 
+    <a href="Main_page.html" class="main-options">
+        Main Page
+    </a>
 
-    <!-- =========================================================
-         APPEARANCE SETTINGS
-    ========================================================= -->
+</div>
 
-    <div class="settings-section">
 
-        <div class="undertitle_text">
-            Appearance
-        </div>
+<!-- Title -->
+<h1 class="titels" id="pageTitle">
+    Settings
+</h1>
 
+<p class="under_main_titels" id="pageSubtitle">
+    Robotics Union Control Software
+</p>
 
-        <p class="normal_text">
-            Einstellungen für das Erscheinungsbild der Weboberfläche.
-        </p>
 
+<!-- Robot Settings -->
+<div class="settings-section">
 
-        <table class="settings-table">
+    <h3 class="undertitle_text" id="robotSettingsTitle">
+        Robot
+    </h3>
 
-            <tr>
-                <th>
-                    Setting
-                </th>
+    <table class="settings-table">
 
-                <th>
-                    Value
-                </th>
-            </tr>
+        <tr>
 
+            <td id="robotNameText">
+                Robot Name
+            </td>
 
-            <tr>
+            <td>
 
-                <td>
-                    UI Theme
-                </td>
+                <input
+                    id="robotName"
+                    class="settings-input"
+                    type="text"
+                    maxlength="30"
+                    placeholder="Robotics Union"
+                >
 
-                <td>
+            </td>
 
-                    <select
-                        id="uiTheme"
-                        class="settings-select"
-                    >
+        </tr>
 
-                        <option value="light">
-                            Light
-                        </option>
 
-                        <option value="dark">
-                            Dark
-                        </option>
+        <tr>
 
-                        <option value="high-contrast">
-                            High Contrast
-                        </option>
+            <td id="languageText">
+                Language
+            </td>
 
-                    </select>
+            <td>
 
-                </td>
+                <select
+                    id="language"
+                    class="settings-select"
+                >
 
-            </tr>
+                    <option value="en">
+                        English
+                    </option>
 
+                    <option value="de">
+                        Deutsch
+                    </option>
 
-            <tr>
+                </select>
 
-                <td>
-                    Data Refresh (ms)
-                </td>
+            </td>
 
-                <td>
+        </tr>
 
-                    <input
-                        type="number"
-                        id="uiRefresh"
-                        class="settings-input"
-                        min="50"
-                        step="50"
-                        value="200"
-                    >
+    </table>
 
-                </td>
+</div>
 
-            </tr>
 
-        </table>
+<!-- General Settings -->
+<div class="settings-section">
 
-    </div>
+    <h3 class="undertitle_text" id="generalSettingsTitle">
+        General
+    </h3>
 
+    <table class="settings-table">
 
-    <!-- =========================================================
-         UI BEHAVIOR
-    ========================================================= -->
+        <tr>
 
-    <div class="settings-section">
+            <td id="autoSaveText">
+                Auto Save Settings
+            </td>
 
-        <div class="undertitle_text">
-            UI Behavior
-        </div>
+            <td>
 
+                <select
+                    id="autoSave"
+                    class="settings-select"
+                >
 
-        <p class="normal_text">
-            Einstellungen für das Verhalten der Weboberfläche.
-        </p>
+                    <option value="yes">
+                        Enabled
+                    </option>
 
+                    <option value="no">
+                        Disabled
+                    </option>
 
-        <table class="settings-table">
+                </select>
 
-            <tr>
+            </td>
 
-                <th>
-                    Setting
-                </th>
+        </tr>
 
-                <th>
-                    Value
-                </th>
+    </table>
 
-            </tr>
+</div>
 
 
-            <tr>
+<!-- Configuration -->
+<div class="settings-section">
 
-                <td>
-                    Popups / Alerts
-                </td>
+    <h3 class="undertitle_text" id="configurationTitle">
+        Configuration
+    </h3>
 
-                <td>
 
-                    <select
-                        id="uiAlerts"
-                        class="settings-select"
-                    >
+    <button
+        id="saveButton"
+        class="settings-save"
+        type="button"
+    >
+        Save Settings
+    </button>
 
-                        <option value="all">
-                            All
-                        </option>
 
-                        <option value="errors">
-                            Errors only
-                        </option>
+    <button
+        id="resetButton"
+        class="settings-save"
+        type="button"
+    >
+        Reset Settings
+    </button>
 
-                        <option value="none">
-                            None
-                        </option>
 
-                    </select>
+    <p
+        id="statusMessage"
+        class="normal_text"
+    ></p>
 
-                </td>
+</div>
 
-            </tr>
 
+<script>
 
-            <tr>
+/* =========================================================
+   DEFAULT SETTINGS
+   ========================================================= */
 
-                <td>
-                    Web Dev Console Log
-                </td>
+const DEFAULT_SETTINGS = {
 
-                <td>
+    robotName: "Robotics Union",
 
-                    <select
-                        id="uiConsole"
-                        class="settings-select"
-                    >
+    language: "en",
 
-                        <option value="enabled">
-                            Enabled
-                        </option>
+    autoSave: "yes"
 
-                        <option value="disabled">
-                            Disabled
-                        </option>
+};
 
-                    </select>
 
-                </td>
+/* =========================================================
+   HTML ELEMENTS
+   ========================================================= */
 
-            </tr>
+const robotName =
+    document.getElementById("robotName");
 
-        </table>
+const language =
+    document.getElementById("language");
 
-    </div>
+const autoSave =
+    document.getElementById("autoSave");
 
+const saveButton =
+    document.getElementById("saveButton");
 
-    <!-- =========================================================
-         SAVE
-    ========================================================= -->
+const resetButton =
+    document.getElementById("resetButton");
 
-    <div class="settings-section">
+const statusMessage =
+    document.getElementById("statusMessage");
 
-        <div class="undertitle_text">
-            Save Configuration
-        </div>
 
+/* =========================================================
+   LOAD SETTINGS
+   ========================================================= */
 
-        <p class="normal_text">
-            Speichert die Einstellungen lokal in diesem Browser.
-        </p>
+function loadSettings() {
 
+    let settings = DEFAULT_SETTINGS;
 
-        <button
-            id="saveButton"
-            class="settings-save"
-            type="button"
-        >
-            Save UI Configuration
-        </button>
-
-
-        <div
-            id="statusMessage"
-            class="settings-status"
-        ></div>
-
-    </div>
-
-
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================= -->
-
-    <script>
-
-
-        /* =========================================================
-           DEFAULT SETTINGS
-        ========================================================= */
-
-        const DEFAULT_SETTINGS = {
-
-            theme: "light",
-
-            refresh: 200,
-
-            alerts: "all",
-
-            console: "enabled"
-
-        };
-
-
-        /* =========================================================
-           ELEMENTE
-        ========================================================= */
-
-        const uiTheme =
-            document.getElementById("uiTheme");
-
-
-        const uiRefresh =
-            document.getElementById("uiRefresh");
-
-
-        const uiAlerts =
-            document.getElementById("uiAlerts");
-
-
-        const uiConsole =
-            document.getElementById("uiConsole");
-
-
-        const saveButton =
-            document.getElementById("saveButton");
-
-
-        const statusMessage =
-            document.getElementById("statusMessage");
-
-
-        /* =========================================================
-           SETTINGS LADEN
-        ========================================================= */
-
-        function loadSettings() {
-
-            const theme =
-                localStorage.getItem("ui_theme")
-                || DEFAULT_SETTINGS.theme;
-
-
-            const refresh =
-                localStorage.getItem("ui_refresh")
-                || DEFAULT_SETTINGS.refresh;
-
-
-            const alerts =
-                localStorage.getItem("ui_alerts")
-                || DEFAULT_SETTINGS.alerts;
-
-
-            const consoleLog =
-                localStorage.getItem("ui_console")
-                || DEFAULT_SETTINGS.console;
-
-
-            uiTheme.value = theme;
-
-            uiRefresh.value = refresh;
-
-            uiAlerts.value = alerts;
-
-            uiConsole.value = consoleLog;
-
-        }
-
-
-        /* =========================================================
-           SETTINGS SPEICHERN
-        ========================================================= */
-
-        function saveSettings() {
-
-            const refreshValue =
-                parseInt(uiRefresh.value, 10);
-
-
-            if (
-                isNaN(refreshValue)
-                || refreshValue < 50
-            ) {
-
-                showStatus(
-                    "Data Refresh must be at least 50 ms.",
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            localStorage.setItem(
-                "ui_theme",
-                uiTheme.value
-            );
-
-
-            localStorage.setItem(
-                "ui_refresh",
-                refreshValue
-            );
-
-
-            localStorage.setItem(
-                "ui_alerts",
-                uiAlerts.value
-            );
-
-
-            localStorage.setItem(
-                "ui_console",
-                uiConsole.value
-            );
-
-
-            showStatus(
-                "UI Configuration saved.",
-                "success"
-            );
-
-
-            if (
-                uiConsole.value === "enabled"
-            ) {
-
-                console.log(
-                    "Robotics Union UI Configuration saved."
-                );
-
-            }
-
-        }
-
-
-        /* =========================================================
-           STATUS MESSAGE
-        ========================================================= */
-
-        function showStatus(
-            message,
-            type
-        ) {
-
-            statusMessage.textContent =
-                message;
-
-
-            statusMessage.className =
-                "settings-status visible";
-
-
-            if (type === "error") {
-
-                statusMessage.style.backgroundColor =
-                    "#eeeeee";
-
-            }
-
-            else {
-
-                statusMessage.style.backgroundColor =
-                    "#f0f0f0";
-
-            }
-
-
-            setTimeout(
-                function () {
-
-                    statusMessage.className =
-                        "settings-status";
-
-                },
-                3000
-            );
-
-        }
-
-
-        /* =========================================================
-           SAVE BUTTON
-        ========================================================= */
-
-        saveButton.addEventListener(
-            "click",
-            saveSettings
+    const saved =
+        localStorage.getItem(
+            "robotics_union_settings"
         );
 
 
-        /* =========================================================
-           PAGE START
-        ========================================================= */
+    if (saved) {
 
-        loadSettings();
+        try {
+
+            settings = {
+                ...DEFAULT_SETTINGS,
+                ...JSON.parse(saved)
+            };
+
+        } catch (error) {
+
+            settings = DEFAULT_SETTINGS;
+
+        }
+
+    }
 
 
-    </script>
+    robotName.value =
+        settings.robotName;
 
+    language.value =
+        settings.language;
+
+    autoSave.value =
+        settings.autoSave;
+
+
+    updateLanguage();
+
+}
+
+
+/* =========================================================
+   SAVE SETTINGS
+   ========================================================= */
+
+function saveSettings() {
+
+    const settings = {
+
+        robotName:
+            robotName.value.trim() ||
+            "Robotics Union",
+
+        language:
+            language.value,
+
+        autoSave:
+            autoSave.value
+
+    };
+
+
+    localStorage.setItem(
+
+        "robotics_union_settings",
+
+        JSON.stringify(settings)
+
+    );
+
+
+    showStatus(
+        language.value === "de"
+            ? "Einstellungen gespeichert."
+            : "Settings saved."
+    );
+
+}
+
+
+/* =========================================================
+   RESET SETTINGS
+   ========================================================= */
+
+function resetSettings() {
+
+    localStorage.removeItem(
+        "robotics_union_settings"
+    );
+
+
+    robotName.value =
+        DEFAULT_SETTINGS.robotName;
+
+    language.value =
+        DEFAULT_SETTINGS.language;
+
+    autoSave.value =
+        DEFAULT_SETTINGS.autoSave;
+
+
+    updateLanguage();
+
+
+    showStatus(
+        language.value === "de"
+            ? "Einstellungen zurückgesetzt."
+            : "Settings reset."
+    );
+
+}
+
+
+/* =========================================================
+   STATUS MESSAGE
+   ========================================================= */
+
+function showStatus(message) {
+
+    statusMessage.textContent =
+        message;
+
+    statusMessage.style.display =
+        "block";
+
+
+    setTimeout(function () {
+
+        statusMessage.textContent = "";
+
+    }, 2500);
+
+}
+
+
+/* =========================================================
+   LANGUAGE
+   ========================================================= */
+
+function updateLanguage() {
+
+    if (language.value === "de") {
+
+        document.documentElement.lang =
+            "de";
+
+
+        document.title =
+            "Robotics Union - Einstellungen";
+
+
+        document.getElementById(
+            "pageTitle"
+        ).textContent =
+            "Einstellungen";
+
+
+        document.getElementById(
+            "pageSubtitle"
+        ).textContent =
+            "Robotics Union Steuerungssoftware";
+
+
+        document.getElementById(
+            "robotSettingsTitle"
+        ).textContent =
+            "Roboter";
+
+
+        document.getElementById(
+            "robotNameText"
+        ).textContent =
+            "Robotername";
+
+
+        document.getElementById(
+            "languageText"
+        ).textContent =
+            "Sprache";
+
+
+        document.getElementById(
+            "generalSettingsTitle"
+        ).textContent =
+            "Allgemein";
+
+
+        document.getElementById(
+            "autoSaveText"
+        ).textContent =
+            "Einstellungen automatisch speichern";
+
+
+        document.getElementById(
+            "configurationTitle"
+        ).textContent =
+            "Konfiguration";
+
+
+        saveButton.textContent =
+            "Einstellungen speichern";
+
+
+        resetButton.textContent =
+            "Einstellungen zurücksetzen";
+
+
+        autoSave.options[0].text =
+            "Aktiviert";
+
+        autoSave.options[1].text =
+            "Deaktiviert";
+
+    }
+
+    else {
+
+        document.documentElement.lang =
+            "en";
+
+
+        document.title =
+            "Robotics Union - Settings";
+
+
+        document.getElementById(
+            "pageTitle"
+        ).textContent =
+            "Settings";
+
+
+        document.getElementById(
+            "pageSubtitle"
+        ).textContent =
+            "Robotics Union Control Software";
+
+
+        document.getElementById(
+            "robotSettingsTitle"
+        ).textContent =
+            "Robot";
+
+
+        document.getElementById(
+            "robotNameText"
+        ).textContent =
+            "Robot Name";
+
+
+        document.getElementById(
+            "languageText"
+        ).textContent =
+            "Language";
+
+
+        document.getElementById(
+            "generalSettingsTitle"
+        ).textContent =
+            "General";
+
+
+        document.getElementById(
+            "autoSaveText"
+        ).textContent =
+            "Auto Save Settings";
+
+
+        document.getElementById(
+            "configurationTitle"
+        ).textContent =
+            "Configuration";
+
+
+        saveButton.textContent =
+            "Save Settings";
+
+
+        resetButton.textContent =
+            "Reset Settings";
+
+
+        autoSave.options[0].text =
+            "Enabled";
+
+        autoSave.options[1].text =
+            "Disabled";
+
+    }
+
+}
+
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+saveButton.addEventListener(
+    "click",
+    saveSettings
+);
+
+
+resetButton.addEventListener(
+    "click",
+    resetSettings
+);
+
+
+language.addEventListener(
+    "change",
+    function () {
+
+        updateLanguage();
+
+
+        if (autoSave.value === "yes") {
+
+            saveSettings();
+
+        }
+
+    }
+);
+
+
+robotName.addEventListener(
+    "input",
+    function () {
+
+        if (autoSave.value === "yes") {
+
+            saveSettings();
+
+        }
+
+    }
+);
+
+
+autoSave.addEventListener(
+    "change",
+    function () {
+
+        if (autoSave.value === "yes") {
+
+            saveSettings();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+loadSettings();
+
+</script>
 
 </body>
-
 </html>
