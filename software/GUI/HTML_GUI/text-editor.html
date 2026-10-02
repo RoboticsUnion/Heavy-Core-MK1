@@ -92,6 +92,15 @@
     </button>
 
 
+    <button
+        id="save-gcode->PC"
+        class="main-options"
+        style="margin-top: 15px; width: auto; padding: 0 20px;"
+    >
+        Save G-Code to arm
+    </button>
+
+
     <!-- =====================================================
          FILE NAME
     ====================================================== -->
@@ -148,7 +157,7 @@
 
 
 
-    <!-- =====================================================
+     <!-- =====================================================
          JAVASCRIPT
     ====================================================== -->
 
@@ -156,6 +165,25 @@
 
         let port;
         let writer;
+        let textEncoder;
+
+
+        /* =====================================================
+           HILFSFUNKTION: PORT ÖFFNEN
+        ====================================================== */
+        async function stelleVerbindungHer(status) {
+            if (!port) {
+                status.innerText = "Status: Warte auf Port-Auswahl...";
+                status.style.color = "orange";
+
+                port = await navigator.serial.requestPort();
+                await port.open({ baudRate: 115200 });
+                
+                // Direkter und stabiler Aufbau des Writers ohne Streams-Pipe
+                textEncoder = new TextEncoder();
+                writer = port.writable.getWriter();
+            }
+        }
 
 
         /* =====================================================
@@ -175,33 +203,8 @@
 
                 try {
 
-                    if (!port) {
-
-                        status.innerText =
-                            "Status: Warte auf Port-Auswahl...";
-
-                        port =
-                            await navigator.serial.requestPort();
-
-
-                        await port.open({
-                            baudRate: 115200
-                        });
-
-
-                        const textEncoder =
-                            new TextEncoderStream();
-
-
-                        textEncoder.readable.pipeTo(
-                            port.writable
-                        );
-
-
-                        writer =
-                            textEncoder.writable.getWriter();
-
-                    }
+                    // Nutzt die zentrale Verbindungsfunktion
+                    await stelleVerbindungHer(status);
 
 
                     status.innerText =
@@ -211,9 +214,9 @@
                         "orange";
 
 
-                    await writer.write(
-                        gcodeText + "\n"
-                    );
+                    // Text in Byte-Array umwandeln und senden
+                    const daten = textEncoder.encode(gcodeText + "\n");
+                    await writer.write(daten);
 
 
                     status.innerText =
@@ -241,7 +244,7 @@
 
 
         /* =====================================================
-           SAVE G-CODE
+           SAVE G-CODE (Lokal auf PC herunterladen)
         ====================================================== */
 
         document
@@ -336,7 +339,7 @@
 
 
                 /* ---------------------------------------------
-                   Status
+                   Status aktualisieren
                 --------------------------------------------- */
 
                 const status =
@@ -349,6 +352,77 @@
 
                 status.style.color =
                     "green";
+
+            });
+
+
+
+        /* =====================================================
+           SAVE G-CODE -> PC / ARM (Über USB Senden)
+        ====================================================== */
+
+        document
+            .getElementById('save-gcode->PC')
+            .addEventListener('click', async () => {
+
+                const status =
+                    document.getElementById('response');
+
+                const fileNameInput =
+                    document.getElementById('gcode-name');
+
+                let fileName =
+                    fileNameInput.value.trim();
+
+
+                if (fileName === "") {
+
+                    fileName = "G-Code";
+
+                }
+
+
+                // Der Befehl: SAVE "NAME" mit Zeilenumbruch
+                const befehl = 'SAVE "' + fileName + '"\n';
+
+
+                try {
+
+                    // Nutzt die zentrale Verbindungsfunktion
+                    await stelleVerbindungHer(status);
+
+
+                    status.innerText =
+                        "Status: Sende Speicherbefehl...";
+
+                    status.style.color =
+                        "orange";
+
+
+                    // Text in Byte-Array umwandeln und senden
+                    const daten = textEncoder.encode(befehl);
+                    await writer.write(daten);
+
+
+                    status.innerText =
+                        'Status: Befehl erfolgreich gesendet: ' + befehl.trim();
+
+                    status.style.color =
+                        "green";
+
+                }
+
+
+                catch (error) {
+
+                    status.innerText =
+                        "Status Fehler: "
+                        + error.message;
+
+                    status.style.color =
+                        "red";
+
+                }
 
             });
 
@@ -384,6 +458,8 @@
             });
 
     </script>
+
+
 
 </body>
 </html>
