@@ -17,7 +17,7 @@ class TerminalOUT {
     private:
         const std::string standard_output = "--> ";
 
-        const std::string config_file_name = "../Terminal/Terminal-IN/error_list.txt";
+        const std::string config_file_name = "../Terminal/Terminal-OUT/error_list.txt";
 
         std::vector<std::string> errors = load_error_message(config_file_name);
 
