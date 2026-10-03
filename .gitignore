@@ -7,6 +7,7 @@ Thumbs.db
 *.tmp
 *.bak
 *.swp
+*~
 
 #####################################
 # SolidWorks
@@ -69,10 +70,50 @@ htmlcov/
 #####################################
 # VS Code / IDE
 #####################################
+
 .vscode/
 .idea/
 *.code-workspace
 
-.obj/
-.pdb/
-.ilk/
+#####################################
+# C / C++ Build-Dateien
+#####################################
+
+# Objektdateien
+*.obj
+*.o
+
+# Debug-Dateien
+*.pdb
+*.ilk
+
+# Libraries
+*.lib
+*.a
+
+# Executables
+*.exe
+
+# Linker / Build-Dateien
+*.exp
+*.idb
+*.suo
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+#####################################
+# Build-Ordner
+#####################################
+
+bin/
+obj/
+out/
+Debug/
+Release/
+x64/
+x86/
