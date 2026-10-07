@@ -4,3 +4,12 @@ error_only_string -This input only accepts strings.
 error_pas_short -Paswort is to short.
 error_forbidden_symbol -Forbidden char was used.
 out_of_range -The number is out of range.
+error_opening_port_GUI -An error hapened during opening an port to GUI. Try restart GUI interface / enable usb.
+error_opening_port_CON1 -An error hapened during opening an port to CON1. Try restart CON1 / check usb conection / WARNING dont use it till it functions normaly!
+error_opening_port_CON2 -An error hapened during opening an port to CON2. Try restart CON2 / check usb conection / chamber data can not be send or read WARNING!!
+error_reading_setting_GUI -An error happened during reading the Serial settings/ try again.
+error_set_conection_atributs_GUI -An error hapened during setting the conection atributes / try again.
+error_reading_setting_CON1 -An error happened during reading the Serial settings/ try again.
+error_set_conection_atributs_CON1 -An error hapened during setting the conection atributes / try again.
+error_reading_setting_CON2 -An error happened during reading the Serial settings/ try again.
+error_set_conection_atributs_CON2 -An error hapened during setting the conection atributes / try again.
