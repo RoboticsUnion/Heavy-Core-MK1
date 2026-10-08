@@ -30,14 +30,12 @@ int TerminalIN::terminal_read_line_int() {
 
     }
     catch (const invalid_argument& e) {
-        terminal.load_error_message("Terminal/Terminal-OUT/error_list.txt"); //loads the error messages from the file "error_list.txt" and returns them as a vector of strings
         terminal.terminal_custom_output(terminal.terminal_error_output("error_only_int"), ansi_color_chart::yellow); //searches for the error message corresponding to the error reason passed to the function and returns it as a string
         terminal.terminal_custom_output("\n", ansi_color_chart::black);
         terminal.terminal_standard_output(); //make a -> for the next input
         return TerminalIN::terminal_read_line_int(); //recursively calls the function again to get a valid integer input from the user
     }
     catch (const out_of_range& e) {
-        terminal.load_error_message("Terminal/Terminal-OUT/error_list.txt"); //loads the error messages from the file "error_list.txt" and returns them as a vector of strings
         terminal.terminal_custom_output(terminal.terminal_error_output("out_of_range"), ansi_color_chart::yellow); //searches for the error message corresponding to the error reason passed to the function and returns it as a string
         terminal.terminal_custom_output("\n", ansi_color_chart::black); 
         terminal.terminal_standard_output();

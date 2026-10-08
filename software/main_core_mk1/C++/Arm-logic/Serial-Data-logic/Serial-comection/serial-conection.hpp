@@ -28,4 +28,6 @@ class Serial {
         HANDLE m_hSerialCON1 = INVALID_HANDLE_VALUE; // Handle for the serial port connection
         HANDLE m_hSerialCON2 = INVALID_HANDLE_VALUE; // Handle for the serial port connection
 
+        std::vector<std::string> return_handle = {"", "", ""};
+
 };
