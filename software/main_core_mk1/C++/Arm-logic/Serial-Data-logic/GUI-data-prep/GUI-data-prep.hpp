@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-class Serial {
+class DataPrep {
     public:
         
         char read_serial_GUI(); // returns raw data unproofed reads it from serial GUI port
