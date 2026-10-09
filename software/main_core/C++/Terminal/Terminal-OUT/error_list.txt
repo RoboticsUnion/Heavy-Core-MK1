@@ -1,6 +1,0 @@
-example_error_reason -Hello People from error manager
-error_only_int -This input only accepts integers.
-error_only_string -This input only accepts strings.
-error_pas_short -Paswort is to short.
-error_forbidden_symbol -Forbidden char was used.
-out_of_range -The number is out of range.
