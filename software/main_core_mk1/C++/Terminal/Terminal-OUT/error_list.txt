@@ -13,7 +13,6 @@ error_reading_setting_CON1 -An error happened during reading the Serial settings
 error_set_conection_atributs_CON1 -An error hapened during setting the conection atributes / try again.
 error_reading_setting_CON2 -An error happened during reading the Serial settings/ try again.
 error_set_conection_atributs_CON2 -An error hapened during setting the conection atributes / try again.
-
 warning_GUI_ser_disc -The serial conection to the GUI is not opened.
 warning_CON1_ser_disc -The serial conection to the CON1 is not opened.
 warning_CON2_ser_disc -The serial conection to the CON2 is not opened.

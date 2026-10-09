@@ -1,12 +1,11 @@
 #include "serial-conection.hpp" 
 #include "../../../ansi_color_chart/ansi_color_chart.hpp"
-#include "../../Terminal/Terminal-OUT/Terminal-OUT.hpp"
-#include "../../Terminal/Terminal-IN/Terminal-IN.hpp"
+
+#include "../../../Terminal/Terminal-OUT/Terminal-OUT.hpp"
+#include "../../../Terminal/Terminal-IN/Terminal-IN.hpp"
 
 #include <iostream>
 #include <windows.h>
-#include <chrono>
-#include <thread>
 # include <vector>
 
 TerminalOUT terminal_out;
@@ -238,42 +237,48 @@ void Serial::disconnect_serial_CON2() {
     }
 }
 
-string Serial::check_serial_available(string PORT_GUI, int baudrate_GUI, string PORT_CON1, int baudrate_CON1, string PORT_CON2, int baudrate_CON2) {
+vector<string> Serial::check_serial_available(string PORT_GUI, int baudrate_GUI, string PORT_CON1, int baudrate_CON1, string PORT_CON2, int baudrate_CON2) {
     terminal_out.terminal_custom_output("Checking conection status to Serial GUI, CON1 and CON2", ansi_color_chart::bright_blue);
     DWORD errors;
     COMSTAT status;
+    string error_output;
 
-    vector<string> return_handle = {"", "", ""};
+    vector<string> return_handle = {"GUI-OK", "CON1-OK", "CON2-OK"};
+    bool any_error = false;
 
     if(!ClearCommError(this->m_hSerialGUI, &errors, &status)) {
         CloseHandle(this->m_hSerialGUI);
         this->m_hSerialGUI = INVALID_HANDLE_VALUE;
         return_handle[0] = "GUI-NOT-CONECTED";
-        terminal_out.terminal_error_output("warning_GUI_ser_disc");  
+        any_error = true;
+        error_output = terminal_out.terminal_error_output("warning_GUI_ser_disc");  
+        terminal_out.terminal_custom_output(error_output, ansi_color_chart::red);
     }
 
     if(!ClearCommError(this->m_hSerialCON1, &errors, &status)) {
         CloseHandle(this->m_hSerialCON1);
         this->m_hSerialCON1 = INVALID_HANDLE_VALUE;
         return_handle[1] = "CON1-NOT-CONECTED";
-        terminal_out.terminal_error_output("warning_CON1_ser_disc");  
+        any_error = true;
+        error_output = terminal_out.terminal_error_output("warning_CON1_ser_disc");  
+        terminal_out.terminal_custom_output(error_output, ansi_color_chart::red);
     }
 
     if(!ClearCommError(this->m_hSerialCON2, &errors, &status)) {
         CloseHandle(this->m_hSerialCON2);
         this->m_hSerialCON2 = INVALID_HANDLE_VALUE;
         return_handle[2] = "CON2-NOT-CONECTED";
-        terminal_out.terminal_error_output("warning_CON2_ser_disc");  
+        any_error = true;
+        error_output = terminal_out.terminal_error_output("warning_CON2_ser_disc");  
+        terminal_out.terminal_custom_output(error_output, ansi_color_chart::red);
     }
 
-    if(return_handle == std::vector<std::string>{"", "", ""}) {
+    if(!any_error) {
         terminal_out.terminal_custom_output("All Serial Ports are connected", ansi_color_chart::green);
-        return "return_handle";
+    } else {
+        terminal_out.terminal_custom_output("Some serial Ports are disconnected", ansi_color_chart::red);
     }
 
-    if(return_handle != std::vector<std::string>{"", "", ""}) {
-        terminal_out.terminal_custom_output("Some serial Ports are disconnected", ansi_color_chart::red);
-        return "return_handle";
-    }
+    return return_handle;
     
 }

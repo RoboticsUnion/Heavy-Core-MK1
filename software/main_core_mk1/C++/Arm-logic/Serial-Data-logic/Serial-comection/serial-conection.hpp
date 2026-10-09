@@ -12,7 +12,7 @@ class Serial {
         std::string serial_conect_CON2(std::string PORT_CON2, int baudrate_CON2);
         void disconnect_serial_CON2();
         
-        std::string check_serial_available(std::string PORT_GUI, int baudrate_GUI, std::string PORT_CON1, int baudrate_CON1, std::string PORT_CON2, int baudrate_CON2);
+        std::vector<std::string> check_serial_available(std::string PORT_GUI, int baudrate_GUI, std::string PORT_CON1, int baudrate_CON1, std::string PORT_CON2, int baudrate_CON2);
         
     private:
     
