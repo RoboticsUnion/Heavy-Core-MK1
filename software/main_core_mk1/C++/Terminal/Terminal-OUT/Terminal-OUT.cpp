@@ -11,18 +11,27 @@
 
 using namespace std;
 
+vector<string> TerminalOUT::errors = TerminalOUT().load_error_message("../Terminal/Terminal-OUT/error_list.txt");
+
+
 void TerminalOUT::terminal_standard_output() {
     cout << standard_output; // gives you the standard output for the terminal, which is "--> "
 }
 
 void TerminalOUT::terminal_custom_output(string content, string color) {
-    cout << color + content + ansi_color_chart::reset; // gives you the custom output for the terminal, which is the content passed to the function with the color passed to the function
+    cout << color + content + ansi_color_chart::reset + "\n"; // gives you the custom output for the terminal, which is the content passed to the function with the color passed to the function
 }
 
 vector<string> TerminalOUT::load_error_message(const string config_file_name) { // loads the error messages from the file "error_list.txt" and returns them as a vector of strings
     string str;
     ifstream in(config_file_name);
     vector<string> newVector;
+
+    if (!in.is_open()) {
+    cout << "Error: Could not open file [CRITICAL KERNEL ERROR PLEAS CALL SUPPORT] " + config_file_name << endl;
+        return newVector;
+    }
+
     while (getline(in, str)) {
         if (!str.empty()) newVector.push_back(str);
     }
@@ -34,7 +43,7 @@ string TerminalOUT::terminal_error_output(string error_reason) { // gives you th
     int error_index = 0;
 
     for (const auto& error : errors) {
-        size_t first_space = error.find(' '); // finds the first space in the error message, which is used to separate the error reason from the error description
+        size_t first_space = error.find(" -"); // finds the first space in the error message, which is used to separate the error reason from the error description
         string first_word = (first_space != string::npos) ? error.substr(0, first_space) : error;
         if (first_word == error_reason) {
             return error; // returns the error message corresponding to the error reason passed to the function
