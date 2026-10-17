@@ -1,42 +1,48 @@
-#include <iostream>
 #include <vector>
 #include <string>
-#include <windows.h>
-
 
 #include "../Arm-logic/Serial-Data-logic/Serial-comection/serial-conection.hpp"
 #include "../ansi_color_chart/ansi_color_chart.hpp"
 #include "../Terminal/Terminal-OUT/Terminal-OUT.hpp"
 #include "../Terminal/Terminal-IN/Terminal-IN.hpp"
 
-// 2. Bindet die Windows-Bibliothek für GetCommPorts direkt beim Linken ein
 #pragma comment(lib, "OneCore.lib")
-
 
 using namespace std;
 
-// Globale Testvariable (jetzt kennt der Compiler std::string!)
-std::string example = "example_text";
-
 int main() {
-    Serial Serial;
+    
+    Serial serial; 
     TerminalOUT terminal_out;
     TerminalIN terminal_in;
 
     terminal_out.load_error_message("../Terminal/Terminal-OUT/error_list.txt");
 
-    vector<string> serial_ports = Serial.search_for_serial_ports();
-
-    int i;
+    vector<string> serial_ports = serial.search_for_serial_ports();
 
     if (serial_ports.empty()) {
         terminal_out.terminal_custom_output("No serial ports found.", ansi_color_chart::yellow);
     } else {
         terminal_out.terminal_custom_output("Available serial ports:", ansi_color_chart::bright_blue);
         short num_ports = serial_ports.size();
-        for (i = 0; i < num_ports; i++) {
+        for (int i = 0; i < num_ports; i++) {
             terminal_out.terminal_custom_output(serial_ports[i], ansi_color_chart::white);
         }
     }
 
+    vector<string> status = serial.check_serial_available("COM3", 115200, "COM4", 115200, "COM5", 115200);
+
+    for (const string& port_status : status) {
+        terminal_out.terminal_custom_output(port_status, ansi_color_chart::white);
+    }
+
+    // Verbindungen testen (Variablenname angepasst)
+    serial.serial_conect_CON1("COM3", 115200);
+    serial.disconnect_serial_CON1();
+
+    serial.serial_conect_CON1("COM4", 115200);
+    serial.disconnect_serial_CON1();
+
+    serial.serial_conect_CON1("COM5", 115200);
+    serial.disconnect_serial_CON1();
 }
