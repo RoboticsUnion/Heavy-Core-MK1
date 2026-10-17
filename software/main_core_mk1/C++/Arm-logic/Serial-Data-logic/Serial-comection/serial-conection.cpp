@@ -13,7 +13,6 @@ TerminalIN terminal_in;
 
 using namespace std;
 
-
 string Serial::serial_conect_GUI(string PORT_GUI, int baudrate_GUI) {
 
     terminal_out.terminal_custom_output("Trying to connect to: " + PORT_GUI + " with BAUD: " + to_string(baudrate_GUI), ansi_color_chart::yellow);
@@ -238,6 +237,7 @@ void Serial::disconnect_serial_CON2() {
 }
 
 vector<string> Serial::check_serial_available(string PORT_GUI, int baudrate_GUI, string PORT_CON1, int baudrate_CON1, string PORT_CON2, int baudrate_CON2) {
+
     terminal_out.terminal_custom_output("Checking conection status to Serial GUI, CON1 and CON2", ansi_color_chart::bright_blue);
     DWORD errors;
     COMSTAT status;
@@ -246,7 +246,7 @@ vector<string> Serial::check_serial_available(string PORT_GUI, int baudrate_GUI,
     vector<string> return_handle = {"GUI-OK", "CON1-OK", "CON2-OK"};
     bool any_error = false;
 
-    if(!ClearCommError(this->m_hSerialGUI, &errors, &status)) {
+    if(!ClearCommError(this->m_hSerialGUI, &errors, &status)) {  // Check if the serial GUI port is available
         CloseHandle(this->m_hSerialGUI);
         this->m_hSerialGUI = INVALID_HANDLE_VALUE;
         return_handle[0] = "GUI-NOT-CONECTED";
@@ -255,7 +255,7 @@ vector<string> Serial::check_serial_available(string PORT_GUI, int baudrate_GUI,
         terminal_out.terminal_custom_output(error_output, ansi_color_chart::red);
     }
 
-    if(!ClearCommError(this->m_hSerialCON1, &errors, &status)) {
+    if(!ClearCommError(this->m_hSerialCON1, &errors, &status)) {  // Check if the serial CON1 port is available
         CloseHandle(this->m_hSerialCON1);
         this->m_hSerialCON1 = INVALID_HANDLE_VALUE;
         return_handle[1] = "CON1-NOT-CONECTED";
@@ -264,7 +264,7 @@ vector<string> Serial::check_serial_available(string PORT_GUI, int baudrate_GUI,
         terminal_out.terminal_custom_output(error_output, ansi_color_chart::red);
     }
 
-    if(!ClearCommError(this->m_hSerialCON2, &errors, &status)) {
+    if(!ClearCommError(this->m_hSerialCON2, &errors, &status)) {  // Check if the serial CON2 port is available
         CloseHandle(this->m_hSerialCON2);
         this->m_hSerialCON2 = INVALID_HANDLE_VALUE;
         return_handle[2] = "CON2-NOT-CONECTED";
@@ -273,7 +273,7 @@ vector<string> Serial::check_serial_available(string PORT_GUI, int baudrate_GUI,
         terminal_out.terminal_custom_output(error_output, ansi_color_chart::red);
     }
 
-    if(!any_error) {
+    if(!any_error) {  // All serial ports are connected
         terminal_out.terminal_custom_output("All Serial Ports are connected", ansi_color_chart::green);
     } else {
         terminal_out.terminal_custom_output("Some serial Ports are disconnected", ansi_color_chart::red);
@@ -281,4 +281,51 @@ vector<string> Serial::check_serial_available(string PORT_GUI, int baudrate_GUI,
 
     return return_handle;
     
+}
+
+vector<string> Serial::search_for_serial_ports() {   // AI FUCKING WINDOWS API FUCKING HELL, I HATE THIS SHIT
+
+    this->availablePorts.clear();
+
+    wchar_t buffer[40000];
+    DWORD result = QueryDosDeviceW(NULL, buffer, 40000);
+
+    if (result != 0) { // QueryDosDeviceW succeeded
+        wchar_t* currentDevice = buffer;
+
+        while (*currentDevice != L'\0') {  // Loop through the null-terminated strings in the buffer
+            wstring wideDeviceName(currentDevice);
+
+            if (wideDeviceName.rfind(L"COM", 0) == 0) {  // Check if the string starts with "COM"
+
+                string portName(
+                    wideDeviceName.begin(),
+                    wideDeviceName.end()
+                );
+
+                // Arduino filtern
+                if (wideDeviceName.find(L"Arduino") != wstring::npos) {
+                    portName += " | Arduino";
+                }
+                // ESP filtern
+                else if (wideDeviceName.find(L"ESP") != wstring::npos) {
+                    portName += " | ESP";
+                }
+                // STM filtern
+                else if (wideDeviceName.find(L"STM") != wstring::npos) {
+                    portName += " | STM";
+                }
+                // Standard COM
+                else {
+                    portName += " | Standard COM";
+                }
+
+                this->availablePorts.push_back(portName); // Add the port name to the availablePorts vector
+            }
+
+            currentDevice += wideDeviceName.length() + 1; // Move to the next null-terminated string in the buffer
+        }
+    }
+
+    return this->availablePorts; // Return the vector of available serial ports
 }
