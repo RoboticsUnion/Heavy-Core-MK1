@@ -17,7 +17,8 @@ string user_input;
 int number_convert;
 
 string TerminalIN::terminal_read_line() {
-    cin >> user_input;
+    string user_input;
+    getline(std::cin, user_input); 
     return user_input;
 }
 

@@ -19,7 +19,7 @@ void TerminalOUT::terminal_standard_output() {
 }
 
 void TerminalOUT::terminal_custom_output(string content, string color) {
-    cout << color + content + ansi_color_chart::reset + "\n"; // gives you the custom output for the terminal, which is the content passed to the function with the color passed to the function
+    cout << color << content << "\n" << ansi_color_chart::reset; // gives you the custom output for the terminal, which is the content passed to the function with the color passed to the function
 }
 
 vector<string> TerminalOUT::load_error_message(const string config_file_name) { // loads the error messages from the file "error_list.txt" and returns them as a vector of strings
