@@ -175,7 +175,7 @@ int main() {
 ```
 #### Output:
 The output from the code above
-```cpp
+```txt
 Available serial ports:
 COM5 | Standard COM
 COM4 | Standard COM
