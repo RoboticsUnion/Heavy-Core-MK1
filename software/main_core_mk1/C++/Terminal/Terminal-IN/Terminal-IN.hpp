@@ -10,3 +10,5 @@ class TerminalIN {
 
     private:
 };
+
+extern TerminalIN terminal_in;

@@ -16,3 +16,8 @@ error_set_conection_atributs_CON2 -An error hapened during setting the conection
 warning_GUI_ser_disc -The serial conection to the GUI is not opened.
 warning_CON1_ser_disc -The serial conection to the CON1 is not opened.
 warning_CON2_ser_disc -The serial conection to the CON2 is not opened.
+err_writing_json_login -An error happened while trying to write saves to the json. Try again or close the file if opened.
+error_empty_username -Username cannot be empty.
+error_empty_password -Password cannot be empty.
+err_reading_json_login -Could not read the user database because its JSON is invalid.
+err_invalid_json_structure_login -The user database JSON must contain a "users" object.

@@ -1,5 +1,9 @@
 # Documentation of HeavyMk1 Code
 
+## Used imports
+* [nlohmann/json](https://github.com/nlohmann/json/tree/develop/) - JSON for Modern C++ (MIT-Lizenz)
+
+
 ## Naming Conventions
 * **Main folders** – Top-level directory structure
 * **Sub folders** – Module and feature-specific directories
@@ -197,3 +201,4 @@ CON1 Port disconected
 
 ```
 
+### Login-Register-Presetloading

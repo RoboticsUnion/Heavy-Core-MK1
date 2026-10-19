@@ -6,12 +6,24 @@ class UserManager {
     public:
         void startup_terminal(std::string user_name);
         bool login_user(std::string user_name, std::string password); 
-        void register_user(std::string user_name, std::string password, bool one_time_login); 
+        bool register_user(std::string user_name, std::string password); 
         bool delete_user(std::string user_name, std::string password); 
+
+        std::string time();
 
         PresetLoader presetLoader;
 
     private:
-        // json data
-        std::string db_file = "../preset-user.json"; 
+    
+        std::string db_file = "Terminal/Login-Register-Presetloading/preset-user.json";
+
+
+        const std::string robotics_union = R"(
+   ___       __        __  _           __  __     _         
+  / _ \___  / /  ___  / /_(_)______   / / / /__  (_)__  ___ 
+ / , _/ _ \/ _ \/ _ \/ __/ / __(_-<  / /_/ / _ \/ / _ \/ _ \
+/_/|_|\___/_.__/\___/\__/_/\__/___/  \____/_//_/_/\___/_//_/
+                                                            
+)";
+
 };

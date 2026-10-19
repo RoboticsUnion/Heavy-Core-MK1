@@ -2,54 +2,102 @@
 
 #include "../../ansi_color_chart/ansi_color_chart.hpp"
 
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <vector>
-#include <fstream>
-#include <iterator>
-#include <algorithm>
 
 using namespace std;
 
-vector<string> TerminalOUT::errors = TerminalOUT().load_error_message("../Terminal/Terminal-OUT/error_list.txt");
+namespace {
+    vector<string> read_error_file(const string& path) {
+        ifstream in(path);
+        vector<string> messages;
+        if (!in.is_open()) {
+            return messages;
+        }
 
+        string line;
+        while (getline(in, line)) {
+            if (!line.empty() && line.back() == '\r') {
+                line.pop_back();
+            }
+            if (!line.empty()) {
+                messages.push_back(line);
+            }
+        }
+        return messages;
+    }
+
+    vector<string> load_default_errors() {
+        // The executable may be started from the project root or Main_runtime.
+        const vector<string> candidates = {
+            "Terminal/Terminal-OUT/error_list.txt",
+            "../Terminal/Terminal-OUT/error_list.txt"
+        };
+        for (const auto& path : candidates) {
+            vector<string> messages = read_error_file(path);
+            if (!messages.empty()) {
+                return messages;
+            }
+        }
+        return {};
+    }
+}
+
+vector<string> TerminalOUT::errors = load_default_errors();
 
 void TerminalOUT::terminal_standard_output() {
-    cout << standard_output; // gives you the standard output for the terminal, which is "--> "
+    cout << standard_output;
 }
 
 void TerminalOUT::terminal_custom_output(string content, string color) {
-    cout << color << content << "\n" << ansi_color_chart::reset; // gives you the custom output for the terminal, which is the content passed to the function with the color passed to the function
+    cout << color << content << "\n" << ansi_color_chart::reset;
 }
 
-vector<string> TerminalOUT::load_error_message(const string config_file_name) { // loads the error messages from the file "error_list.txt" and returns them as a vector of strings
-    string str;
-    ifstream in(config_file_name);
-    vector<string> newVector;
+vector<string> TerminalOUT::load_error_message(const string config_file_name) {
+    vector<string> messages = read_error_file(config_file_name);
 
-    if (!in.is_open()) {
-    cout << "Error: Could not open file [CRITICAL KERNEL ERROR PLEAS CALL SUPPORT] " + config_file_name << endl;
-        return newVector;
-    }
-
-    while (getline(in, str)) {
-        if (!str.empty()) newVector.push_back(str);
-    }
-    return newVector;
-
-}
-
-string TerminalOUT::terminal_error_output(string error_reason) { // gives you the error output for the terminal, which is the error message corresponding to the error reason passed to the function
-    int error_index = 0;
-
-    for (const auto& error : errors) {
-        size_t first_space = error.find(" -"); // finds the first space in the error message, which is used to separate the error reason from the error description
-        string first_word = (first_space != string::npos) ? error.substr(0, first_space) : error;
-        if (first_word == error_reason) {
-            return error; // returns the error message corresponding to the error reason passed to the function
+    // Use known project-relative fallbacks when the supplied relative path
+    // does not match the current working directory.
+    if (messages.empty()) {
+        const vector<string> candidates = {
+            "Terminal/Terminal-OUT/error_list.txt",
+            "../Terminal/Terminal-OUT/error_list.txt"
+        };
+        for (const auto& path : candidates) {
+            messages = read_error_file(path);
+            if (!messages.empty()) {
+                break;
+            }
         }
     }
 
-    return ansi_color_chart::red + "Error not found" + ansi_color_chart::reset; // returns an error message if the error reason passed to the function is not found in the error messages loaded from the file "error_list.txt"
+    if (messages.empty()) {
+        cerr << "Error: Could not load error definitions. Tried: "
+             << config_file_name
+             << ", Terminal/Terminal-OUT/error_list.txt, and "
+             << "../Terminal/Terminal-OUT/error_list.txt.\n";
+        return errors;
+    }
+
+    errors = messages;
+    return errors;
 }
 
+string TerminalOUT::terminal_error_output(string error_reason) {
+    for (const auto& error : errors) {
+        const size_t delimiter = error.find(" -");
+        const string key = (delimiter != string::npos)
+            ? error.substr(0, delimiter)
+            : error;
+
+        if (key == error_reason) {
+            return error;
+        }
+    }
+
+    return ansi_color_chart::red + "Error not found: '" + error_reason +
+           "'. Check Terminal/Terminal-OUT/error_list.txt." +
+           ansi_color_chart::reset;
+}

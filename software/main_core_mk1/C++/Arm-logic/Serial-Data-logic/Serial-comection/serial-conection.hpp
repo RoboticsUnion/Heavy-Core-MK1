@@ -35,3 +35,5 @@ class Serial {
         std::vector<std::string> availablePorts; // Vector to store the names of available serial ports on the system
 
 };
+
+extern Serial serial;

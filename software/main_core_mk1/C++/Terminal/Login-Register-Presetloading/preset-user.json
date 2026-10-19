@@ -1,0 +1,16 @@
+{
+    "users": {
+        "David": {
+            "created_at": "19-10-2026 21:39:00",
+            "password": "katzi2k",
+            "presets": {
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}

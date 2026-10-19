@@ -8,9 +8,6 @@
 #include <windows.h>
 # include <vector>
 
-TerminalOUT terminal_out;
-TerminalIN terminal_in;
-
 using namespace std;
 
 string Serial::serial_conect_GUI(string PORT_GUI, int baudrate_GUI) {
@@ -58,7 +55,7 @@ string Serial::serial_conect_GUI(string PORT_GUI, int baudrate_GUI) {
     if (!SetCommState(hSerial, &dcbSerialParams)) {
         CloseHandle(hSerial);
         
-        string error = terminal_out.terminal_error_output("error_set_conection_atributs");
+        string error = terminal_out.terminal_error_output("error_set_conection_atributs_GUI");
         terminal_out.terminal_custom_output(error, ansi_color_chart::yellow);
         return "error_set_conection_atributs_GUI";
     }
@@ -132,7 +129,7 @@ string Serial::serial_conect_CON1(string PORT_CON1, int baudrate_CON1) {
     if (!SetCommState(hSerial, &dcbSerialParams)) {
         CloseHandle(hSerial);
         
-        string error = terminal_out.terminal_error_output("error_set_conection_atributs");
+        string error = terminal_out.terminal_error_output("error_set_conection_atributs_CON1");
         terminal_out.terminal_custom_output(error, ansi_color_chart::yellow);
         return "error_set_conection_atributs_CON1";
     }
@@ -206,7 +203,7 @@ string Serial::serial_conect_CON2(string PORT_CON2, int baudrate_CON2) {
     if (!SetCommState(hSerial, &dcbSerialParams)) {
         CloseHandle(hSerial);
         
-        string error = terminal_out.terminal_error_output("error_set_conection_atributs");
+        string error = terminal_out.terminal_error_output("error_set_conection_atributs_CON2");
         terminal_out.terminal_custom_output(error, ansi_color_chart::yellow);
         return "error_set_conection_atributs_CON2";
     }
