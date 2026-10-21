@@ -1,9 +1,16 @@
 {
     "users": {
-        "David": {
-            "created_at": "19-10-2026 21:39:00",
-            "password": "katzi2k",
+        "david": {
+            "created_at": "21-10-2026 21:17:51",
+            "password": "234455",
             "presets": {
+                "axis_1_speed": 50,
+                "axis_2_speed": 50,
+                "axis_3_speed": 50,
+                "axis_4_speed": 50,
+                "axis_5_speed": 50,
+                "axis_6_speed": 50,
+                "product": "####",
                 "standard_l1_lenght": 210,
                 "standard_l2_lenght": 210,
                 "standard_l3_lenght": 210,

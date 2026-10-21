@@ -27,3 +27,5 @@ class UserManager {
 )";
 
 };
+
+extern UserManager usr_manager;

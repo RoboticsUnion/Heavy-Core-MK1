@@ -21,3 +21,6 @@ error_empty_username -Username cannot be empty.
 error_empty_password -Password cannot be empty.
 err_reading_json_login -Could not read the user database because its JSON is invalid.
 err_invalid_json_structure_login -The user database JSON must contain a "users" object.
+usr_exist -The user already exists pleas use a different name.
+usr_!exist -This user does not exist. Check user name or register.
+wrong_pas -Wrong password pleas retry or delete acc and create a new one.
