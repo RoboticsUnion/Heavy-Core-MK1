@@ -51,8 +51,7 @@ namespace {
         });
         return text;
     }
-
-    
+ 
     bool check_database(const string& user_name, const string& password, const string& db_file, nlohmann::json& db) {
         if (user_name.empty()) {
             print_error("error_empty_username");
