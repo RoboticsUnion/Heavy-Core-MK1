@@ -7,7 +7,9 @@ class Logging {
         std::string log_to(std::string contents);
 
     private:
-        std::string log_txt_path = "log.txt";
+        std::string log_txt_path =
+            "../Terminal/Login-Register-Presetloading/logging-system/log.txt";
+
 };  
 
-extern Logging log;
+extern Logging logger;

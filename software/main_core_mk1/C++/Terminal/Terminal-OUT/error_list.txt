@@ -24,3 +24,5 @@ err_invalid_json_structure_login -The user database JSON must contain a "users" 
 usr_exist -The user already exists pleas use a different name.
 usr_!exist -This user does not exist. Check user name or register.
 wrong_pas -Wrong password pleas retry or delete acc and create a new one.
+!log_open -Log file could not been opened. Restart or check log.txt.
+!write_log -Could not opend log file for writing purpose. Restart or check log.txt.

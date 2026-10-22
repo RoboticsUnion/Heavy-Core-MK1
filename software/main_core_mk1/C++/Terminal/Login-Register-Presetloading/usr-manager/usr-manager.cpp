@@ -1,6 +1,8 @@
 #include "usr-manager.hpp"
 #include "../../../ansi_color_chart/ansi_color_chart.hpp"
 #include "../../../Terminal/Terminal-OUT/Terminal-OUT.hpp"
+#include "../usr-manager/usr-manager.hpp"
+#include "../logging-system/logging-system.hpp"
 
 #include <ctime>
 #include <fstream>
@@ -35,6 +37,7 @@ namespace {
         if (project_root_marker.is_open()) {
             return preferred_path;
         }
+        logger.log_to("[INFO] Database path resolve");
         return "../Terminal/Login-Register-Presetloading/preset-user.json";
     }
 
@@ -43,6 +46,7 @@ namespace {
             terminal_out.terminal_error_output(key),
             ansi_color_chart::red
         );
+        logger.log_to("[INFO] error output");
     }
 
     std::string to_lower(std::string text) {
@@ -50,6 +54,7 @@ namespace {
             return std::tolower(c);
         });
         return text;
+        logger.log_to("[INFO] string to lower");
     }
  
     bool check_database(const string& user_name, const string& password, const string& db_file, nlohmann::json& db) {
@@ -88,11 +93,10 @@ namespace {
             }
         }
         
-        cout << "[DEBUG] Database path: " << database_path << '\n';
-        cout << "[DEBUG] Username to find: [" << user_name_lower << "]\n";
-        cout << "[DEBUG] Loaded JSON:\n" << db.dump(4) << '\n';
-        cout << "[DEBUG] Contains david: "
-            << db["users"].contains("david") << '\n';
+        logger.log_to("[DEBUG] Database path: " + database_path);
+        logger.log_to("[DEBUG] Username to find: " + user_name_lower);
+        logger.log_to("[DEBUG] Loaded JSON:\n" + db.dump(4));
+        logger.log_to("[DEBUG] Contains david: " + db["users"].contains("david"));
 
         if (!db.is_object()) {
             print_error("err_invalid_json_structure_login");
@@ -138,6 +142,7 @@ void UserManager::startup_terminal(string user_name) {
     terminal_out.terminal_custom_output(UserManager::robotics_union, ansi_color_chart::blue);
     string output = "Loged user: " + user_name;
     terminal_out.terminal_custom_output(output, ansi_color_chart::white);
+    logger.log_to("[INFO] Startup terminal function");
 }
 
 string UserManager::time() {
@@ -149,6 +154,7 @@ string UserManager::time() {
         return "unknown";
     }
     return string(buffer);
+    logger.log_to("[INFO] Time function");
 }
 
 bool UserManager::register_user(string user_name, string password) {
@@ -244,6 +250,7 @@ bool UserManager::register_user(string user_name, string password) {
         return false;
     }
 
+    logger.log_to("[INFO] login register");
     return true;
 }
 
@@ -251,6 +258,7 @@ bool UserManager::login_user(string user_name, string password) {
     json db;
 
     if(!check_database(user_name, password, db_file, db)) {
+        logger.log_to("[ERROR] database/data error");
         return false;
     }
 
@@ -260,6 +268,7 @@ bool UserManager::login_user(string user_name, string password) {
         return false;
     }
 
+    logger.log_to("[INFO] Login function");
     return true;
 
 }
@@ -269,6 +278,7 @@ bool UserManager::delete_user(string user_name, string password) {
     json db;
 
     if (!check_database(user_name, password, db_file, db)) {
+        logger.log_to("[ERROR] database/data error");
         return false;
     }
 
@@ -276,6 +286,7 @@ bool UserManager::delete_user(string user_name, string password) {
     const string database_path = resolve_database_path(db_file);
 
     if (db["users"].erase(user_name_lower) == 0) {
+        logger.log_to("[ERROR] delete usr");
         return false;
     }
 
@@ -283,6 +294,7 @@ bool UserManager::delete_user(string user_name, string password) {
 
     if (!file.is_open()) {
         print_error("err_writing_json_login");
+        logger.log_to("[ERROR] err_writing_json_login");
         return false;
     }
 
@@ -294,8 +306,10 @@ bool UserManager::delete_user(string user_name, string password) {
 
     if (!write_succeeded || file.fail()) {
         print_error("err_writing_json_login");
+        logger.log_to("[ERROR] err_writing_json_login");
         return false;
     }
 
+    logger.log_to("[INFO] Usr del function");
     return true;
 }
