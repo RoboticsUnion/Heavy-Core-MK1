@@ -88,6 +88,12 @@ namespace {
                 }
             }
         }
+        
+        cout << "[DEBUG] Database path: " << database_path << '\n';
+        cout << "[DEBUG] Username to find: [" << user_name_lower << "]\n";
+        cout << "[DEBUG] Loaded JSON:\n" << db.dump(4) << '\n';
+        cout << "[DEBUG] Contains david: "
+            << db["users"].contains("david") << '\n';
 
         if (!db.is_object()) {
             print_error("err_invalid_json_structure_login");
@@ -102,26 +108,32 @@ namespace {
             terminal_out.terminal_custom_output("Database path: " + database_path, ansi_color_chart::red);
             return false;
         }
+
         if (!db["users"].contains(user_name_lower)) {
             print_error("usr_!exist");
             return false;
         }
         
-        if (!db["users"][user_name_lower].contains("password")) {
+        auto& user_data = db["users"][user_name_lower];
+
+        if (!user_data.is_object() ||
+            !user_data.contains("password") ||
+            !user_data["password"].is_string()) {
             print_error("err_invalid_json_structure_login");
             return false;
         }
 
-        std::string password_read = db["users"][user_name_lower]["password"].get<std::string>();
+        std::string password_read = user_data["password"].get<std::string>();
+
         if (password_read != password) {
             print_error("wrong_pas");
             return false;
         }
 
+
         return true; // Validierung erfolgreich abgeschlossen
     }
 }
-
 
 void UserManager::startup_terminal(string user_name) {
     terminal_out.terminal_custom_output(UserManager::robotics_union, ansi_color_chart::blue);
@@ -245,7 +257,7 @@ bool UserManager::login_user(string user_name, string password) {
 
     string user_name_lower = to_lower(user_name);
 
-    if(!prset_loader.load_user_preset(user_name_lower, db_file)){
+    if(!presetLoader.load_user_preset(user_name_lower, db_file)){
         return false;
     }
 
