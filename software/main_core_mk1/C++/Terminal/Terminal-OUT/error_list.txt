@@ -1,0 +1,28 @@
+example_error_reason -Hello world from error manager
+error_only_int -This input only accepts integers.
+error_only_string -This input only accepts strings.
+error_pas_short -Paswort is to short.
+error_forbidden_symbol -Forbidden char was used.
+out_of_range -The number is out of range.
+error_opening_port_GUI -An error hapened during opening an port to GUI. Try restart GUI interface / enable usb.
+error_opening_port_CON1 -An error hapened during opening an port to CON1. Try restart CON1 / check usb conection / WARNING dont use it till it functions normaly!
+error_opening_port_CON2 -An error hapened during opening an port to CON2. Try restart CON2 / check usb conection / chamber data can not be send or read WARNING!!
+error_reading_setting_GUI -An error happened during reading the Serial settings/ try again.
+error_set_conection_atributs_GUI -An error hapened during setting the conection atributes / try again.
+error_reading_setting_CON1 -An error happened during reading the Serial settings/ try again.
+error_set_conection_atributs_CON1 -An error hapened during setting the conection atributes / try again.
+error_reading_setting_CON2 -An error happened during reading the Serial settings/ try again.
+error_set_conection_atributs_CON2 -An error hapened during setting the conection atributes / try again.
+warning_GUI_ser_disc -The serial conection to the GUI is not opened.
+warning_CON1_ser_disc -The serial conection to the CON1 is not opened.
+warning_CON2_ser_disc -The serial conection to the CON2 is not opened.
+err_writing_json_login -An error happened while trying to write saves to the json. Try again or close the file if opened.
+error_empty_username -Username cannot be empty.
+error_empty_password -Password cannot be empty.
+err_reading_json_login -Could not read the user database because its JSON is invalid.
+err_invalid_json_structure_login -The user database JSON must contain a "users" object.
+usr_exist -The user already exists pleas use a different name.
+usr_!exist -This user does not exist. Check user name or register.
+wrong_pas -Wrong password pleas retry or delete acc and create a new one.
+!log_open -Log file could not been opened. Restart or check log.txt.
+!write_log -Could not opend log file for writing purpose. Restart or check log.txt.

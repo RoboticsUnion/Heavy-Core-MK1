@@ -1,0 +1,18 @@
+HeavyMk1 C++ bug-fix notes
+
+Fixed in this source package:
+- Error messages load from either the project root or Main_runtime working directory.
+- load_error_message() now updates the error definitions used by terminal_error_output().
+- Unknown error keys show the actual requested key and the error-list path.
+- Serial SetCommState error lookups now match the GUI, CON1, and CON2 keys in error_list.txt.
+- Integer terminal input uses getline(), validates the whole line, and does not leave a newline for the next username read.
+- User registration treats an empty JSON file as a first-run database, validates JSON before using it, checks write success, and reports failures through the error system.
+- UserManager::register_user() returns bool and main prints a success message only when saving succeeds.
+- The canonical user database starts as valid empty JSON at Terminal/Login-Register-Presetloading/preset-user.json.
+
+Build notes:
+- Build using the provided VS Code C/C++ build task from the C++ project folder.
+- Existing compiled binaries and object/debug artifacts were removed from this package so they cannot accidentally run the old broken build; rebuild to create a fresh executable.
+
+Security note:
+- This project currently stores passwords as plain text in JSON. Do not use a real/reused password until password hashing is implemented.
