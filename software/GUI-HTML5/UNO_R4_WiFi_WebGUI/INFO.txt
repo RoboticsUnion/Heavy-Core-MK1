@@ -1,0 +1,1 @@
+The Website was coded by hand. SerialBridge and the .ino code were Vibecoded. This will maybe get a rework but we have time proplems so we Need a faster way.
