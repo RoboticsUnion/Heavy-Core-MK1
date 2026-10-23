@@ -3,11 +3,13 @@
 #include <string>
 #include <iostream>
 
-#include "../Arm-logic/Serial-Data-logic/Serial-comection/serial-conection.hpp"
+#include "../Arm-logic/Serial-Data-logic/Serial-conection/serial-conection.hpp"
+#include "../Arm-logic/Serial-Data-logic/GUI-data-prep/GUI-data-prep.hpp"
 #include "../ansi_color_chart/ansi_color_chart.hpp"
 #include "../Terminal/Terminal-OUT/Terminal-OUT.hpp"
 #include "../Terminal/Terminal-IN/Terminal-IN.hpp"
 #include "../Terminal/Login-Register-Presetloading/usr-manager/usr-manager.hpp"
+#include "../Terminal/Login-Register-Presetloading/logging-system/logging-system.hpp"
 
 #pragma comment(lib, "OneCore.lib")
 
@@ -68,6 +70,26 @@ int main() {
                 ansi_color_chart::green
             );
         }
+    }
+    else if(num == 4){
+        vector<string> serial_ports = serial.search_for_serial_ports();
+        short num_ports = serial_ports.size();
+        for (int i = 0; i < num_ports; i++) {
+            terminal_out.terminal_custom_output(serial_ports[i], ansi_color_chart::white);
+        }
+        terminal_out.terminal_custom_output("COM:", ansi_color_chart::white);
+        string com = terminal_in.terminal_read_line();
+        terminal_out.terminal_custom_output("Baud", ansi_color_chart::white);
+        int baud = terminal_in.terminal_read_line_int();
+        string status = serial.serial_conect_GUI(com, baud);
+        logger.log_to(status);
+        string data;
+        do{
+            data = data_prep.read_serial_GUI_per_line();
+        } while(data.empty());
+
+        terminal_out.terminal_custom_output(data, ansi_color_chart::white);
+
     }
     else {
         terminal_out.terminal_custom_output(

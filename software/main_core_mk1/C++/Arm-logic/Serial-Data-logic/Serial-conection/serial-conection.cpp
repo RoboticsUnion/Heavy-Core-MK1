@@ -10,6 +10,8 @@
 
 using namespace std;
 
+Serial serial;
+
 string Serial::serial_conect_GUI(string PORT_GUI, int baudrate_GUI) {
 
     terminal_out.terminal_custom_output("Trying to connect to: " + PORT_GUI + " with BAUD: " + to_string(baudrate_GUI), ansi_color_chart::yellow);
