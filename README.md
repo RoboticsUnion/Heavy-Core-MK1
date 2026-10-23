@@ -28,8 +28,8 @@ We are developing a control application that will include:
 
 Completed:
   - Torque calculations
-  - CAD design of Axis 1 and 2
-  - Stepper motor integration
+  - CAD design of Axis 1, 2, 3 and 4
+  - Stepper motor integration(Stepperonline)
   - First tests of the custom designed Gearboxes
   - Functional test of both Axis
 
@@ -41,9 +41,9 @@ In Progress:
 
 # Preliminary Technical Specifications
 - Target DOF: 6 DOF
-- currently functional: 2 DOF
+- currently functional: 4 DOF
 - Actuators: Stepper motors
-- Structure: Aluminum & PLA (Stronger 3D-printed material planned)
+- Structure: Aluminum & PETG (Stronger 3D-printed material planned)
 - Control system: Arduino & ESP32 based
 - Sofware: Custom standalone desktop or mobile application
 
@@ -54,9 +54,9 @@ In Progress:
 
 | MK1 Alpha | 2 DOF mechanical validation, first project showcase | Completed |
 
-| MK1 Beta | 4-6 DOF mechanical prototype | Q3 2026 (estimated) |
+| MK1 Beta | 4-6 DOF mechanical prototype | Q4 2026 (estimated) |
 
-| MK1 Software Alpha | Basic motion control & UI | Q3 2026 |
+| MK1 Software Alpha | Basic motion control & UI | Q4 2026 |
 
 | MK1 Integrated Demo | Hardware + software functional for demonstration | Q1 2027 (January, HTL Open house) |
 
@@ -69,4 +69,6 @@ Heavy-Core is more than a 3D-printed robotic arm.
 It is the foundation for a modular robotics ecosystem that is mostly custom designed.
 
 Mechanical engineering, electronics and software development are 
-combined in one unified system, driven by the abition and passion of young engineers. 
+combined in one unified system, driven by the abition and passion of young engineers.
+
+This complete robotic arm system is fully open source and available on GitHub, providing unrestricted access to all hardware designs, electronics, and software, enabling developers worldwide to customize, improve, and extend the platform.
