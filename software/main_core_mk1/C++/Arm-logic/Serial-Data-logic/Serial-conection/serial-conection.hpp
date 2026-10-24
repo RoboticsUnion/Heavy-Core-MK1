@@ -15,6 +15,10 @@ class Serial {
         std::vector<std::string> check_serial_available(std::string PORT_GUI, int baudrate_GUI, std::string PORT_CON1, int baudrate_CON1, std::string PORT_CON2, int baudrate_CON2); // checks the availability of the serial GUI, CON1, and CON2 ports and returns a vector of strings indicating the status of each port
 
         std::vector<std::string> search_for_serial_ports(); // searches for available serial ports on the system and returns a vector of strings containing the names of the available ports
+
+        HANDLE m_hSerialGUI = INVALID_HANDLE_VALUE; // Handle for the serial port connection
+        HANDLE m_hSerialCON1 = INVALID_HANDLE_VALUE; // Handle for the serial port connection
+        HANDLE m_hSerialCON2 = INVALID_HANDLE_VALUE; // Handle for the serial port connection
         
     private:
     
@@ -25,10 +29,6 @@ class Serial {
         const std::string standard_PORT_GUI = "COM6"; //default port for serial connection
         const std::string standard_PORT_CON1 = "COM3"; //default port for serial connection
         const std::string standard_PORT_CON2 = "COM4"; //default port for serial connection
-
-        HANDLE m_hSerialGUI = INVALID_HANDLE_VALUE; // Handle for the serial port connection
-        HANDLE m_hSerialCON1 = INVALID_HANDLE_VALUE; // Handle for the serial port connection
-        HANDLE m_hSerialCON2 = INVALID_HANDLE_VALUE; // Handle for the serial port connection
 
         std::vector<std::string> return_handle = {"", "", ""}; // Vector to store the status of the serial connections (GUI, CON1, CON2)
 

@@ -5,13 +5,21 @@
 class DataPrep {
     public:
         
-        char read_serial_GUI(); // returns raw data unproofed reads it from serial GUI port
+        std::string read_serial_GUI_per_line(); // reads line from serial port one line
 
-        char check_incoming_data(char raw_incoming_data); // returns the proofed data input is raw data
+        std::vector<std::string> read_serial_GUI_code_block(); // reads line from serial port complete code block in vector line to line
 
-        void save_icoming_data(char incoming_char); // saves incoming chars in to an vektor !ONLY FOR CODE BLOCK!
+        std::string check_incoming_data_per_line(std::string raw_incoming_data_per_line); // returns the proofed data input is raw data line
 
-        std::string read_vektor_data(int line);
+        std::string check_incoming_data_code_block(std::vector<std::string> raw_incoming_data_code_block); // returns the proofed data input is raw data vector
+
+        void save_icoming_data(std::vector<std::string> checked_raw_code_block); // saves incoming chars in to an vektor !ONLY FOR CODE BLOCK!
+
+        std::vector<std::string> code_save_slot_1; // save slot 1 for a code block only variable should been loaded when you login out of json
+
+        std::vector<std::string> code_save_slot_2; // save slot 2 for a code block only variable should been loaded when you login out of json
+
+        std::vector<std::string> code_save_slot_3; // save slot 3 for a code block only variable should been loaded when you login out of json
 
     private:
         std::vector<std::string> g_code_buffer; //buffer for the g-code data that is being read from the serial port
@@ -19,3 +27,5 @@ class DataPrep {
         std::string current_line = ""; //current line of data that is being read from the serial port
 
 };
+
+extern DataPrep data_prep;
