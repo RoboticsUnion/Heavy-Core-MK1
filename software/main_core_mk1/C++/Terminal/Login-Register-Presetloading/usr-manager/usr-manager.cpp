@@ -273,7 +273,6 @@ bool UserManager::login_user(string user_name, string password) {
 
 }
 
-
 bool UserManager::delete_user(string user_name, string password) {
     json db;
 

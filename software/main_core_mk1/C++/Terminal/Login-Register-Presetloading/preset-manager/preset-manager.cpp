@@ -18,3 +18,7 @@ using namespace std;
 bool PresetLoader::load_user_preset(string user, string db_file){
     return true;
 }
+
+void change_user_preset(string user, string password, map<string, string> changes, string db_file){ // searches user via pasword and name in the json and chenges the specific thing
+    return;
+}
