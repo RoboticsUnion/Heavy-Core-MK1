@@ -13,7 +13,6 @@ class DataPrep {
 
         bool check_incoming_data_validate(const std::string& raw_incoming_data_per_line); // returns the proofed data input is raw data line
 
-
         std::vector<std::string> code_save_slot_1; // save slot 1 for a code block only variable should been loaded when you login out of json
 
         std::vector<std::string> code_save_slot_2; // save slot 2 for a code block only variable should been loaded when you login out of json
@@ -36,8 +35,6 @@ class DataPrep {
             {"HAA",            std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
             {"XSTOPX",         std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
             {"XENDX",          std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
-            {"END",            std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
-            {"BEGINN",         std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
 
             {"ENAM",         std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},
             {"DISM",         std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},

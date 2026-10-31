@@ -66,49 +66,40 @@ namespace {
 
     int save_nmbr = 0;
 
-    void save_handle(vector<string> code_block) {
-        bool save_slots_full = false;
-
-        while (save_slots_full == false) {
-            if (data_prep.code_save_slot_1.empty()) {
-                data_prep.code_save_slot_1 = code_block;
-                save_nmbr++;
-                logger.log_to("Saved to 1");
-                terminal_out.terminal_custom_output("Saved to 1", ansi_color_chart::green);
-                // preset should load in the json
-                save_slots_full = true;
-            }
-            else if (data_prep.code_save_slot_2.empty()) {
-                data_prep.code_save_slot_2 = code_block;
-                save_nmbr++;
-                logger.log_to("Saved to 2");
-                terminal_out.terminal_custom_output("Saved to 2", ansi_color_chart::green);
-                // preset should load in the json
-                save_slots_full = true;
-            }
-            else if (data_prep.code_save_slot_3.empty()) {
-                data_prep.code_save_slot_3 = code_block;
-                save_nmbr++;
-                logger.log_to("Saved to 3");
-                terminal_out.terminal_custom_output("Saved to 3", ansi_color_chart::green);
-                // preset should load in the json
-                save_slots_full = true;
-            }
-            else {
-                logger.log_to("[ERROR] All save slots are full");
-                save_slots_full = true;
-            }
-
-            if (save_nmbr == 3) {
-                save_nmbr = 0;
-                data_prep.code_save_slot_1.clear();
-                data_prep.code_save_slot_2.clear();
-                data_prep.code_save_slot_3.clear();
-                logger.log_to("Clear saves");
-                terminal_out.terminal_custom_output("Cleared saves", ansi_color_chart::green);
-            }
+    void save_handle(vector<string> code_block) {// AI overview
+        if (save_nmbr >= 3) {
+            save_nmbr = 0;
+            data_prep.code_save_slot_1.clear();
+            data_prep.code_save_slot_2.clear();
+            data_prep.code_save_slot_3.clear();
+            logger.log_to("Clear saves");
+            terminal_out.terminal_custom_output("Cleared saves", ansi_color_chart::green);
         }
-    }
+
+        // 2. Save into the next available empty slot
+        if (data_prep.code_save_slot_1.empty()) {
+            data_prep.code_save_slot_1 = code_block;
+            save_nmbr++;
+            logger.log_to("Saved to 1");
+            terminal_out.terminal_custom_output("Saved to 1", ansi_color_chart::green);
+        }
+        else if (data_prep.code_save_slot_2.empty()) {
+            data_prep.code_save_slot_2 = code_block;
+            save_nmbr++;
+            logger.log_to("Saved to 2");
+            terminal_out.terminal_custom_output("Saved to 2", ansi_color_chart::green);
+        }
+        else if (data_prep.code_save_slot_3.empty()) {
+            data_prep.code_save_slot_3 = code_block;
+            save_nmbr++;
+            logger.log_to("Saved to 3");
+            terminal_out.terminal_custom_output("Saved to 3", ansi_color_chart::green);
+        }
+        else {
+            logger.log_to("[ERROR] All save slots are full");
+            terminal_out.terminal_custom_output("All slots full! Clear them manually or restart.", ansi_color_chart::red);
+        }
+}
 }
 
 string DataPrep::read_serial_GUI_per_line(){
@@ -245,7 +236,6 @@ vector<string> DataPrep::read_serial_GUI_code_block() {
     }
 
 }
-
 
 bool DataPrep::check_incoming_data_validate(const string& raw_incoming_data_per_line){
     terminal_out.terminal_custom_output("Validating: " + raw_incoming_data_per_line, ansi_color_chart::white);
