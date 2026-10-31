@@ -1,97 +1,121 @@
-[26-10-2026 15:04:35] [INFO] Startup terminal function
-[26-10-2026 15:04:56] error_opening_port_GUI
-[26-10-2026 15:04:56] Waiting for Serial BEGINN 
-[26-10-2026 15:04:56] [ERROR] 6
-[26-10-2026 15:05:46] [INFO] Startup terminal function
-[26-10-2026 15:07:23] Connection was successful!
-[26-10-2026 15:07:23] Waiting for Serial BEGINN 
-[26-10-2026 15:10:28] [INFO] Startup terminal function
-[26-10-2026 15:10:37] Connection was successful!
-[26-10-2026 15:10:37] Waiting for Serial BEGINN 
-[26-10-2026 15:10:40] [DEBUG]43
-[26-10-2026 15:11:21] [DEBUG]42
-[26-10-2026 15:11:21] Serial BEGINN 
-[26-10-2026 15:11:21] Reading... waiting for END
-[26-10-2026 15:11:21] [DEBUG] Line got pushed back: MOVE X10
-[26-10-2026 15:11:21] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:11:21] [DEBUG] Line got pushed back: MOVE Z10
-[26-10-2026 15:11:21] Serial END
-[26-10-2026 15:11:34] Saved to 1
-[26-10-2026 15:12:18] [INFO] Startup terminal function
-[26-10-2026 15:12:30] Connection was successful!
-[26-10-2026 15:12:30] Waiting for Serial BEGINN 
-[26-10-2026 15:12:38] [DEBUG]43
-[26-10-2026 15:12:38] Serial BEGINN 
-[26-10-2026 15:12:38] Reading... waiting for END
-[26-10-2026 15:12:38] [DEBUG] Line got pushed back: MOVE X10
-[26-10-2026 15:12:38] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:12:38] [DEBUG] Line got pushed back: MOVE Z10
-[26-10-2026 15:12:38] Serial END
-[26-10-2026 15:12:44] Saved to 1
-[26-10-2026 15:13:55] [INFO] Startup terminal function
-[26-10-2026 15:14:02] Connection was successful!
-[26-10-2026 15:14:02] Waiting for Serial BEGINN 
-[26-10-2026 15:14:23] [DEBUG]256
-[26-10-2026 15:14:23] Serial BEGINN 
-[26-10-2026 15:14:23] Reading... waiting for END
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG]256
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG]256
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10MOVE X10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Y10
-[26-10-2026 15:14:23] [DEBUG] Line got pushed back: MOVE Z10
-[26-10-2026 15:14:24] [DEBUG]5
-[26-10-2026 15:14:24] Serial END
-[26-10-2026 15:14:27] Saved to 1
+[31-10-2026 00:43:59] [ERROR] 995
+[31-10-2026 00:44:28] [INFO] Startup terminal function
+[31-10-2026 00:44:38] Connection was successful!
+[31-10-2026 00:44:38] Waiting for Serial BEGINN 
+[31-10-2026 00:44:49] [DEBUG]150
+[31-10-2026 00:44:49] Serial BEGINN 
+[31-10-2026 00:44:49] Reading... waiting for END
+[31-10-2026 00:44:49] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:44:49] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:44:49] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:44:49] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:44:49] [DEBUG] Line got pushed back: HAA
+[31-10-2026 00:44:49] [DEBUG] Line got pushed back: ENAM
+[31-10-2026 00:44:49] Serial END
+[31-10-2026 00:44:53] ValidatingMOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:44:53] ValidatingMOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:44:53] ValidatingMOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:44:53] ValidatingMOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:44:53] ValidatingHAA
+[31-10-2026 00:44:53] ValidatingENAM
+[31-10-2026 00:47:50] [INFO] Startup terminal function
+[31-10-2026 00:47:57] Connection was successful!
+[31-10-2026 00:47:57] Waiting for Serial BEGINN 
+[31-10-2026 00:48:01] [DEBUG]150
+[31-10-2026 00:48:01] Serial BEGINN 
+[31-10-2026 00:48:01] Reading... waiting for END
+[31-10-2026 00:48:01] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:48:01] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:48:01] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:48:01] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:48:01] [DEBUG] Line got pushed back: HAA
+[31-10-2026 00:48:01] [DEBUG] Line got pushed back: ENAM
+[31-10-2026 00:48:01] Serial END
+[31-10-2026 00:48:04] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:48:04] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:48:04] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:48:04] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:48:04] Validating: HAA
+[31-10-2026 00:48:04] Unknown command name: 
+[31-10-2026 00:48:04] Validating: ENAM
+[31-10-2026 00:48:04] Unknown command name: 
+[31-10-2026 00:50:20] [INFO] Startup terminal function
+[31-10-2026 00:50:27] Connection was successful!
+[31-10-2026 00:50:27] Waiting for Serial BEGINN 
+[31-10-2026 00:50:30] [DEBUG]154
+[31-10-2026 00:50:30] Serial BEGINN 
+[31-10-2026 00:50:30] Reading... waiting for END
+[31-10-2026 00:50:30] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:50:30] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:50:30] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:50:30] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:50:30] [DEBUG] Line got pushed back: HAA
+[31-10-2026 00:50:30] [DEBUG] Line got pushed back: ENAM ALL
+[31-10-2026 00:50:30] Serial END
+[31-10-2026 00:50:32] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:50:32] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:50:32] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:50:32] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:50:32] Validating: HAA
+[31-10-2026 00:50:32] Unknown command name: 
+[31-10-2026 00:50:32] Validating: ENAM ALL
+[31-10-2026 00:52:33] [INFO] Startup terminal function
+[31-10-2026 00:52:38] Connection was successful!
+[31-10-2026 00:52:38] Waiting for Serial BEGINN 
+[31-10-2026 00:53:56] [DEBUG]154
+[31-10-2026 00:53:56] Serial BEGINN 
+[31-10-2026 00:53:56] Reading... waiting for END
+[31-10-2026 00:53:56] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:53:56] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:53:56] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:53:56] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:53:56] [DEBUG] Line got pushed back: HAA
+[31-10-2026 00:53:56] [DEBUG] Line got pushed back: ENAM ALL
+[31-10-2026 00:53:56] Serial END
+[31-10-2026 00:53:59] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:53:59] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:53:59] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:53:59] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:53:59] Validating: HAA
+[31-10-2026 00:53:59] Unknown command name: 
+[31-10-2026 00:53:59] Validating: ENAM ALL
+[31-10-2026 00:57:05] [INFO] Startup terminal function
+[31-10-2026 00:59:21] Connection was successful!
+[31-10-2026 00:59:21] Waiting for Serial BEGINN 
+[31-10-2026 00:59:35] [DEBUG]154
+[31-10-2026 00:59:35] Serial BEGINN 
+[31-10-2026 00:59:35] Reading... waiting for END
+[31-10-2026 00:59:35] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:59:35] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:59:35] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:59:35] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:59:35] [DEBUG] Line got pushed back: HAA
+[31-10-2026 00:59:35] [DEBUG] Line got pushed back: ENAM ALL
+[31-10-2026 00:59:35] Serial END
+[31-10-2026 00:59:38] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:59:38] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:59:38] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 00:59:38] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 00:59:38] Validating: HAA
+[31-10-2026 00:59:38] Unknown command name: 
+[31-10-2026 00:59:38] Validating: ENAM ALL
+[31-10-2026 00:59:43] [INFO] Startup terminal function
+[31-10-2026 00:59:49] Connection was successful!
+[31-10-2026 00:59:49] Waiting for Serial BEGINN 
+[31-10-2026 01:00:21] [DEBUG]156
+[31-10-2026 01:00:21] Serial BEGINN 
+[31-10-2026 01:00:21] Reading... waiting for END
+[31-10-2026 01:00:21] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 01:00:21] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 01:00:21] [DEBUG] Line got pushed back: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 01:00:21] [DEBUG] Line got pushed back: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 01:00:21] [DEBUG] Line got pushed back: HAA #
+[31-10-2026 01:00:21] [DEBUG] Line got pushed back: ENAM ALL
+[31-10-2026 01:00:21] Serial END
+[31-10-2026 01:00:23] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 01:00:23] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 01:00:23] Validating: MOVE 10.5, -20.0, 300, 0, 90, 0
+[31-10-2026 01:00:23] Validating: MOVE 1, -20.0, 300, 0, 90, 0
+[31-10-2026 01:00:23] Validating: HAA #
+[31-10-2026 01:00:23] Validating: ENAM ALL
+[31-10-2026 01:00:23] Saved to 1

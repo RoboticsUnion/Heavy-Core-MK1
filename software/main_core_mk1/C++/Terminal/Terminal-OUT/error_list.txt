@@ -26,5 +26,5 @@ usr_!exist -This user does not exist. Check user name or register.
 wrong_pas -Wrong password pleas retry or delete acc and create a new one.
 !log_open -Log file could not been opened. Restart or check log.txt.
 !write_log -Could not opend log file for writing purpose. Restart or check log.txt.
-!comm_exist_ln -Line command does not exist. Pleas try send it again or the command is not in the interpreter yet.
-!comm_exist_blk -Code block has errors in it see below and fix:
+!CMND_EX -Unknown command name. Pleas check  if your code matches the coding guidlines.
+SYNTER_ARGS -Syntax Error: Arguments do not match requirements.
