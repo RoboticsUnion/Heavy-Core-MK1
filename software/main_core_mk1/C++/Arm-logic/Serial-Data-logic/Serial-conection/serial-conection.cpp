@@ -8,6 +8,13 @@
 #include <windows.h>
 # include <vector>
 
+#include <setupapi.h>
+#include <initguid.h>
+#include <ntddser.h>
+
+#pragma comment(lib, "Setupapi.lib")
+#pragma comment(lib, "Advapi32.lib")
+
 using namespace std;
 
 Serial serial;
@@ -282,49 +289,189 @@ vector<string> Serial::check_serial_available(string PORT_GUI, int baudrate_GUI,
     
 }
 
-vector<string> Serial::search_for_serial_ports() {   // AI FUCKING WINDOWS API FUCKING HELL, I HATE THIS SHIT
+vector<string> Serial::search_for_serial_ports() { //AI SHIT FUCKING WINDOWS API SHIT FUCKING HELL
 
     this->availablePorts.clear();
 
-    wchar_t buffer[40000];
-    DWORD result = QueryDosDeviceW(NULL, buffer, 40000);
+    // Get all currently present COM port device interfaces
+    HDEVINFO deviceInfoSet = SetupDiGetClassDevsW(
+        &GUID_DEVINTERFACE_COMPORT,
+        nullptr,
+        nullptr,
+        DIGCF_PRESENT | DIGCF_DEVICEINTERFACE
+    );
 
-    if (result != 0) { // QueryDosDeviceW succeeded
-        wchar_t* currentDevice = buffer;
-
-        while (*currentDevice != L'\0') {  // Loop through the null-terminated strings in the buffer
-            wstring wideDeviceName(currentDevice);
-
-            if (wideDeviceName.rfind(L"COM", 0) == 0) {  // Check if the string starts with "COM"
-
-                string portName(
-                    wideDeviceName.begin(),
-                    wideDeviceName.end()
-                );
-
-                // Arduino filtern
-                if (wideDeviceName.find(L"Arduino") != wstring::npos) {
-                    portName += " | Arduino";
-                }
-                // ESP filtern
-                else if (wideDeviceName.find(L"ESP") != wstring::npos) {
-                    portName += " | ESP";
-                }
-                // STM filtern
-                else if (wideDeviceName.find(L"STM") != wstring::npos) {
-                    portName += " | STM";
-                }
-                // Standard COM
-                else {
-                    portName += " | Standard COM";
-                }
-
-                this->availablePorts.push_back(portName); // Add the port name to the availablePorts vector
-            }
-
-            currentDevice += wideDeviceName.length() + 1; // Move to the next null-terminated string in the buffer
-        }
+    if (deviceInfoSet == INVALID_HANDLE_VALUE) {
+        return this->availablePorts;
     }
 
-    return this->availablePorts; // Return the vector of available serial ports
+    // Enumerate all COM port interfaces
+    for (DWORD deviceIndex = 0; ; deviceIndex++) {
+
+        SP_DEVICE_INTERFACE_DATA interfaceData{};
+        interfaceData.cbSize = sizeof(SP_DEVICE_INTERFACE_DATA);
+
+        if (!SetupDiEnumDeviceInterfaces(
+            deviceInfoSet,
+            nullptr,
+            &GUID_DEVINTERFACE_COMPORT,
+            deviceIndex,
+            &interfaceData
+        )) {
+
+            if (GetLastError() == ERROR_NO_MORE_ITEMS) {
+                break;
+            }
+
+            break;
+        }
+
+        // Get the required buffer size
+        DWORD requiredSize = 0;
+
+        SetupDiGetDeviceInterfaceDetailW(
+            deviceInfoSet,
+            &interfaceData,
+            nullptr,
+            0,
+            &requiredSize,
+            nullptr
+        );
+
+        if (GetLastError() != ERROR_INSUFFICIENT_BUFFER ||
+            requiredSize == 0) {
+            continue;
+        }
+
+        // Allocate the required buffer
+        vector<BYTE> detailBuffer(requiredSize);
+
+        PSP_DEVICE_INTERFACE_DETAIL_DATA_W detailData =
+            reinterpret_cast<PSP_DEVICE_INTERFACE_DETAIL_DATA_W>(
+                detailBuffer.data()
+            );
+
+        detailData->cbSize = sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA_W);
+
+        SP_DEVINFO_DATA deviceInfoData{};
+        deviceInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
+
+        // Get device information
+        if (!SetupDiGetDeviceInterfaceDetailW(
+            deviceInfoSet,
+            &interfaceData,
+            detailData,
+            requiredSize,
+            nullptr,
+            &deviceInfoData
+        )) {
+            continue;
+        }
+
+        // Open the device registry key
+        HKEY deviceKey = SetupDiOpenDevRegKey(
+            deviceInfoSet,
+            &deviceInfoData,
+            DICS_FLAG_GLOBAL,
+            0,
+            DIREG_DEV,
+            KEY_QUERY_VALUE
+        );
+
+        if (deviceKey == INVALID_HANDLE_VALUE) {
+            continue;
+        }
+
+        // Read the actual COM port name
+        wchar_t portBuffer[256]{};
+
+        DWORD portType = 0;
+        DWORD portBufferSize = sizeof(portBuffer);
+
+        LONG registryResult = RegQueryValueExW(
+            deviceKey,
+            L"PortName",
+            nullptr,
+            &portType,
+            reinterpret_cast<LPBYTE>(portBuffer),
+            &portBufferSize
+        );
+
+        RegCloseKey(deviceKey);
+
+        portBuffer[255] = L'\0';
+
+        if (registryResult != ERROR_SUCCESS ||
+            (portType != REG_SZ && portType != REG_EXPAND_SZ)) {
+            continue;
+        }
+
+        wstring widePortName(portBuffer);
+
+        // Only accept actual COM port names
+        if (widePortName.rfind(L"COM", 0) != 0) {
+            continue;
+        }
+
+        // Get the device friendly name for identification
+        wchar_t deviceNameBuffer[512]{};
+
+        DWORD nameType = 0;
+
+        if (!SetupDiGetDeviceRegistryPropertyW(
+            deviceInfoSet,
+            &deviceInfoData,
+            SPDRP_FRIENDLYNAME,
+            &nameType,
+            reinterpret_cast<PBYTE>(deviceNameBuffer),
+            sizeof(deviceNameBuffer),
+            nullptr
+        )) {
+
+            // Fallback to device description
+            SetupDiGetDeviceRegistryPropertyW(
+                deviceInfoSet,
+                &deviceInfoData,
+                SPDRP_DEVICEDESC,
+                &nameType,
+                reinterpret_cast<PBYTE>(deviceNameBuffer),
+                sizeof(deviceNameBuffer),
+                nullptr
+            );
+        }
+
+        deviceNameBuffer[511] = L'\0';
+
+        wstring wideDeviceName(deviceNameBuffer);
+
+        // Convert COM name to string
+        string portName(
+            widePortName.begin(),
+            widePortName.end()
+        );
+
+        // Arduino filtering
+        if (wideDeviceName.find(L"Arduino") != wstring::npos) {
+            portName += " | Arduino";
+        }
+        // ESP filtering
+        else if (wideDeviceName.find(L"ESP") != wstring::npos) {
+            portName += " | ESP";
+        }
+        // STM filtering
+        else if (wideDeviceName.find(L"STM") != wstring::npos) {
+            portName += " | STM";
+        }
+        // Standard COM
+        else {
+            portName += " | Standard COM";
+        }
+
+        this->availablePorts.push_back(portName);
+    }
+
+    // Release device information list
+    SetupDiDestroyDeviceInfoList(deviceInfoSet);
+
+    return this->availablePorts;
 }
