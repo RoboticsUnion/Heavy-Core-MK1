@@ -19,6 +19,8 @@ using namespace std;
 
 TerminalOUT terminal_out;
 
+bool run = true;
+
 int main()
 {
     UserManager system;
