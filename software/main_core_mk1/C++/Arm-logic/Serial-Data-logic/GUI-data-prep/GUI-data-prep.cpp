@@ -225,7 +225,7 @@ vector<string> DataPrep::read_serial_GUI_code_block() {
             return code_block;
         }
         save_handle(code_block);
-        terminal_out.terminal_custom_output("Codeblock saved to local variable without checking", ansi_color_chart::green);
+        terminal_out.terminal_custom_output("Codeblock saved to local variable checking", ansi_color_chart::green);
         return code_block;
 
 

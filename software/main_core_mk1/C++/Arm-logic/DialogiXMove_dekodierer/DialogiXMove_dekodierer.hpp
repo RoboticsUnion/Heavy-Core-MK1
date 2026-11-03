@@ -14,6 +14,13 @@ class DeCode {
             int Rx;
             int Ry;
             int Rz;
+
+            //bool oldX = false;
+            //bool oldY = false;
+            //bool oldZ = false;
+            //bool oldA = false;
+            //bool oldB = false;
+            //bool oldC = false;
         };
 
         struct ENAM

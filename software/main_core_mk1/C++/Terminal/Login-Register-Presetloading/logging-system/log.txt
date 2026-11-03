@@ -64,3 +64,50 @@
 [01-11-2026 23:52:26] parser function
 [01-11-2026 23:52:26] [DEBUG] split function
 [01-11-2026 23:52:26] [DialogiXMOVE] MOVE-Command
+[03-11-2026 09:45:57] [INFO] Startup terminal function
+[03-11-2026 09:47:22] Connection was successful!
+[03-11-2026 09:47:22] Waiting for Serial BEGINN 
+[03-11-2026 09:54:28] [INFO] Startup terminal function
+[03-11-2026 09:54:35] Connection was successful!
+[03-11-2026 09:54:35] Waiting for Serial BEGINN 
+[03-11-2026 09:55:20] [INFO] Startup terminal function
+[03-11-2026 09:55:27] Connection was successful!
+[03-11-2026 09:55:27] Waiting for Serial BEGINN 
+[03-11-2026 09:55:48] [DEBUG]36
+[03-11-2026 09:55:48] Serial BEGINN 
+[03-11-2026 09:55:48] Reading... waiting for END
+[03-11-2026 09:55:48] [DEBUG] Line got pushed back: MOVE 12 12 12 90 90 0
+[03-11-2026 09:55:48] Serial END
+[03-11-2026 09:56:05] Validating: MOVE 12 12 12 90 90 0
+[03-11-2026 09:56:05] Saved to 1
+[03-11-2026 09:56:05] parser function
+[03-11-2026 09:56:05] [DEBUG] split function
+[03-11-2026 09:56:05] [DialogiXMOVE] MOVE-Command
+[03-11-2026 09:57:09] [INFO] Startup terminal function
+[03-11-2026 09:59:17] Connection was successful!
+[03-11-2026 09:59:17] Waiting for Serial BEGINN 
+[03-11-2026 09:59:19] [DEBUG]105
+[03-11-2026 09:59:19] Serial BEGINN 
+[03-11-2026 09:59:19] Reading... waiting for END
+[03-11-2026 09:59:19] [DEBUG] Line got pushed back: MOVE 12 12 12 90 90 0
+[03-11-2026 09:59:19] [DEBUG] Line got pushed back: MOVE 12 12 12 90 90 0
+[03-11-2026 09:59:19] [DEBUG] Line got pushed back: MOVE 12 12 12 90 90 0
+[03-11-2026 09:59:19] [DEBUG] Line got pushed back: MOVE 12 12 12 90 90 0
+[03-11-2026 09:59:19] Serial END
+[03-11-2026 09:59:22] Validating: MOVE 12 12 12 90 90 0
+[03-11-2026 09:59:22] Validating: MOVE 12 12 12 90 90 0
+[03-11-2026 09:59:22] Validating: MOVE 12 12 12 90 90 0
+[03-11-2026 09:59:22] Validating: MOVE 12 12 12 90 90 0
+[03-11-2026 09:59:22] Saved to 1
+[03-11-2026 09:59:22] parser function
+[03-11-2026 09:59:22] [DEBUG] split function
+[03-11-2026 09:59:22] [DialogiXMOVE] MOVE-Command
+[03-11-2026 09:59:22] parser function
+[03-11-2026 09:59:22] [DEBUG] split function
+[03-11-2026 09:59:22] [DialogiXMOVE] MOVE-Command
+[03-11-2026 09:59:22] parser function
+[03-11-2026 09:59:22] [DEBUG] split function
+[03-11-2026 09:59:22] [DialogiXMOVE] MOVE-Command
+[03-11-2026 09:59:22] parser function
+[03-11-2026 09:59:22] [DEBUG] split function
+[03-11-2026 09:59:22] [DialogiXMOVE] MOVE-Command
