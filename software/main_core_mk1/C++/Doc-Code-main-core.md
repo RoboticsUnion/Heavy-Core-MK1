@@ -1,4 +1,5 @@
 # Heavy Core mk1 — C++ Codebase Guide
+###### `This dok was written by chatgpt with in the prompt the infos.`
 
 This document is a developer guide for the **Heavy Core mk1** project. It explains the current C++ modules, their public functions, how to use them, and how to investigate common problems.
 
@@ -1103,3 +1104,5 @@ Heavy Core mk1 is intended to control physical robotic hardware. A command that 
 Before enabling physical movement, the control pipeline should include independent validation of joint and Cartesian limits, speed and acceleration limits, communication timeouts, and hardware state. Provide a physical emergency-stop mechanism that does not depend on the GUI or the normal command-processing loop. Test new command paths with motor power disabled or in a controlled, low-risk setup before testing them on an operating mechanism.
 
 The decoder is only a text-to-data conversion stage. It must never be treated as the safety system.
+
+###### `This dok was written by chatgpt with in the prompt the infos.`

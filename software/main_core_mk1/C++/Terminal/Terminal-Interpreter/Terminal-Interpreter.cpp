@@ -6,21 +6,22 @@
 #include <functional>
 #include <list>
 
-void output(std::string output)
+void TerminalInterpreter::output(std::string output)
 {
     TerminalOUT terminalOut;
     terminalOut.terminal_custom_output(output, ansi_color_chart::white);
 }
 
-void test(std::list<std::string> arguments)
-{
-    output("test");
-}
+//void TerminalInterpreter::test(std::list<std::string> arguments)
+//{
+//    output("test");
+//}
 
 std::list<std::string> arguments;
 
 std::unordered_map<std::string, std::function<void(std::list<std::string>)>> commands = {
-    {"test", test}};
+    {}
+};
 
 std::string formater(std::string input)
 {
