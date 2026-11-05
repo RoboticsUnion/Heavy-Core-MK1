@@ -29,3 +29,4 @@ wrong_pas -Wrong password pleas retry or delete acc and create a new one.
 !CMND_EX -Unknown command name. Pleas check  if your code matches the coding guidlines.
 SYNTER_ARGS -Syntax Error: Arguments do not match requirements.
 DiXM_ER_!cm -DialogiXMove error the command does not exist. This could be an code error. Or the command was empty.
+!comm_exist_ln -Unknown command name. Pleas check if the code matches the coding guidlines.
