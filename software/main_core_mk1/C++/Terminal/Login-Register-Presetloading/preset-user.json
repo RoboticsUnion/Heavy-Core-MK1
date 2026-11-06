@@ -18,6 +18,25 @@
                 "standard_l5_lenght": 210,
                 "standard_l6_lenght": 210
             }
+        },
+        "user": {
+            "created_at": "07-11-2026 00:57:35",
+            "password": "User1234",
+            "presets": {
+                "axis_1_speed": 50,
+                "axis_2_speed": 50,
+                "axis_3_speed": 50,
+                "axis_4_speed": 50,
+                "axis_5_speed": 50,
+                "axis_6_speed": 50,
+                "product": "####",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
         }
     }
 }

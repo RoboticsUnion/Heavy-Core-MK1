@@ -19,10 +19,6 @@
 
 using namespace std;
 
-Serial serial;
-
-TerminalOUT terminal_out;
-
 bool data_send_back::send_data_back_GUI(string contents){
     if(serial.m_hSerialGUI == INVALID_HANDLE_VALUE){
         terminal_out.terminal_custom_output(terminal_out.terminal_error_output("INVALID_GUI_HANDLE"), ansi_color_chart::red);

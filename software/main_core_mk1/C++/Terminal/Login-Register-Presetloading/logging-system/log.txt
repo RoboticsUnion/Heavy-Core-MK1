@@ -111,3 +111,6 @@
 [03-11-2026 09:59:22] parser function
 [03-11-2026 09:59:22] [DEBUG] split function
 [03-11-2026 09:59:22] [DialogiXMOVE] MOVE-Command
+[07-11-2026 00:43:07] [INFO] Startup terminal function
+[07-11-2026 00:57:11] [INFO] Startup terminal function
+[07-11-2026 00:57:35] [INFO] login register

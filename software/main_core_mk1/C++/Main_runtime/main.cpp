@@ -11,6 +11,8 @@
 #include "../Terminal/Login-Register-Presetloading/usr-manager/usr-manager.hpp"
 #include "../Terminal/Login-Register-Presetloading/logging-system/logging-system.hpp"
 #include "../Arm-logic/DialogiXMove_dekodierer/DialogiXMove_dekodierer.hpp"
+#include "../Arm-logic/Serial-Data-logic/Data-send-back/Data-send-back.hpp"
+#include "../Arm-logic/Serial-Data-logic/read-serial-con1-2/read-serial-con1-2.hpp"
 
 #include <windows.h>
 

@@ -17,7 +17,7 @@
 #include <iterator>
 #include <unordered_map>
 
-data_read_back data_rd_bck;
+data_read_back data_rd_b;
 
 using namespace std;
 
@@ -127,6 +127,7 @@ namespace  {
                 if(!success){
                     DWORD error = GetLastError();
                     logger.log_to("[ERROR] " + to_string(error));
+                    print_error("!READING_CON1_2_HANDLE");
                     return {};
                 }
                 incoming_data_handler(success, bytesRead, buffer, data_rd_b.current_line);
@@ -139,7 +140,7 @@ namespace  {
         logger.log_to("Serial BEGINN ");
 
     // Keep only non-empty payload lines; protocol markers are excluded.
-    vector<string> code_block;
+    vector<string> incoming_blk;
 
     terminal_out.terminal_custom_output("Reading... waiting for END", ansi_color_chart::white);
     logger.log_to("Reading... waiting for END");
@@ -159,19 +160,21 @@ namespace  {
             if(!success) {
                 DWORD error = GetLastError();
                 logger.log_to("[ERROR] " + to_string(error));
+                print_error("!READING_CON1_2_HANDLE");
                 return {};
             }
             incoming_data_handler(success, bytesRead, buffer, data_rd_b.current_line);
                 
         }
         if (!line.empty() && line != "END") {
-            code_block.push_back(line);
+            incoming_blk.push_back(line);
             logger.log_to("[DEBUG] Line got pushed back: " + line);
         }
     } while(line != "END");
 
     terminal_out.terminal_custom_output("Serial END", ansi_color_chart::green);
     logger.log_to("Serial END");
+    return incoming_blk;
     }
 
 }
