@@ -30,3 +30,9 @@ wrong_pas -Wrong password pleas retry or delete acc and create a new one.
 SYNTER_ARGS -Syntax Error: Arguments do not match requirements.
 DiXM_ER_!cm -DialogiXMove error the command does not exist. This could be an code error. Or the command was empty.
 !comm_exist_ln -Unknown command name. Pleas check if the code matches the coding guidlines.
+INVALID_GUI_HANDLE -Serial GUI handle value is invalid pleas try again or read the debugg guidline.
+INVALID_CON1_HANDLE -Serial controler 1 handle value is invalid pleas try again or read the debugg guidline.
+INVALID_CON2_HANDLE -Serial controler 2 handle value is invalid pleas try again or read the debugg guidline.
+!WRITING_GUI -Could not write to GUI pleas check conection.
+!WRITING_CON1 -Could not write to CON1 pleas check conection.
+!WRITING_CON2 -Could not write to CON2 pleas check conection.
