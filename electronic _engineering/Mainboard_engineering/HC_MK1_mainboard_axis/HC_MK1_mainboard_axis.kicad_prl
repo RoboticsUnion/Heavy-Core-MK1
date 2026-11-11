@@ -60,7 +60,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "Breakout_bord_sensor.kicad_prl",
+    "filename": "HC_MK1_mainboard_axis.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {

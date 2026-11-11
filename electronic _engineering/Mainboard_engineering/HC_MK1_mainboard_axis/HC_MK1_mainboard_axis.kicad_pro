@@ -250,7 +250,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Breakout_bord_sensor.kicad_pro",
+    "filename": "HC_MK1_mainboard_axis.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -408,6 +408,11 @@
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "58feb867-5c3e-4ba3-a657-c65080efafcf",
+      "Root"
+    ]
+  ],
   "text_variables": {}
 }
