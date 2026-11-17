@@ -32,11 +32,7 @@ class DataPrep {
         std::string current_line = ""; //current line of data that is being read from the serial port
 
         const std::unordered_map<std::string, std::regex> COMMAND_GRAMMAR = { //COMMAND list for checking
-<<<<<<< Updated upstream
-            {"HAA",            std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
-=======
             {"HAA",            std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")}, // old unused
->>>>>>> Stashed changes
             {"XSTOPX",         std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
             {"XENDX",          std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
 
@@ -51,9 +47,6 @@ class DataPrep {
     
             {"SINGLE JOINT", std::regex(R"(^\s*MOVE[,\s]+[1-7][,\s]+-?\d+\.?\d*\s*$)")},
     
-<<<<<<< Updated upstream
-            {"DO AGAIN",     std::regex(R"(^.+$)")} 
-=======
             {"REPEAT", std::regex(
                 R"(^\s*REPEAT[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+[,\s]+[1-9]\d*[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+\s*$)"
                 )},
@@ -63,7 +56,6 @@ class DataPrep {
             {"HOME", std::regex(R"(^\s*HOME\[0\s*-\s*6\]\s*$)")}
 
 
->>>>>>> Stashed changes
         };
 
 };
