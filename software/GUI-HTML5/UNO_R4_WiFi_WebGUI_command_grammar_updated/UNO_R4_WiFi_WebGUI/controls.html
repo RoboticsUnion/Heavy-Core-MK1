@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Robotics Union Software ©">
+    <title>Robotics Union Control Software (based on HTML5)</title>
+    
+    <!-- Styling preset-->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="/serial_bridge.js"></script>
+</head>
+<body>
+
+    <div class="button-row">
+        <a href="text-editor.html" class="main-options">Text-Editor</a>
+        <a href="controls.html" class="main-options">Controls</a>
+        <a href="settings.html" class="main-options">Settings</a>
+        <a href="rsd.html" class="main-options">RSD</a>
+        <a href="chamber.html" class="main-options">Chamber</a>
+        <a href="Main_page.html" class="main-options">Main Page</a>
+    </div>
+
+    <h1 class="titels">Manual Robot Control</h1>
+
+    <div class="control-container">
+        <h3 class="undertitle_text">Program & Safety</h3>
+        <div class="control-group">
+            <button class="cmd-btn_send-command" data-cmd="XSTOPX" style="background-color: red; color: #000;">EMERGENCY STOP</button>
+            <button class="cmd-btn_send-command" data-cmd="XENDX">End Program</button>
+        </div>
+
+        <h3 class="undertitle_text">Axis & Motor Control</h3>
+        <div class="control-group" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <label for="axis-target" class="normal_text">Target axes:</label>
+            <select id="axis-target" class="main-options" style="width:auto;">
+                <option value="ALL">ALL</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                <option value="1,2">1,2</option><option value="1,2,3">1,2,3</option>
+                <option value="4,5,6">4,5,6</option>
+            </select>
+            <button class="main-options axis-command" data-axis-command="ENAM">Enable Motors</button>
+            <button class="main-options axis-command" data-axis-command="DISM">Disable Motors</button>
+            <button class="main-options axis-command" data-axis-command="ENAC">Enable Controllers</button>
+            <button class="main-options axis-command" data-axis-command="DISC">Disable Controllers</button>
+        </div>
+
+        <div class="control-group" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:12px;">
+            <label for="home-target" class="normal_text">Home selection:</label>
+            <select id="home-target" class="main-options" style="width:auto;">
+                <option value="0">0 (all, if supported by controller)</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+            </select>
+            <button id="send-home" class="main-options">Send HOME</button>
+        </div>
+
+        <h2 class="undertitle_text">Motion Control</h2>
+        <p class="normal_text">MOVE requires six numeric values in the order X Y Z Rx Ry Rz.</p>
+        <div class="control-group" style="display:flex; gap:10px; flex-wrap:wrap;">
+            <label class="normal_text">X <input id="move-x" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Y <input id="move-y" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Z <input id="move-z" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Rx <input id="move-rx" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Ry <input id="move-ry" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Rz <input id="move-rz" type="number" step="any" required style="width:90px;"></label>
+            <button id="send-move" class="main-options">Send MOVE</button>
+        </div>
+
+        <h3 class="undertitle_text">Single Joint Movement</h3>
+        <div class="control-group" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <label for="joint-target" class="normal_text">Joint:</label>
+            <select id="joint-target" class="main-options" style="width:auto;">
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option>
+            </select>
+            <label for="joint-value" class="normal_text">Target value:</label>
+            <input id="joint-value" type="number" step="any" style="width:120px;">
+            <button id="send-single-joint" class="main-options">Send Joint Move</button>
+        </div>
+
+        <h3 class="undertitle_text">Repeat Movement</h3>
+        <p class="normal_text">Six initial values, repetition count, then change X, Y and Z. The values in the current grammar are integers.</p>
+        <div class="control-group" style="display:flex; gap:8px; flex-wrap:wrap;">
+            <label class="normal_text">X <input id="repeat-x" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Y <input id="repeat-y" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Z <input id="repeat-z" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Rx <input id="repeat-rx" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Ry <input id="repeat-ry" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Rz <input id="repeat-rz" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Count <input id="repeat-count" type="number" min="1" step="1" style="width:76px;"></label>
+            <label class="normal_text">ΔX <input id="repeat-dx" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">ΔY <input id="repeat-dy" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">ΔZ <input id="repeat-dz" type="number" step="1" style="width:76px;"></label>
+            <button id="send-repeat" class="main-options">Send REPEAT</button>
+        </div>
+
+        <h3 class="undertitle_text">Motion Settings</h3>
+        <div class="control-group" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <select id="setting-name" class="main-options" style="width:auto;">
+                <option value="SPEED">SPEED</option><option value="ACCEL">ACCEL</option><option value="DECEL">DECEL</option>
+            </select>
+            <input id="setting-value" type="number" min="1" max="100" step="1" value="50" style="width:100px;">
+            <button id="send-setting" class="main-options">Send SET</button>
+        </div>
+
+        <p class="normal_text" style="margin-top:15px;">Check the target values and keep the robot's movement area clear before sending motion commands.</p>
+    </div>
+    <!-- Statusanzeige für die USB-Verbindung -->
+    <p id="response" class="normal_text" style="color: grey; margin-top: 20px; ">Status: Not Connected</p>
+
+    <!-- JavaScript für die serielle USB-Übertragung -->
+    <script>
+
+let port = null;
+let writer = null;
+let reader = null;
+
+
+// ============================================================
+// SERIAL VERBINDUNG
+// ============================================================
+
+async function connectSerial() {
+
+    const statusText = document.getElementById('response');
+
+    if (!("serial" in navigator)) {
+        statusText.innerText = "Status: Web Serial is not supported!";
+        statusText.style.color = "red";
+        return false;
+    }
+
+    if (port) {
+        return true;
+    }
+
+    try {
+
+        statusText.innerText = "Status: Please select your COM-Port...";
+        statusText.style.color = "orange";
+
+        port = await navigator.serial.requestPort();
+
+        await port.open({
+            baudRate: 115200
+        });
+
+        const textEncoder = new TextEncoderStream();
+
+        textEncoder.readable.pipeTo(port.writable);
+
+        writer = textEncoder.writable.getWriter();
+
+
+        // ----------------------------------------------------
+        // READER STARTEN
+        // ----------------------------------------------------
+
+        startSerialReader();
+
+
+        statusText.innerText = "Status: Connected to Robot!";
+        statusText.style.color = "green";
+
+        return true;
+
+    }
+    catch (error) {
+
+        console.error(error);
+
+        port = null;
+        writer = null;
+
+        statusText.innerText =
+            "Connection Error: " + error.message;
+
+        statusText.style.color = "red";
+
+        return false;
+    }
+}
+
+
+// ============================================================
+// SERIAL READER
+// ============================================================
+
+async function startSerialReader() {
+
+    if (!port || !port.readable) {
+        return;
+    }
+
+    const decoder = new TextDecoderStream();
+
+    port.readable.pipeTo(decoder.writable);
+
+    reader = decoder.readable.getReader();
+
+
+    let buffer = "";
+
+
+    try {
+
+        while (true) {
+
+            const { value, done } = await reader.read();
+
+            if (done) {
+                break;
+            }
+
+            if (value) {
+
+                buffer += value;
+
+                let lines = buffer.split("\n");
+
+                buffer = lines.pop();
+
+
+                for (let line of lines) {
+
+                    line = line.trim();
+
+                    if (line.length > 0) {
+
+                        console.log("ARDUINO -> WEB:", line);
+
+                        handleArduinoResponse(line);
+                    }
+                }
+            }
+        }
+
+    }
+    catch (error) {
+
+        console.error(
+            "Serial reader error:",
+            error
+        );
+    }
+}
+
+
+// ============================================================
+// ARDUINO ANTWORT VERARBEITEN
+// ============================================================
+
+function handleArduinoResponse(response) {
+
+    const statusText =
+        document.getElementById('response');
+
+
+    // --------------------------------------------------------
+    // NORMALE OK ANTWORT
+    // --------------------------------------------------------
+
+    if (response.startsWith("OK:")) {
+
+        statusText.innerText =
+            "Robot: " + response;
+
+        statusText.style.color = "green";
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // SENSOR DATEN
+    // --------------------------------------------------------
+
+    if (response.startsWith("AXIS:")) {
+
+        console.log(
+            "Sensor data received:",
+            response
+        );
+
+        statusText.innerText =
+            "Sensor: " + response;
+
+        statusText.style.color = "green";
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // CHAMBER TEMPERATUR
+    // --------------------------------------------------------
+
+    if (response.startsWith("CHAMBER TEMP:")) {
+
+        statusText.innerText =
+            "Chamber Temperature: " +
+            response.substring(14);
+
+        statusText.style.color = "green";
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // CHAMBER HUMIDITY
+    // --------------------------------------------------------
+
+    if (response.startsWith("CHAMBER HUM:")) {
+
+        statusText.innerText =
+            "Chamber Humidity: " +
+            response.substring(12);
+
+        statusText.style.color = "green";
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // CHAMBER PRESSURE
+    // --------------------------------------------------------
+
+    if (response.startsWith("CHAMBER PRESS:")) {
+
+        statusText.innerText =
+            "Chamber Pressure: " +
+            response.substring(14);
+
+        statusText.style.color = "green";
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // CONTROLLER TEMPERATURE
+    // --------------------------------------------------------
+
+    if (response.startsWith("CHAMBER CONTROLER TEMP:")) {
+
+        statusText.innerText =
+            "Controller Temperature: " +
+            response.substring(23);
+
+        statusText.style.color = "green";
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // UNKNOWN
+    // --------------------------------------------------------
+
+    if (response.startsWith("UNKNOWN:")) {
+
+        statusText.innerText =
+            "Robot: Unknown command";
+
+        statusText.style.color = "red";
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // SONSTIGE ANTWORT
+    // --------------------------------------------------------
+
+    statusText.innerText =
+        "Robot: " + response;
+}
+
+
+// ============================================================
+// BEFEHL SENDEN
+// ============================================================
+
+async function sendCommand(command) {
+
+    const statusText =
+        document.getElementById('response');
+
+
+    const connected =
+        await connectSerial();
+
+    if (!connected) {
+        return;
+    }
+
+
+    if (!writer) {
+
+        statusText.innerText =
+            "Transmission Error: Serial writer unavailable";
+
+        statusText.style.color = "red";
+
+        return;
+    }
+
+
+    try {
+
+        console.log(
+            "WEB -> ARDUINO:",
+            command
+        );
+
+
+        await writer.write(
+            command + "\n"
+        );
+
+
+        statusText.innerText =
+            `Status: Sent "${command}"`;
+
+        statusText.style.color =
+            "green";
+
+    }
+    catch (error) {
+
+        console.error(error);
+
+        statusText.innerText =
+            "Transmission Error: " +
+            error.message;
+
+        statusText.style.color =
+            "red";
+    }
+}
+
+
+// ============================================================
+// ALLE COMMAND-BUTTONS
+// ============================================================
+//
+// WICHTIG:
+// Wir nehmen jetzt BEIDE Klassen.
+//
+// .send-command
+// .cmd-btn_send-command
+//
+// Dadurch funktionieren auch die System Commands.
+// ============================================================
+
+const commandButtons =
+    document.querySelectorAll(
+        '.send-command, .cmd-btn_send-command'
+    );
+
+
+commandButtons.forEach(button => {
+
+    button.addEventListener(
+        'click',
+        async () => {
+
+            const command =
+                button.getAttribute('data-cmd');
+
+            if (!command) {
+
+                console.error(
+                    "Button has no data-cmd!"
+                );
+
+                return;
+            }
+
+            await sendCommand(command);
+        }
+    );
+
+});
+
+
+
+
+
+
+
+
+// Build command arguments exactly as defined by the C++ command grammar.
+document.querySelectorAll('.axis-command').forEach(button => {
+    button.addEventListener('click', () => {
+        const target = document.getElementById('axis-target').value;
+        sendCommand(`${button.dataset.axisCommand} ${target}`);
+    });
+});
+
+document.getElementById('send-home').addEventListener('click', () => {
+    const target = document.getElementById('home-target').value;
+    sendCommand(`HOME[${target}]`);
+});
+
+document.getElementById('send-move').addEventListener('click', () => {
+    const ids = ['move-x', 'move-y', 'move-z', 'move-rx', 'move-ry', 'move-rz'];
+    const values = ids.map(id => document.getElementById(id).value.trim());
+    if (values.some(value => value === '' || !Number.isFinite(Number(value)))) {
+        document.getElementById('response').innerText = 'Enter all six numeric MOVE values.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    sendCommand(`MOVE ${values.join(' ')}`);
+});
+
+document.getElementById('send-single-joint').addEventListener('click', () => {
+    const axis = document.getElementById('joint-target').value;
+    const value = document.getElementById('joint-value').value.trim();
+    if (value === '' || !Number.isFinite(Number(value))) {
+        document.getElementById('response').innerText = 'Enter a numeric joint target value.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    sendCommand(`SINGLE JOINT MOVE ${axis} ${value}`);
+});
+
+document.getElementById('send-repeat').addEventListener('click', () => {
+    const ids = ['repeat-x', 'repeat-y', 'repeat-z', 'repeat-rx', 'repeat-ry', 'repeat-rz', 'repeat-count', 'repeat-dx', 'repeat-dy', 'repeat-dz'];
+    const values = ids.map(id => document.getElementById(id).value.trim());
+    const numbers = values.map(Number);
+    if (values.some(value => value === '' || !Number.isFinite(Number(value)) || !Number.isInteger(Number(value)))) {
+        document.getElementById('response').innerText = 'Enter all ten REPEAT values as integers.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    if (numbers[6] < 1) {
+        document.getElementById('response').innerText = 'REPEAT count must be at least 1.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    sendCommand(`REPEAT ${values.join(' ')}`);
+});
+
+document.getElementById('send-setting').addEventListener('click', () => {
+    const setting = document.getElementById('setting-name').value;
+    const valueText = document.getElementById('setting-value').value.trim();
+    const value = Number(valueText);
+    if (valueText === '' || !Number.isInteger(value) || value < 1 || value > 100) {
+        document.getElementById('response').innerText = 'SET value must be an integer from 1 to 100.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    sendCommand(`SET ${setting}[${value}]`);
+});
+
+</script>
+    
+</body>
+</html>

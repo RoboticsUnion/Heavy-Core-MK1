@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="Author" content="Robotics Union Software ©">
+
+    <title>Robotics Union Control Software (based on HTML5)</title>
+
+    <!-- Styling preset -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="/serial_bridge.js"></script>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <div class="button-row">
+
+        <a href="text-editor.html" class="main-options">
+            Text-Editor
+        </a>
+
+        <a href="controls.html" class="main-options">
+            Controls
+        </a>
+
+        <a href="settings.html" class="main-options">
+            Settings
+        </a>
+
+        <a href="rsd.html" class="main-options">
+            RSD
+        </a>
+
+        <a href="chamber.html" class="main-options">
+            Chamber
+        </a>
+
+        <a href="Main_page.html" class="main-options">
+            Main Page
+        </a>
+
+    </div>
+
+
+    <!-- =========================================================
+         TITLE
+    ========================================================== -->
+
+    <h1 class="titels">
+        Manual Robot Control
+    </h1>
+
+
+    <div class="control-container">
+
+
+        <!-- =====================================================
+             FAN CONTROL
+        ====================================================== -->
+
+        <h3 class="undertitle_text">
+            Fan Control
+        </h3>
+
+
+        <div class="control-group" style="display:flex; gap:15px; margin-bottom:20px; flex-wrap:wrap;">
+            <button class="main-options send-command" data-cmd="CHAMBER FAN ON">Fan On</button>
+            <button class="main-options send-command" data-cmd="CHAMBER FAN OFF">Fan Off</button>
+            <button class="main-options send-command" data-cmd="CHAMBER FAN SPEED+">Speed +</button>
+            <button class="main-options send-command" data-cmd="CHAMBER FAN SPEED-">Speed -</button>
+            <button class="main-options send-command" data-cmd="CHAMBER FAN AUTO">Automatic Speed Control</button>
+        </div>
+
+        <!-- =====================================================
+             OTHER CHAMBER CONTROLS
+        ====================================================== -->
+
+        <h3 class="undertitle_text">
+            Other Chamber Controls
+        </h3>
+
+
+        <div
+            class="control-group"
+            style="display: flex; gap: 15px; margin-bottom: 20px;"
+        >
+
+            <button
+                class="main-options send-command"
+                data-cmd="CHAMBER LIGHTS ON"
+            >
+                Lights On
+            </button>
+
+
+            <button
+                class="main-options send-command"
+                data-cmd="CHAMBER LIGHTS OFF"
+            >
+                Lights Off
+            </button>
+
+
+            <button
+                class="main-options send-command"
+                data-cmd="CHAMBER PSU OFF"
+            >
+                Power down PSU
+            </button>
+
+
+            <button
+                class="main-options send-command"
+                data-cmd="CHAMBER PSU ON"
+            >
+                Power up PSU
+            </button>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             SENSOR READINGS
+        ====================================================== -->
+
+        <h2 class="undertitle_text">
+            Sensor Readings
+        </h2>
+
+
+        <div
+            class="control-group"
+            style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;"
+        >
+
+            <!-- TEMPERATURE -->
+
+            <button
+                class="main-options send-command"
+                data-cmd="CHAMBER READ - TEMP"
+            >
+                Read Temperature ONLY AIR
+            </button>
+
+
+            <!-- HUMIDITY -->
+
+            <button
+                class="main-options send-command"
+                data-cmd="CHAMBER READ - HUM"
+            >
+                Read Humidity
+            </button>
+
+
+            <!-- PRESSURE -->
+
+            <button
+                class="main-options send-command"
+                data-cmd="CHAMBER READ - PRESS"
+            >
+                Read Pressure
+            </button>
+
+
+            <!-- CONTROLLER TEMPERATURE -->
+
+            <button
+                class="main-options send-command"
+                data-cmd="CHAMBER READ - CONTROLER TEMP"
+            >
+                Read Controller Temperature
+            </button>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             SENSOR DATA
+        ====================================================== -->
+
+        <h2 class="undertitle_text">
+            Chamber Data
+        </h2>
+
+
+        <div class="axis-grid">
+
+
+            <!-- AIR TEMPERATURE -->
+
+            <div class="axis-card">
+
+                <h3>
+                    Air Temperature
+                </h3>
+
+                <div class="data-field">
+
+                    Temperature:
+                    <span id="chamber-temp">
+                        ---
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HUMIDITY -->
+
+            <div class="axis-card">
+
+                <h3>
+                    Humidity
+                </h3>
+
+                <div class="data-field">
+
+                    Humidity:
+                    <span id="chamber-hum">
+                        ---
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRESSURE -->
+
+            <div class="axis-card">
+
+                <h3>
+                    Pressure
+                </h3>
+
+                <div class="data-field">
+
+                    Pressure:
+                    <span id="chamber-press">
+                        ---
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTROLLER TEMPERATURE -->
+
+            <div class="axis-card">
+
+                <h3>
+                    Controller Temperature
+                </h3>
+
+                <div class="data-field">
+
+                    Temperature:
+                    <span id="chamber-controller-temp">
+                        ---
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================================================
+         CONNECTION STATUS
+    ========================================================== -->
+
+    <p
+        id="response"
+        class="normal_text"
+        style="color: grey; margin-top: 20px;"
+    >
+        Status: Not Connected
+    </p>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+
+        /* =========================================================
+           SERIAL VARIABLES
+        ========================================================== */
+
+        let port = null;
+
+        let writer = null;
+
+        let reader = null;
+
+
+
+        /* =========================================================
+           CONNECT SERIAL
+        ========================================================== */
+
+        async function connectSerial() {
+
+            const statusText =
+                document.getElementById("response");
+
+
+            if (!port) {
+
+                try {
+
+                    statusText.innerText =
+                        "Status: Please select your COM-Port...";
+
+
+                    port =
+                        await navigator.serial.requestPort();
+
+
+                    await port.open({
+                        baudRate: 115200
+                    });
+
+
+                    /* ---------------------------------------------
+                       WRITER
+                    --------------------------------------------- */
+
+                    const textEncoder =
+                        new TextEncoderStream();
+
+
+                    textEncoder.readable.pipeTo(
+                        port.writable
+                    );
+
+
+                    writer =
+                        textEncoder.writable.getWriter();
+
+
+                    /* ---------------------------------------------
+                       START READER
+                    --------------------------------------------- */
+
+                    startSerialReader();
+
+
+                    statusText.innerText =
+                        "Status: Connected to Robot!";
+
+
+                    statusText.style.color =
+                        "green";
+
+
+                    return true;
+
+                }
+
+                catch (error) {
+
+                    statusText.innerText =
+                        "Connection Error: "
+                        + error.message;
+
+
+                    statusText.style.color =
+                        "red";
+
+
+                    return false;
+
+                }
+
+            }
+
+
+            return true;
+
+        }
+
+
+
+        /* =========================================================
+           SERIAL READER
+        ========================================================== */
+
+        async function startSerialReader() {
+
+            if (!port || !port.readable) {
+
+                return;
+
+            }
+
+
+            const textDecoder =
+                new TextDecoderStream();
+
+
+            port.readable.pipeTo(
+                textDecoder.writable
+            );
+
+
+            reader =
+                textDecoder.readable.getReader();
+
+
+            let buffer = "";
+
+
+            try {
+
+                while (true) {
+
+                    const {
+                        value,
+                        done
+                    } = await reader.read();
+
+
+                    if (done) {
+
+                        break;
+
+                    }
+
+
+                    if (value) {
+
+                        buffer += value;
+
+
+                        /*
+                         * Eine Nachricht endet mit \n
+                         */
+
+                        while (buffer.includes("\n")) {
+
+                            const newlineIndex =
+                                buffer.indexOf("\n");
+
+
+                            const line =
+                                buffer
+                                    .substring(
+                                        0,
+                                        newlineIndex
+                                    )
+                                    .trim();
+
+
+                            buffer =
+                                buffer.substring(
+                                    newlineIndex + 1
+                                );
+
+
+                            if (line.length > 0) {
+
+                                handleChamberData(
+                                    line
+                                );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Serial reader error:",
+                    error
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================================================
+           CHAMBER DATA AUSWERTEN
+        ========================================================== */
+
+        function handleChamberData(line) {
+
+            console.log(
+                "Robot -> Web:",
+                line
+            );
+
+
+            /*
+             * -----------------------------------------------------
+             * TEMPERATURE
+             *
+             * Erwartet:
+             *
+             * CHAMBER TEMP:24.6
+             * -----------------------------------------------------
+             */
+
+            if (
+                line.startsWith(
+                    "CHAMBER TEMP:"
+                )
+            ) {
+
+                const value =
+                    line.substring(
+                        "CHAMBER TEMP:".length
+                    );
+
+
+                document.getElementById(
+                    "chamber-temp"
+                ).textContent =
+                    value + " °C";
+
+
+                return;
+
+            }
+
+
+            /*
+             * -----------------------------------------------------
+             * HUMIDITY
+             *
+             * Erwartet:
+             *
+             * CHAMBER HUM:42.3
+             * -----------------------------------------------------
+             */
+
+            if (
+                line.startsWith(
+                    "CHAMBER HUM:"
+                )
+            ) {
+
+                const value =
+                    line.substring(
+                        "CHAMBER HUM:".length
+                    );
+
+
+                document.getElementById(
+                    "chamber-hum"
+                ).textContent =
+                    value + " %";
+
+
+                return;
+
+            }
+
+
+            /*
+             * -----------------------------------------------------
+             * PRESSURE
+             *
+             * Erwartet:
+             *
+             * CHAMBER PRESS:1013.2
+             * -----------------------------------------------------
+             */
+
+            if (
+                line.startsWith(
+                    "CHAMBER PRESS:"
+                )
+            ) {
+
+                const value =
+                    line.substring(
+                        "CHAMBER PRESS:".length
+                    );
+
+
+                document.getElementById(
+                    "chamber-press"
+                ).textContent =
+                    value + " hPa";
+
+
+                return;
+
+            }
+
+
+            /*
+             * -----------------------------------------------------
+             * CONTROLLER TEMPERATURE
+             *
+             * Erwartet:
+             *
+             * CHAMBER CONTROLER TEMP:38.7
+             * -----------------------------------------------------
+             */
+
+            if (
+                line.startsWith(
+                    "CHAMBER CONTROLER TEMP:"
+                )
+            ) {
+
+                const value =
+                    line.substring(
+                        "CHAMBER CONTROLER TEMP:".length
+                    );
+
+
+                document.getElementById(
+                    "chamber-controller-temp"
+                ).textContent =
+                    value + " °C";
+
+
+                return;
+
+            }
+
+
+            /*
+             * -----------------------------------------------------
+             * UNBEKANNTE NACHRICHT
+             * -----------------------------------------------------
+             */
+
+            console.log(
+                "Unknown chamber response:",
+                line
+            );
+
+        }
+
+
+
+        /* =========================================================
+           STANDARD COMMAND BUTTONS
+        ========================================================== */
+
+        const commandButtons =
+            document.querySelectorAll(
+                ".send-command"
+            );
+
+
+        commandButtons.forEach(
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    async () => {
+
+                        const isConnected =
+                            await connectSerial();
+
+
+                        if (!isConnected) {
+
+                            return;
+
+                        }
+
+
+                        const command =
+                            button.getAttribute(
+                                "data-cmd"
+                            );
+
+
+                        try {
+
+                            await writer.write(
+                                command + "\n"
+                            );
+
+
+                            document.getElementById(
+                                "response"
+                            ).innerText =
+                                `Status: Sent "${command}"`;
+
+
+                            document.getElementById(
+                                "response"
+                            ).style.color =
+                                "green";
+
+                        }
+
+                        catch (error) {
+
+                            document.getElementById(
+                                "response"
+                            ).innerText =
+                                "Transmission Error: "
+                                + error.message;
+
+
+                            document.getElementById(
+                                "response"
+                            ).style.color =
+                                "red";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
+

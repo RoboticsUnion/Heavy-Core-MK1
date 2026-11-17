@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Robotics Union Software ©">
+    <title>Robotics Union Control Software (based on HTML5)</title>
+    
+    <!-- Styling preset-->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="/serial_bridge.js"></script>
+</head>
+<body>
+
+    <div class="button-row">
+        <a href="text-editor.html" class="main-options">Text-Editor</a>
+        <a href="controls.html" class="main-options">Controls</a>
+        <a href="settings.html" class="main-options">Settings</a>
+        <a href="rsd.html" class="main-options">RSD</a>
+        <a href="chamber.html" class="main-options">Chamber</a>
+        <a href="Main_page.html" class="main-options">Main Page</a>
+    </div>
+
+    <h1 class="titels">Robotics Union Control Software</h1>
+
+    <h2 class="under_main_titels">Made by Robotics Union Software © </h2>
+    <h2 class="under_main_titels">Version 0.1.1 alpha</h2>
+
+    <h2 class="undertitle_text">Heavy-Core-MK1</h2>
+    <p class="normal_text">Heavy-Core-MK1 is the development of a modular robotic arm platform. The goal is to create a scalable, affordable robotics ecosystem where hardware and software are engineered together from the ground up.
+    The first two axes have already been designed, printed, assembled, and successfully tested. In parallel, we are developing our own control software for precise motion control.</p>
+
+    <h2 class="undertitle_text">Our Vision</h2>
+    <p class="normal_text">We aim to build a 6 DOF robotic arm that:</p>
+    <p class="normal_text"> -&gt; Is upgradeable with interchangeable end-effectors</p>
+    <p class="normal_text"> -&gt; Is structurally optimized for strength-to-weight efficiency</p>
+    <p class="normal_text"> -&gt; Includes a custom-developed control software</p>
+    <p class="normal_text"> -&gt; Allows future automation features</p>
+    <p class="normal_text"> -&gt; Serves as a platform for robotics development</p>
+
+    <h2 class="undertitle_text">Custom Control Software</h2>
+    <p class="normal_text">Our robotic arm will not rely solely on position control. We are developing a control application that will include:</p>
+    <p class="normal_text"> -&gt; Real-Time position feedback</p>
+    <p class="normal_text"> -&gt; Inverse kinematics calculations</p>
+    <p class="normal_text"> -&gt; Intuitive controls</p>
+    <p class="normal_text"> -&gt; Integrated arm simulation to prevent collisions or overload situations</p>
+    <p class="normal_text"> -&gt; Expandable architecture for future features</p>
+    
+    <h2 class="undertitle_text">Current Development Status</h2>
+
+    <p class="normal_text"><strong>Completed:</strong></p>
+    <p class="normal_text"> -&gt; Torque calculations</p>
+    <p class="normal_text"> -&gt; CAD design of Axis 1 and 2</p>
+    <p class="normal_text"> -&gt; Stepper motor integration</p>
+    <p class="normal_text"> -&gt; First tests of the custom designed Gearboxes</p>
+    <p class="normal_text"> -&gt; Functional test of both Axis</p>
+
+    <p class="normal_text"><strong>In Progress:</strong></p>
+    <p class="normal_text"> -&gt; Development of remaining Axis</p>
+    <p class="normal_text"> -&gt; Gearbox optimization</p>
+    <p class="normal_text"> -&gt; Software development</p>
+    <p class="normal_text"> -&gt; Control hardware integration</p>
+
+    <h2 class="undertitle_text">Preliminary Technical Specifications</h2>
+
+    <p class="normal_text"> -&gt; Target DOF: 6 DOF</p>
+    <p class="normal_text"> -&gt; currently functional: 2 DOF</p>
+    <p class="normal_text"> -&gt; Actuators: Stepper motors</p>
+    <p class="normal_text"> -&gt; Structure: Aluminum & PLA (Stronger 3D-printed material planned)</p>
+    <p class="normal_text"> -&gt; Control system: Arduino & ESP32 based</p>
+    <p class="normal_text"> -&gt; Software: Custom standalone desktop or mobile application</p>
+
+    <h2 class="undertitle_text">Development Roadmap</h2>
+    <table class="roadmap-table">
+        <thead>
+            <tr>
+                <th>Phase</th>
+                <th>Description</th>
+                <th>Target</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MK1 Alpha</td>
+                <td>2 DOF mechanical validation, first project showcase</td>
+                <td>Completed</td>
+            </tr>
+            <tr>
+                <td>MK1 Beta</td>
+                <td>4-6 DOF mechanical prototype</td>
+                <td>Q3 2026 (estimated)</td>
+            </tr>
+            <tr>
+                <td>MK1 Software Alpha</td>
+                <td>Basic motion control & UI</td>
+                <td>Q3 2026</td>
+            </tr>
+            <tr>
+                <td>MK1 Integrated Demo</td>
+                <td>Hardware + software functional for demonstration</td>
+                <td>Q1 2027 (January, HTL Open house)</td>
+            </tr>
+            <tr>
+                <td>MK1 Full Prototype</td>
+                <td>Fully functional 6 DOF with software improvements</td>
+                <td>Post Open House (future milestone)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <h2 class="undertitle_text">Code Guidelines</h2>
+
+    <p class="normal_text">
+        The Robotics Union Control Software uses a command-based system
+        to control the robotic arm and its peripheral hardware.
+        Each command has a defined syntax and specific parameters.
+        Commands must follow the specified format to be accepted
+        by the control software.
+    </p>
+
+    <h2 class="undertitle_text">1. Emergency & Program Control</h2>
+
+    <h3 class="undertitle_text">XSTOPX - Emergency Stop</h3>
+    <p class="normal_text">
+        XSTOPX triggers the emergency shutdown function.
+        In an emergency situation, it cuts the power supply to the system.
+        This command is intended for emergency situations only.
+        The emergency shutdown must be supported by an independent
+        hardware safety system.
+    </p>
+    <p class="normal_text"><strong>Syntax:</strong> XSTOPX [optional parameter]</p>
+    <p class="normal_text"><strong>Example:</strong> XSTOPX</p>
+    <p class="normal_text"><strong>Allowed parameters:</strong> #, 1, DUMMY or empty</p>
+
+    <h3 class="undertitle_text">XENDX - Program Shutdown</h3>
+    <p class="normal_text">
+        XENDX provides a controlled way to terminate the running program.
+        Unlike XSTOPX, this command is intended for normal program termination
+        and does not represent an emergency shutdown.
+    </p>
+    <p class="normal_text"><strong>Syntax:</strong> XENDX [optional parameter]</p>
+    <p class="normal_text"><strong>Example:</strong> XENDX</p>
+    <p class="normal_text"><strong>Allowed parameters:</strong> #, 1, DUMMY or empty</p>
+
+    <h2 class="undertitle_text">2. Axis & Motor Control</h2>
+
+    <h3 class="undertitle_text">ENAM - Enable Axis Motors</h3>
+    <p class="normal_text">
+        Enables the motors of the selected axes.
+        The command accepts either ALL or individual axis numbers.
+        Multiple axes can be selected in one command.
+    </p>
+    <p class="normal_text"><strong>Syntax:</strong> ENAM ALL / ENAM 1,2,3</p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">ENAM ALL</p>
+    <p class="normal_text">ENAM 1,2,3</p>
+
+    <h3 class="undertitle_text">DISM - Disable Axis Motors</h3>
+    <p class="normal_text">
+        Disables the motors of the selected axes.
+        Accepts ALL or individual axis numbers from 1 to 6.
+    </p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">DISM ALL</p>
+    <p class="normal_text">DISM 2,4,6</p>
+
+    <h3 class="undertitle_text">ENAC - Enable Axis Cards</h3>
+    <p class="normal_text">
+        Enables the selected axis controller cards.
+        The command accepts ALL or individual axis numbers from 1 to 6.
+    </p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">ENAC ALL</p>
+    <p class="normal_text">ENAC 1,3,5</p>
+
+    <h3 class="undertitle_text">DISC - Disable Axis Cards</h3>
+    <p class="normal_text">
+        Disables the selected axis controller cards.
+        Accepts ALL or individual axis numbers from 1 to 6.
+    </p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">DISC ALL</p>
+    <p class="normal_text">DISC 1,2</p>
+
+    <h2 class="undertitle_text">3. Motion Control</h2>
+
+    <h3 class="undertitle_text">MOVE - Cartesian Movement</h3>
+    <p class="normal_text">
+        MOVE commands the robotic arm to move to a specified target position.
+        It uses six parameters representing the Cartesian position
+        and orientation of the end effector.
+    </p>
+
+    <p class="normal_text"><strong>Parameters:</strong></p>
+    <p class="normal_text">X - Position along the X axis</p>
+    <p class="normal_text">Y - Position along the Y axis</p>
+    <p class="normal_text">Z - Position along the Z axis</p>
+    <p class="normal_text">Rx - Rotation around the X axis</p>
+    <p class="normal_text">Ry - Rotation around the Y axis</p>
+    <p class="normal_text">Rz - Rotation around the Z axis</p>
+
+    <p class="normal_text"><strong>Syntax:</strong> MOVE X Y Z Rx Ry Rz</p>
+    <p class="normal_text"><strong>Example:</strong></p>
+    <p class="normal_text">MOVE 100 200 300 0 90 0</p>
+
+    <h3 class="undertitle_text">SINGLE JOINT - Individual Axis Movement</h3>
+    <p class="normal_text">
+        SINGLE JOINT allows direct movement of one individual joint.
+        It is useful when a specific axis needs to be controlled
+        without defining a complete Cartesian target position.
+    </p>
+    <p class="normal_text"><strong>Full command:</strong> SINGLE JOINT MOVE axis value</p>
+    <p class="normal_text"><strong>Parameters:</strong></p>
+    <p class="normal_text">Axis - Selected joint (1-7)</p>
+    <p class="normal_text">Value - Target movement value</p>
+    <p class="normal_text"><strong>Example:</strong></p>
+    <p class="normal_text">SINGLE JOINT MOVE 1 90</p>
+
+    <h3 class="undertitle_text">REPEAT - Repeated Movement</h3>
+    <p class="normal_text">
+        REPEAT executes a movement sequence a specified number of times.
+        It allows incremental changes to the X, Y and Z coordinates
+        between repetitions.
+        This function is intended for repetitive movement patterns
+        and can serve as a foundation for more advanced movement paths,
+        such as curve generation.
+    </p>
+
+    <p class="normal_text"><strong>Parameters:</strong></p>
+    <p class="normal_text">X - Initial X position</p>
+    <p class="normal_text">Y - Initial Y position</p>
+    <p class="normal_text">Z - Initial Z position</p>
+    <p class="normal_text">Rx - Initial X rotation</p>
+    <p class="normal_text">Ry - Initial Y rotation</p>
+    <p class="normal_text">Rz - Initial Z rotation</p>
+    <p class="normal_text">repeat_nbr - Number of repetitions</p>
+    <p class="normal_text">changex - X coordinate increment per repetition</p>
+    <p class="normal_text">changey - Y coordinate increment per repetition</p>
+    <p class="normal_text">changez - Z coordinate increment per repetition</p>
+
+    <p class="normal_text"><strong>Syntax:</strong></p>
+    <p class="normal_text">
+        REPEAT X Y Z Rx Ry Rz repeat_nbr changex changey changez
+    </p>
+
+    <p class="normal_text"><strong>Example:</strong></p>
+    <p class="normal_text">
+        REPEAT 100 200 300 0 0 0 5 10 0 2
+    </p>
+
+    <p class="normal_text"><strong>Example explanation:</strong></p>
+    <p class="normal_text">
+        The movement sequence is repeated 5 times.
+        Each repetition changes the position by X +10, Y +0 and Z +2.
+        The initial position is X=100, Y=200, Z=300.
+    </p>
+
+    <h2 class="undertitle_text">4. System Configuration</h2>
+
+    <h3 class="undertitle_text">SET - Motion Settings</h3>
+    <p class="normal_text">
+        SET is used to configure motion-related parameters.
+        Values are specified inside square brackets.
+    </p>
+    <p class="normal_text"><strong>Available settings:</strong></p>
+    <p class="normal_text">SPEED[1-100] - Motion speed</p>
+    <p class="normal_text">ACCEL[1-100] - Acceleration</p>
+    <p class="normal_text">DECEL[1-100] - Deceleration</p>
+    <p class="normal_text">HOME[0-6] - HOME-related setting</p>
+
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">SET SPEED[50]</p>
+    <p class="normal_text">SET ACCEL[75]</p>
+    <p class="normal_text">SET DECEL[25]</p>
+    <p class="normal_text">HOME[3]</p>
+
+    <h3 class="undertitle_text">HOME - Homing Command</h3>
+    <p class="normal_text">
+        HOME is a separate command used to initiate a homing operation.
+        It accepts the range 0 to 6, where 0 can represent a homing
+        operation involving all axes, depending on the controller
+        implementation.
+    </p>
+    <p class="normal_text"><strong>Syntax:</strong> HOME[0-6]</p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">HOME[0]</p>
+    <p class="normal_text">HOME[1]</p>
+    <p class="normal_text">HOME[6]</p>
+
+    <h2 class="undertitle_text">5. Chamber Control</h2>
+
+    <h3 class="undertitle_text">CHAMBER - Peripheral Control</h3>
+    <p class="normal_text">
+        CHAMBER controls the peripheral components of the robotic
+        system, including the ventilation fan, lighting and power supply.
+        It also provides access to sensor readings.
+    </p>
+
+    <p class="normal_text"><strong>Fan control:</strong></p>
+    <p class="normal_text">CHAMBER FAN ON - Enables the fan</p>
+    <p class="normal_text">CHAMBER FAN OFF - Disables the fan</p>
+    <p class="normal_text">CHAMBER FAN SPEED+ - Increases fan speed</p>
+    <p class="normal_text">CHAMBER FAN SPEED- - Decreases fan speed</p>
+    <p class="normal_text">CHAMBER FAN AUTO - Enables automatic fan control</p>
+
+    <p class="normal_text"><strong>Lighting:</strong></p>
+    <p class="normal_text">CHAMBER LIGHTS ON - Turns the lights on</p>
+    <p class="normal_text">CHAMBER LIGHTS OFF - Turns the lights off</p>
+
+    <p class="normal_text"><strong>Power supply:</strong></p>
+    <p class="normal_text">CHAMBER PSU ON - Enables the power supply</p>
+    <p class="normal_text">CHAMBER PSU OFF - Disables the power supply</p>
+
+    <p class="normal_text"><strong>Sensor readings:</strong></p>
+    <p class="normal_text">CHAMBER READ - HUM - Reads humidity</p>
+    <p class="normal_text">CHAMBER READ - PRESS - Reads pressure</p>
+    <p class="normal_text">CHAMBER READ - TEMP - Reads temperature</p>
+    <p class="normal_text">CHAMBER READ - CONTROLER TEMP - Reads controller temperature</p>
+
+    <h2 class="undertitle_text">6. Command Syntax & Validation</h2>
+
+    <p class="normal_text">
+        All commands are validated using regular expressions.
+        Invalid commands or incorrectly formatted parameters
+        will not be accepted by the command parser.
+    </p>
+
+    <p class="normal_text">
+        General syntax rules:
+    </p>
+    <p class="normal_text">
+        -&gt; Commands are case-sensitive unless explicitly handled otherwise.
+    </p>
+    <p class="normal_text">
+        -&gt; Parameters must follow the defined command order.
+    </p>
+    <p class="normal_text">
+        -&gt; Multiple axis selections can be separated by commas or spaces.
+    </p>
+    <p class="normal_text">
+        -&gt; Numeric movement values may be positive or negative.
+    </p>
+    <p class="normal_text">
+        -&gt; Decimal values are supported by MOVE commands.
+    </p>
+    <p class="normal_text">
+        -&gt; Commands must match their defined syntax.
+    </p>
+
+
+    
+</body>
+</html>

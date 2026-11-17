@@ -1,13 +1,13 @@
 /*
-  UNO R4 WiFi - HTML_GUI Webserver + USB serial command bridge
+  UNO R4 WiFi - HTML_GUI Webserver + bidirectional USB serial bridge
 
-  - Creates its own Wi-Fi access point (phone/tablet/PC connects to it).
-  - Serves the supplied HTML_GUI pages from flash memory.
-  - Converts the existing website's Web Serial writes into HTTP POST /send.
-  - Forwards each command line to Windows over USB Serial at 115200 baud.
+  - Creates its own Wi-Fi access point.
+  - Serves the HTML_GUI pages from flash memory.
+  - POST /send: forwards browser commands to the PC over USB Serial.
+  - GET /receive: returns bytes received from the PC over USB Serial.
 
-  IMPORTANT: Serial is reserved for application commands. Do not add debug
-  Serial.print/println calls here, otherwise those messages reach the PC app.
+  Serial is the application data channel. Do not add debug Serial.print calls:
+  they would be forwarded to the website as if they were robot responses.
 */
 #include <WiFiS3.h>
 #include <string.h>
@@ -20,8 +20,43 @@ const char AP_PASSWORD[] = "GUIcontrol24"; // WPA2 password: at least 8 characte
 constexpr unsigned long SERIAL_BAUD = 115200;
 constexpr size_t MAX_HTTP_BODY = 8192;
 constexpr size_t MAX_COMMAND_LINE = 511;
+constexpr size_t SERIAL_RX_CAPACITY = 2048;
+constexpr size_t SERIAL_RX_RESPONSE_SIZE = 1024;
 
 WiFiServer server(80);
+
+// Fixed-size ring buffer keeps USB serial input available between HTTP polls.
+static uint8_t serialRxBuffer[SERIAL_RX_CAPACITY];
+static size_t serialRxHead = 0;
+static size_t serialRxTail = 0;
+static size_t serialRxCount = 0;
+static uint32_t serialRxDropped = 0;
+
+static void collectSerialInput() {
+  while (Serial.available() > 0) {
+    int incoming = Serial.read();
+    if (incoming < 0) break;
+
+    if (serialRxCount < SERIAL_RX_CAPACITY) {
+      serialRxBuffer[serialRxHead] = static_cast<uint8_t>(incoming);
+      serialRxHead = (serialRxHead + 1) % SERIAL_RX_CAPACITY;
+      ++serialRxCount;
+    } else {
+      // Preserve queued data and count newer bytes that could not be stored.
+      ++serialRxDropped;
+    }
+  }
+}
+
+static size_t takeSerialInput(uint8_t *destination, size_t maxLength) {
+  size_t copied = 0;
+  while (copied < maxLength && serialRxCount > 0) {
+    destination[copied++] = serialRxBuffer[serialRxTail];
+    serialRxTail = (serialRxTail + 1) % SERIAL_RX_CAPACITY;
+    --serialRxCount;
+  }
+  return copied;
+}
 
 static void sendResponse(WiFiClient &client, int statusCode,
                          const char *statusText, const char *contentType,
@@ -52,6 +87,28 @@ static void serveContent(WiFiClient &client, const char *type,
                reinterpret_cast<const uint8_t *>(content), length);
 }
 
+static void serveSerialReceive(WiFiClient &client) {
+  collectSerialInput();
+
+  uint8_t responseBuffer[SERIAL_RX_RESPONSE_SIZE];
+  size_t responseLength = takeSerialInput(responseBuffer, sizeof(responseBuffer));
+  uint32_t dropped = serialRxDropped;
+  serialRxDropped = 0;
+
+  client.print("HTTP/1.1 200 OK\r\n");
+  client.print("Content-Type: application/octet-stream\r\n");
+  client.print("Content-Length: ");
+  client.print(responseLength);
+  client.print("\r\nX-RX-Dropped: ");
+  client.print(dropped);
+  client.print("\r\nConnection: close\r\nCache-Control: no-store\r\n");
+  client.print("X-Content-Type-Options: nosniff\r\n\r\n");
+
+  if (responseLength > 0) {
+    client.write(responseBuffer, responseLength);
+  }
+}
+
 static void servePage(WiFiClient &client, const char *path) {
   if (strcmp(path, "/") == 0 || strcmp(path, "/Main_page.html") == 0) {
     serveContent(client, "text/html; charset=utf-8", PAGE_MAIN, sizeof(PAGE_MAIN) - 1);
@@ -76,7 +133,7 @@ static void servePage(WiFiClient &client, const char *path) {
   }
 }
 
-// Trims only the outer whitespace. A command is sent as one USB serial line.
+// Trims outer whitespace. A command is forwarded to the PC as one USB line.
 static bool sendCommandLine(char *line, size_t length) {
   while (length > 0 && (line[length - 1] == ' ' || line[length - 1] == '\t' || line[length - 1] == '\r')) {
     --length;
@@ -85,9 +142,8 @@ static bool sendCommandLine(char *line, size_t length) {
   while (first < length && (line[first] == ' ' || line[first] == '\t')) {
     ++first;
   }
-  if (first >= length) return true; // ignore blank lines
+  if (first >= length) return true;
 
-  // Disallow control characters in the payload except ordinary printable text.
   for (size_t i = first; i < length; ++i) {
     unsigned char c = static_cast<unsigned char>(line[i]);
     if (c < 0x20 && c != '\t') return false;
@@ -108,7 +164,6 @@ static bool forwardRequestBody(WiFiClient &client, size_t contentLength) {
   for (size_t i = 0; i < contentLength; ++i) {
     int incoming = client.read();
     if (incoming < 0) {
-      // Stream::read can return -1 while data is momentarily unavailable.
       unsigned long waitStart = millis();
       while (incoming < 0 && client.connected() && millis() - waitStart < 2500) {
         delay(1);
@@ -119,27 +174,18 @@ static bool forwardRequestBody(WiFiClient &client, size_t contentLength) {
 
     char c = static_cast<char>(incoming);
     if (c == '\n') {
-      if (lineOverflow) {
-        valid = false;
-      } else if (!sendCommandLine(line, lineLength)) {
-        valid = false;
-      }
+      if (lineOverflow) valid = false;
+      else if (!sendCommandLine(line, lineLength)) valid = false;
       lineLength = 0;
       lineOverflow = false;
     } else if (c != '\r') {
-      if (lineLength < MAX_COMMAND_LINE) {
-        line[lineLength++] = c;
-      } else {
-        lineOverflow = true;
-      }
+      if (lineLength < MAX_COMMAND_LINE) line[lineLength++] = c;
+      else lineOverflow = true;
     }
   }
 
-  if (lineOverflow) {
-    valid = false;
-  } else if (lineLength > 0 && !sendCommandLine(line, lineLength)) {
-    valid = false;
-  }
+  if (lineOverflow) valid = false;
+  else if (lineLength > 0 && !sendCommandLine(line, lineLength)) valid = false;
   return valid;
 }
 
@@ -180,6 +226,8 @@ static void handleClient(WiFiClient &client) {
     }
   }
 
+  collectSerialInput();
+
   if (method == "POST" && target == "/send") {
     if (contentLength > MAX_HTTP_BODY) {
       sendText(client, 413, "Payload Too Large", "Command payload too large\n");
@@ -188,6 +236,8 @@ static void handleClient(WiFiClient &client) {
       if (ok) sendText(client, 200, "OK", "OK\n");
       else sendText(client, 400, "Bad Request", "Invalid or incomplete command payload\n");
     }
+  } else if (method == "GET" && target == "/receive") {
+    serveSerialReceive(client);
   } else if (method == "GET") {
     servePage(client, target.c_str());
   } else {
@@ -199,13 +249,11 @@ static void handleClient(WiFiClient &client) {
 }
 
 void setup() {
-  // USB serial is the data channel to the Windows C++ program.
   Serial.begin(SERIAL_BAUD);
 
-  // Create a password-protected Wi-Fi network hosted by the UNO R4 WiFi.
   int apStatus = WiFi.beginAP(AP_SSID, AP_PASSWORD);
   if (apStatus != WL_AP_LISTENING) {
-    // Do not print errors on Serial: the PC program expects commands only.
+    // Do not use Serial for diagnostics; it is reserved for application data.
     while (true) delay(1000);
   }
 
@@ -214,6 +262,11 @@ void setup() {
 }
 
 void loop() {
+  collectSerialInput();
+
   WiFiClient client = server.available();
   if (client) handleClient(client);
+
+  // Drain USB input even when no browser is polling at this exact moment.
+  collectSerialInput();
 }

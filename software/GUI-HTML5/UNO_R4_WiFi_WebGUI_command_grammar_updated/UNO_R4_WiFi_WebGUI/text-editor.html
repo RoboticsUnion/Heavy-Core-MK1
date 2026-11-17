@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Robotics Union Software ©">
+    <title>Robotics Union Control Software (based on HTML5)</title>
+    
+    <!-- Styling preset-->
+    <link rel="stylesheet" href="style.css">
+    <script src="/serial_bridge.js"></script>
+</head>
+
+<body>
+
+    <div class="button-row">
+
+        <a href="text-editor.html" class="main-options">
+            Text-Editor
+        </a>
+
+        <a href="controls.html" class="main-options">
+            Controls
+        </a>
+
+        <a href="settings.html" class="main-options">
+            Settings
+        </a>
+
+        <a href="rsd.html" class="main-options">
+            RSD
+        </a>
+
+        <a href="chamber.html" class="main-options">
+            Chamber
+        </a>
+
+        <a href="Main_page.html" class="main-options">
+            Main Page
+        </a>
+
+    </div>
+
+
+    <h2 class="undertitle_text">
+        G-Code Editor
+    </h2>
+
+
+    <!-- =====================================================
+         G-CODE EDITOR
+    ====================================================== -->
+
+    <textarea
+        id="gcode-input"
+        rows="20"
+        style="
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: vertical;
+            border: 2px solid #111111;
+            border-radius: 5px;
+        "
+    ></textarea>
+
+
+    <!-- =====================================================
+         SEND BUTTON
+    ====================================================== -->
+
+    <button
+        id="send-gcode"
+        class="main-options"
+        style="margin-top: 15px; width: auto; padding: 0 20px;"
+    >
+        Send G-Code
+    </button>
+
+
+    <!-- =====================================================
+         SAVE BUTTON
+    ====================================================== -->
+
+    <button
+        id="save-gcode"
+        class="main-options"
+        style="margin-top: 15px; width: auto; padding: 0 20px;"
+    >
+        Save G-Code
+    </button>
+
+
+
+
+    <!-- =====================================================
+         FILE NAME
+    ====================================================== -->
+
+    <input
+        type="text"
+        id="gcode-name"
+        size="10"
+        placeholder="G-Code Name"
+        style="
+            height: 40px;
+            margin-top: 15px;
+            padding: 0 10px;
+            border: 2px solid #111111;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        "
+    >
+
+
+    <!-- =====================================================
+         CLEAR BUTTON
+    ====================================================== -->
+
+    <button
+        id="clear-gcode"
+        class="main-options"
+        style="margin-top: 15px; width: auto; padding: 0 20px;"
+    >
+        Clear G-Code
+    </button>
+
+    <button id="block-execute" class="main-options" style="margin-top: 15px; width: auto; padding: 0 20px;">
+        Block Execute
+    </button>
+
+
+    <!-- =====================================================
+         STATUS
+    ====================================================== -->
+
+    <p
+        id="response"
+        class="normal_text"
+        style="color: grey; margin-top: 5px;"
+    >
+        Status: Not Connected
+    </p>
+
+
+    <p
+        class="normal_text"
+        style="color: grey; margin-top: 5px;"
+    >
+        Note: Please code in DialogiXMove there is no check for correct writing.©
+    </p>
+
+
+
+     <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        let port;
+        let writer;
+        let reader = null;
+        let textEncoder;
+
+
+        /* =====================================================
+           HILFSFUNKTION: PORT ÖFFNEN
+        ====================================================== */
+        async function stelleVerbindungHer(status) {
+            if (!port) {
+                status.innerText = "Status: Warte auf Port-Auswahl...";
+                status.style.color = "orange";
+
+                port = await navigator.serial.requestPort();
+                await port.open({ baudRate: 115200 });
+                
+                // Direkter und stabiler Aufbau des Writers ohne Streams-Pipe
+                textEncoder = new TextEncoder();
+                writer = port.writable.getWriter();
+                startSerialReader(status);
+            }
+        }
+
+
+
+        // Receive newline-delimited status and telemetry lines from the PC.
+        async function startSerialReader(status) {
+            if (!port || !port.readable || reader) return;
+
+            const decoder = new TextDecoderStream();
+            const pipeClosed = port.readable.pipeTo(decoder.writable);
+            pipeClosed.catch(error => console.error("Serial receive stream:", error));
+            reader = decoder.readable.getReader();
+            let buffer = "";
+
+            try {
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (done) break;
+                    if (!value) continue;
+
+                    buffer += value;
+                    const lines = buffer.split("\n");
+                    buffer = lines.pop();
+
+                    for (const rawLine of lines) {
+                        const line = rawLine.trim();
+                        if (!line) continue;
+
+                        console.log("ROBOT -> WEB:", line);
+                        status.innerText = "Robot: " + line;
+                        status.style.color =
+                            line.startsWith("ERR:") || line.startsWith("UNKNOWN:") ? "red" : "green";
+                    }
+                }
+            } catch (error) {
+                console.error("Serial receive error:", error);
+                status.innerText = "Receive Error: " + error.message;
+                status.style.color = "red";
+            } finally {
+                if (reader) {
+                    reader.releaseLock();
+                    reader = null;
+                }
+            }
+        }
+
+        /* =====================================================
+           SEND G-CODE
+        ====================================================== */
+
+        document
+            .getElementById('send-gcode')
+            .addEventListener('click', async () => {
+
+                const status =
+                    document.getElementById('response');
+
+                const gcodeText =
+                    document.getElementById('gcode-input').value;
+
+
+                try {
+
+                    // Nutzt die zentrale Verbindungsfunktion
+                    await stelleVerbindungHer(status);
+
+
+                    status.innerText =
+                        "Status: Sende G-Code...";
+
+                    status.style.color =
+                        "orange";
+
+
+                    // Text in Byte-Array umwandeln und senden
+                    const daten = textEncoder.encode(gcodeText + "\n");
+                    await writer.write(daten);
+
+
+                    status.innerText =
+                        "Status: G-Code erfolgreich gesendet!";
+
+                    status.style.color =
+                        "green";
+
+                }
+
+
+                catch (error) {
+
+                    status.innerText =
+                        "Status Fehler: "
+                        + error.message;
+
+                    status.style.color =
+                        "red";
+
+                }
+
+            });
+
+
+
+        /* =====================================================
+           SAVE G-CODE (Lokal auf PC herunterladen)
+        ====================================================== */
+
+        document
+            .getElementById('save-gcode')
+            .addEventListener('click', () => {
+
+                const gcodeText =
+                    document.getElementById('gcode-input').value;
+
+
+                const fileNameInput =
+                    document.getElementById('gcode-name');
+
+
+                let fileName =
+                    fileNameInput.value.trim();
+
+
+                /* ---------------------------------------------
+                   Prüfen ob ein Dateiname vorhanden ist
+                --------------------------------------------- */
+
+                if (fileName === "") {
+
+                    fileName = "G-Code";
+
+                }
+
+
+                /* ---------------------------------------------
+                   .gcode automatisch hinzufügen
+                --------------------------------------------- */
+
+                if (
+                    !fileName.toLowerCase().endsWith(".gcode")
+                ) {
+
+                    fileName += ".gcode";
+
+                }
+
+
+                /* ---------------------------------------------
+                   Datei erstellen
+                --------------------------------------------- */
+
+                const blob =
+                    new Blob(
+                        [gcodeText],
+                        {
+                            type: "text/plain"
+                        }
+                    );
+
+
+                const downloadURL =
+                    URL.createObjectURL(blob);
+
+
+                /* ---------------------------------------------
+                   Download-Link erstellen
+                --------------------------------------------- */
+
+                const downloadLink =
+                    document.createElement("a");
+
+
+                downloadLink.href =
+                    downloadURL;
+
+
+                downloadLink.download =
+                    fileName;
+
+
+                document.body.appendChild(
+                    downloadLink
+                );
+
+
+                downloadLink.click();
+
+
+                document.body.removeChild(
+                    downloadLink
+                );
+
+
+                URL.revokeObjectURL(
+                    downloadURL
+                );
+
+
+                /* ---------------------------------------------
+                   Status aktualisieren
+                --------------------------------------------- */
+
+                const status =
+                    document.getElementById('response');
+
+
+                status.innerText =
+                    'Status: "' + fileName + '" gespeichert.';
+
+
+                status.style.color =
+                    "green";
+
+            });
+
+
+
+        // Remote SAVE is intentionally not sent: SAVE is not part of the supplied COMMAND_GRAMMAR.
+
+    </script>
+
+
+
+</body>
+</html>
+
