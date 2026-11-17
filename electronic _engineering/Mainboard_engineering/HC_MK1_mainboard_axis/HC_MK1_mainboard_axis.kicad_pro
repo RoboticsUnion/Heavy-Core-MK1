@@ -2,14 +2,6 @@
   "board": {
     "3dviewports": [],
     "design_settings": {
-<<<<<<< Updated upstream
-      "defaults": {},
-      "diff_pair_dimensions": [],
-      "drc_exclusions": [],
-      "rules": {},
-      "track_widths": [],
-      "via_dimensions": []
-=======
       "defaults": {
         "apply_defaults_to_fp_fields": false,
         "apply_defaults_to_fp_shapes": false,
@@ -230,7 +222,6 @@
         }
       ],
       "zones_allow_external_fillets": false
->>>>>>> Stashed changes
     },
     "ipc2581": {
       "dist": "",
@@ -480,11 +471,7 @@
     "classes": [
       {
         "bus_width": 12,
-<<<<<<< Updated upstream
-        "clearance": 0.2,
-=======
         "clearance": 0.25,
->>>>>>> Stashed changes
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -495,12 +482,6 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-<<<<<<< Updated upstream
-        "track_width": 0.2,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "wire_width": 6
-=======
         "track_width": 0.5,
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -515,7 +496,6 @@
         "track_width": 2.5,
         "via_diameter": 1.2,
         "via_drill": 0.6
->>>>>>> Stashed changes
       }
     ],
     "meta": {
@@ -523,23 +503,19 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-<<<<<<< Updated upstream
-    "netclass_patterns": []
-=======
     "netclass_patterns": [
       {
         "netclass": "MOTOR",
         "pattern": "*J2*"
       }
     ]
->>>>>>> Stashed changes
   },
   "pcbnew": {
     "last_paths": {
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "pcb-files/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

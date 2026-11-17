@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-(kicad_pcb (version 20241229) (generator "pcbnew") (generator_version "9.0")
-)
-=======
 (kicad_pcb
 	(version 20241229)
 	(generator "pcbnew")
@@ -45,7 +41,7 @@
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
-			(usegerberextensions no)
+			(usegerberextensions yes)
 			(usegerberattributes yes)
 			(usegerberadvancedattributes yes)
 			(creategerberjobfile yes)
@@ -76,9 +72,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "pcb-files/")
 		)
 	)
 	(net 0 "")
@@ -2387,6 +2383,83 @@
 		(layer "Edge.Cuts")
 		(uuid "773de3d3-5db2-4a40-b0c7-c95e77d61c8f")
 	)
+	(gr_text "IDC"
+		(at 141 92 0)
+		(layer "F.Cu")
+		(uuid "7cc58530-ad0c-45e0-b00d-8ed9108f7d5d")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "15A UL 10A 250V IN OUT"
+		(at 96 59 90)
+		(layer "F.Cu")
+		(uuid "eec81af3-ec9c-42b9-85c5-6db42e5deeb8")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "15A UL 10A 250V IN"
+		(at 96 90.5 90)
+		(layer "F.Cu")
+		(uuid "22fd98e4-cb10-4f38-acf9-4783df3a79d1")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "HCMK1-AXIS-BREAKOUT\nREV 1.0 | 2026-11\nFR-4 | IPC-2221 | Pb-Free\nDESIGNED IN AUSTRIA\n"
+		(at 151.5 67.5 90)
+		(layer "F.Cu")
+		(uuid "ae06ae35-15f9-4706-8aef-a230996db88a")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "TB"
+		(at 153 42 180)
+		(layer "F.Cu")
+		(uuid "0c8ce24a-9e29-409f-946a-d697ecb2c7f3")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "IPC-A-600 Class 2"
+		(at 160 76.5 90)
+		(layer "F.Cu")
+		(uuid "4d747e10-cc65-4d51-8654-ba207fba48ac")
+		(effects
+			(font
+				(size 1 1.5)
+				(thickness 0.1875)
+			)
+			(justify left bottom)
+		)
+	)
 	(segment
 		(start 150.5 74.275)
 		(end 150.5 78.42)
@@ -2917,4 +2990,3 @@
 	)
 	(embedded_fonts no)
 )
->>>>>>> Stashed changes
