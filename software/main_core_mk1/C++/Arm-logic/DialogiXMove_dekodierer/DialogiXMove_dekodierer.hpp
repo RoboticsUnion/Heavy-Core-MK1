@@ -6,6 +6,7 @@
 
 class DeCode {
     public:
+<<<<<<< Updated upstream
         
         struct MOVE{
             int X;
@@ -14,6 +15,29 @@ class DeCode {
             int Rx;
             int Ry;
             int Rz;
+=======
+
+        struct SET {
+            std::string setting;
+            int value;
+        };
+
+        struct HOME {
+            int axis;
+        };
+
+        struct XSTOPX {};
+
+        struct XENDX {};
+        
+        struct MOVE{
+            double X;
+            double Y;
+            double Z;
+            double Rx;
+            double Ry;
+            double Rz;
+>>>>>>> Stashed changes
 
             //bool oldX = false;
             //bool oldY = false;
@@ -79,11 +103,22 @@ class DeCode {
             std::vector<CHAMBER> chamber;
             std::vector<JOINT> joint;
             std::vector<REPEAT> repeat;
+<<<<<<< Updated upstream
+=======
+            std::vector<SET> set;
+            std::vector<HOME> home;
+            std::vector<XSTOPX> xstopx;
+            std::vector<XENDX> xendx;
+>>>>>>> Stashed changes
         };
 
         functions active_functions;
 
+<<<<<<< Updated upstream
         using CommandResult = std::variant< // summ type
+=======
+        using CommandResult = std::variant<
+>>>>>>> Stashed changes
             std::monostate,
             MOVE,
             ENAM,
@@ -92,7 +127,15 @@ class DeCode {
             DISM,
             DISC,
             REPEAT,
+<<<<<<< Updated upstream
             CHAMBER
+=======
+            CHAMBER,
+            SET,
+            HOME,
+            XSTOPX,
+            XENDX
+>>>>>>> Stashed changes
         >;
 
         std::vector<CommandResult> DeCode_code_blk(std::vector<std::string> code_blk);
