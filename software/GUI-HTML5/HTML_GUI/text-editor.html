@@ -92,13 +92,6 @@
     </button>
 
 
-    <button
-        id="save-gcode->PC"
-        class="main-options"
-        style="margin-top: 15px; width: auto; padding: 0 20px;"
-    >
-        Save G-Code to arm
-    </button>
 
 
     <!-- =====================================================
@@ -132,6 +125,10 @@
         style="margin-top: 15px; width: auto; padding: 0 20px;"
     >
         Clear G-Code
+    </button>
+
+    <button id="block-execute" class="main-options" style="margin-top: 15px; width: auto; padding: 0 20px;">
+        Block Execute
     </button>
 
 
@@ -456,6 +453,63 @@
                     "grey";
 
             });
+
+
+            /* =====================================================
+           BLOCK EXECUTE G-CODE
+        ====================================================== */
+        
+        document
+            .getElementById('block-execute')
+            .addEventListener('click', async () => {
+        
+                const status =
+                    document.getElementById('response');
+        
+                const gcodeText =
+                    document.getElementById('gcode-input').value;
+        
+        
+                try {
+        
+                    // Nutzt die zentrale Verbindungsfunktion
+                    await stelleVerbindungHer(status);
+        
+        
+                    status.innerText =
+                        "Status: Sende Block-Execute G-Code...";
+        
+                    status.style.color =
+                        "orange";
+        
+        
+                    // Text in Byte-Array umwandeln und senden
+                    const daten = textEncoder.encode(gcodeText + "\n");
+                    await writer.write(daten);
+        
+        
+                    status.innerText =
+                        "Status: Block-Execute G-Code erfolgreich gesendet!";
+        
+                    status.style.color =
+                        "green";
+        
+                }
+        
+        
+                catch (error) {
+        
+                    status.innerText =
+                        "Status Fehler: "
+                        + error.message;
+        
+                    status.style.color =
+                        "red";
+        
+                }
+        
+            });
+
 
     </script>
 

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Robotics Union - Settings</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="/serial_bridge.js"></script>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<div class="button-row">
+
+    <a href="text-editor.html" class="main-options">
+        Text-Editor
+    </a>
+
+    <a href="controls.html" class="main-options">
+        Controls
+    </a>
+
+    <a href="settings.html" class="main-options">
+        Settings
+    </a>
+
+    <a href="rsd.html" class="main-options">
+        RSD
+    </a>
+
+    <a href="chamber.html" class="main-options">
+        Chamber
+    </a>
+
+    <a href="Main_page.html" class="main-options">
+        Main Page
+    </a>
+
+</div>
+
+
+<!-- Title -->
+<h1 class="titels" id="pageTitle">
+    Settings
+</h1>
+
+<p class="under_main_titels" id="pageSubtitle">
+    Robotics Union Control Software
+</p>
+
+
+<!-- Robot Settings -->
+<div class="settings-section">
+
+    <h3 class="undertitle_text" id="robotSettingsTitle">
+        Robot
+    </h3>
+
+    <table class="settings-table">
+
+        <tr>
+
+            <td id="robotNameText">
+                Robot Name
+            </td>
+
+            <td>
+
+                <input
+                    id="robotName"
+                    class="settings-input"
+                    type="text"
+                    maxlength="30"
+                    placeholder="Robotics Union"
+                >
+
+            </td>
+
+        </tr>
+
+
+    </table>
+
+</div>
+
+
+
+<!-- Configuration -->
+<div class="settings-section">
+
+    <h3 class="undertitle_text" id="configurationTitle">
+        Configuration
+    </h3>
+
+
+    <button
+        id="saveButton"
+        class="settings-save"
+        type="button"
+    >
+        Save Settings
+    </button>
+
+
+    <button
+        id="resetButton"
+        class="settings-save"
+        type="button"
+    >
+        Reset Settings
+    </button>
+
+
+    <p
+        id="statusMessage"
+        class="normal_text"
+    ></p>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   DEFAULT SETTINGS
+   ========================================================= */
+
+const DEFAULT_SETTINGS = {
+
+    robotName: "Robotics Union",
+
+    language: "en",
+
+    autoSave: "yes"
+
+};
+
+
+/* =========================================================
+   HTML ELEMENTS
+   ========================================================= */
+
+const robotName =
+    document.getElementById("robotName");
+
+const language =
+    document.getElementById("language");
+
+const autoSave =
+    document.getElementById("autoSave");
+
+const saveButton =
+    document.getElementById("saveButton");
+
+const resetButton =
+    document.getElementById("resetButton");
+
+const statusMessage =
+    document.getElementById("statusMessage");
+
+
+/* =========================================================
+   LOAD SETTINGS
+   ========================================================= */
+
+function loadSettings() {
+
+    let settings = DEFAULT_SETTINGS;
+
+    const saved =
+        localStorage.getItem(
+            "robotics_union_settings"
+        );
+
+
+    if (saved) {
+
+        try {
+
+            settings = {
+                ...DEFAULT_SETTINGS,
+                ...JSON.parse(saved)
+            };
+
+        } catch (error) {
+
+            settings = DEFAULT_SETTINGS;
+
+        }
+
+    }
+
+
+    robotName.value =
+        settings.robotName;
+
+    language.value =
+        settings.language;
+
+    autoSave.value =
+        settings.autoSave;
+
+
+    updateLanguage();
+
+}
+
+
+/* =========================================================
+   SAVE SETTINGS
+   ========================================================= */
+
+function saveSettings() {
+
+    const settings = {
+
+        robotName:
+            robotName.value.trim() ||
+            "Robotics Union",
+
+        language:
+            language.value,
+
+        autoSave:
+            autoSave.value
+
+    };
+
+
+    localStorage.setItem(
+
+        "robotics_union_settings",
+
+        JSON.stringify(settings)
+
+    );
+
+
+    showStatus(
+        language.value === "de"
+            ? "Einstellungen gespeichert."
+            : "Settings saved."
+    );
+
+}
+
+
+/* =========================================================
+   RESET SETTINGS
+   ========================================================= */
+
+function resetSettings() {
+
+    localStorage.removeItem(
+        "robotics_union_settings"
+    );
+
+
+    robotName.value =
+        DEFAULT_SETTINGS.robotName;
+
+    language.value =
+        DEFAULT_SETTINGS.language;
+
+    autoSave.value =
+        DEFAULT_SETTINGS.autoSave;
+
+
+    updateLanguage();
+
+
+    showStatus(
+        language.value === "de"
+            ? "Einstellungen zurückgesetzt."
+            : "Settings reset."
+    );
+
+}
+
+
+/* =========================================================
+   STATUS MESSAGE
+   ========================================================= */
+
+function showStatus(message) {
+
+    statusMessage.textContent =
+        message;
+
+    statusMessage.style.display =
+        "block";
+
+
+    setTimeout(function () {
+
+        statusMessage.textContent = "";
+
+    }, 2500);
+
+}
+
+
+/* =========================================================
+   LANGUAGE
+   ========================================================= */
+
+function updateLanguage() {
+
+    if (language.value === "de") {
+
+        document.documentElement.lang =
+            "de";
+
+
+        document.title =
+            "Robotics Union - Einstellungen";
+
+
+        document.getElementById(
+            "pageTitle"
+        ).textContent =
+            "Einstellungen";
+
+
+        document.getElementById(
+            "pageSubtitle"
+        ).textContent =
+            "Robotics Union Steuerungssoftware";
+
+
+        document.getElementById(
+            "robotSettingsTitle"
+        ).textContent =
+            "Roboter";
+
+
+        document.getElementById(
+            "robotNameText"
+        ).textContent =
+            "Robotername";
+
+
+        document.getElementById(
+            "languageText"
+        ).textContent =
+            "Sprache";
+
+
+        document.getElementById(
+            "generalSettingsTitle"
+        ).textContent =
+            "Allgemein";
+
+
+        document.getElementById(
+            "autoSaveText"
+        ).textContent =
+            "Einstellungen automatisch speichern";
+
+
+        document.getElementById(
+            "configurationTitle"
+        ).textContent =
+            "Konfiguration";
+
+
+        saveButton.textContent =
+            "Einstellungen speichern";
+
+
+        resetButton.textContent =
+            "Einstellungen zurücksetzen";
+
+
+        autoSave.options[0].text =
+            "Aktiviert";
+
+        autoSave.options[1].text =
+            "Deaktiviert";
+
+    }
+
+    else {
+
+        document.documentElement.lang =
+            "en";
+
+
+        document.title =
+            "Robotics Union - Settings";
+
+
+        document.getElementById(
+            "pageTitle"
+        ).textContent =
+            "Settings";
+
+
+        document.getElementById(
+            "pageSubtitle"
+        ).textContent =
+            "Robotics Union Control Software";
+
+
+        document.getElementById(
+            "robotSettingsTitle"
+        ).textContent =
+            "Robot";
+
+
+        document.getElementById(
+            "robotNameText"
+        ).textContent =
+            "Robot Name";
+
+
+        document.getElementById(
+            "languageText"
+        ).textContent =
+            "Language";
+
+
+        document.getElementById(
+            "generalSettingsTitle"
+        ).textContent =
+            "General";
+
+
+        document.getElementById(
+            "autoSaveText"
+        ).textContent =
+            "Auto Save Settings";
+
+
+        document.getElementById(
+            "configurationTitle"
+        ).textContent =
+            "Configuration";
+
+
+        saveButton.textContent =
+            "Save Settings";
+
+
+        resetButton.textContent =
+            "Reset Settings";
+
+
+        autoSave.options[0].text =
+            "Enabled";
+
+        autoSave.options[1].text =
+            "Disabled";
+
+    }
+
+}
+
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+saveButton.addEventListener(
+    "click",
+    saveSettings
+);
+
+
+resetButton.addEventListener(
+    "click",
+    resetSettings
+);
+
+
+language.addEventListener(
+    "change",
+    function () {
+
+        updateLanguage();
+
+
+        if (autoSave.value === "yes") {
+
+            saveSettings();
+
+        }
+
+    }
+);
+
+
+robotName.addEventListener(
+    "input",
+    function () {
+
+        if (autoSave.value === "yes") {
+
+            saveSettings();
+
+        }
+
+    }
+);
+
+
+autoSave.addEventListener(
+    "change",
+    function () {
+
+        if (autoSave.value === "yes") {
+
+            saveSettings();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+loadSettings();
+
+</script>
+
+</body>
+</html>

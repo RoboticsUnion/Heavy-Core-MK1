@@ -1,9 +1,8 @@
 #pragma once
 #include <Arduino.h>
 
-// Generated from the supplied HTML_GUI website. Keep data in flash.
-
-const char PAGE_MAIN[] PROGMEM = R"GUIHTML(<!DOCTYPE html>
+// Generated from the updated standalone GUI assets.
+const char PAGE_MAIN[] PROGMEM = R"GUIMAIN(<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -112,10 +111,252 @@ const char PAGE_MAIN[] PROGMEM = R"GUIHTML(<!DOCTYPE html>
             </tr>
         </tbody>
     </table>
+
+    
+    <h2 class="undertitle_text">Code Guidelines</h2>
+
+    <p class="normal_text">
+        The Robotics Union Control Software uses a command-based system
+        to control the robotic arm and its peripheral hardware.
+        Each command has a defined syntax and specific parameters.
+        Commands must follow the specified format to be accepted
+        by the control software.
+    </p>
+
+    <h2 class="undertitle_text">1. Emergency & Program Control</h2>
+
+    <h3 class="undertitle_text">XSTOPX - Emergency Stop</h3>
+    <p class="normal_text">
+        XSTOPX triggers the emergency shutdown function.
+        In an emergency situation, it cuts the power supply to the system.
+        This command is intended for emergency situations only.
+        The emergency shutdown must be supported by an independent
+        hardware safety system.
+    </p>
+    <p class="normal_text"><strong>Syntax:</strong> XSTOPX [optional parameter]</p>
+    <p class="normal_text"><strong>Example:</strong> XSTOPX</p>
+    <p class="normal_text"><strong>Allowed parameters:</strong> #, 1, DUMMY or empty</p>
+
+    <h3 class="undertitle_text">XENDX - Program Shutdown</h3>
+    <p class="normal_text">
+        XENDX provides a controlled way to terminate the running program.
+        Unlike XSTOPX, this command is intended for normal program termination
+        and does not represent an emergency shutdown.
+    </p>
+    <p class="normal_text"><strong>Syntax:</strong> XENDX [optional parameter]</p>
+    <p class="normal_text"><strong>Example:</strong> XENDX</p>
+    <p class="normal_text"><strong>Allowed parameters:</strong> #, 1, DUMMY or empty</p>
+
+    <h2 class="undertitle_text">2. Axis & Motor Control</h2>
+
+    <h3 class="undertitle_text">ENAM - Enable Axis Motors</h3>
+    <p class="normal_text">
+        Enables the motors of the selected axes.
+        The command accepts either ALL or individual axis numbers.
+        Multiple axes can be selected in one command.
+    </p>
+    <p class="normal_text"><strong>Syntax:</strong> ENAM ALL / ENAM 1,2,3</p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">ENAM ALL</p>
+    <p class="normal_text">ENAM 1,2,3</p>
+
+    <h3 class="undertitle_text">DISM - Disable Axis Motors</h3>
+    <p class="normal_text">
+        Disables the motors of the selected axes.
+        Accepts ALL or individual axis numbers from 1 to 6.
+    </p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">DISM ALL</p>
+    <p class="normal_text">DISM 2,4,6</p>
+
+    <h3 class="undertitle_text">ENAC - Enable Axis Cards</h3>
+    <p class="normal_text">
+        Enables the selected axis controller cards.
+        The command accepts ALL or individual axis numbers from 1 to 6.
+    </p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">ENAC ALL</p>
+    <p class="normal_text">ENAC 1,3,5</p>
+
+    <h3 class="undertitle_text">DISC - Disable Axis Cards</h3>
+    <p class="normal_text">
+        Disables the selected axis controller cards.
+        Accepts ALL or individual axis numbers from 1 to 6.
+    </p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">DISC ALL</p>
+    <p class="normal_text">DISC 1,2</p>
+
+    <h2 class="undertitle_text">3. Motion Control</h2>
+
+    <h3 class="undertitle_text">MOVE - Cartesian Movement</h3>
+    <p class="normal_text">
+        MOVE commands the robotic arm to move to a specified target position.
+        It uses six parameters representing the Cartesian position
+        and orientation of the end effector.
+    </p>
+
+    <p class="normal_text"><strong>Parameters:</strong></p>
+    <p class="normal_text">X - Position along the X axis</p>
+    <p class="normal_text">Y - Position along the Y axis</p>
+    <p class="normal_text">Z - Position along the Z axis</p>
+    <p class="normal_text">Rx - Rotation around the X axis</p>
+    <p class="normal_text">Ry - Rotation around the Y axis</p>
+    <p class="normal_text">Rz - Rotation around the Z axis</p>
+
+    <p class="normal_text"><strong>Syntax:</strong> MOVE X Y Z Rx Ry Rz</p>
+    <p class="normal_text"><strong>Example:</strong></p>
+    <p class="normal_text">MOVE 100 200 300 0 90 0</p>
+
+    <h3 class="undertitle_text">SINGLE JOINT - Individual Axis Movement</h3>
+    <p class="normal_text">
+        SINGLE JOINT allows direct movement of one individual joint.
+        It is useful when a specific axis needs to be controlled
+        without defining a complete Cartesian target position.
+    </p>
+    <p class="normal_text"><strong>Full command:</strong> SINGLE JOINT MOVE axis value</p>
+    <p class="normal_text"><strong>Parameters:</strong></p>
+    <p class="normal_text">Axis - Selected joint (1-7)</p>
+    <p class="normal_text">Value - Target movement value</p>
+    <p class="normal_text"><strong>Example:</strong></p>
+    <p class="normal_text">SINGLE JOINT MOVE 1 90</p>
+
+    <h3 class="undertitle_text">REPEAT - Repeated Movement</h3>
+    <p class="normal_text">
+        REPEAT executes a movement sequence a specified number of times.
+        It allows incremental changes to the X, Y and Z coordinates
+        between repetitions.
+        This function is intended for repetitive movement patterns
+        and can serve as a foundation for more advanced movement paths,
+        such as curve generation.
+    </p>
+
+    <p class="normal_text"><strong>Parameters:</strong></p>
+    <p class="normal_text">X - Initial X position</p>
+    <p class="normal_text">Y - Initial Y position</p>
+    <p class="normal_text">Z - Initial Z position</p>
+    <p class="normal_text">Rx - Initial X rotation</p>
+    <p class="normal_text">Ry - Initial Y rotation</p>
+    <p class="normal_text">Rz - Initial Z rotation</p>
+    <p class="normal_text">repeat_nbr - Number of repetitions</p>
+    <p class="normal_text">changex - X coordinate increment per repetition</p>
+    <p class="normal_text">changey - Y coordinate increment per repetition</p>
+    <p class="normal_text">changez - Z coordinate increment per repetition</p>
+
+    <p class="normal_text"><strong>Syntax:</strong></p>
+    <p class="normal_text">
+        REPEAT X Y Z Rx Ry Rz repeat_nbr changex changey changez
+    </p>
+
+    <p class="normal_text"><strong>Example:</strong></p>
+    <p class="normal_text">
+        REPEAT 100 200 300 0 0 0 5 10 0 2
+    </p>
+
+    <p class="normal_text"><strong>Example explanation:</strong></p>
+    <p class="normal_text">
+        The movement sequence is repeated 5 times.
+        Each repetition changes the position by X +10, Y +0 and Z +2.
+        The initial position is X=100, Y=200, Z=300.
+    </p>
+
+    <h2 class="undertitle_text">4. System Configuration</h2>
+
+    <h3 class="undertitle_text">SET - Motion Settings</h3>
+    <p class="normal_text">
+        SET is used to configure motion-related parameters.
+        Values are specified inside square brackets.
+    </p>
+    <p class="normal_text"><strong>Available settings:</strong></p>
+    <p class="normal_text">SPEED[1-100] - Motion speed</p>
+    <p class="normal_text">ACCEL[1-100] - Acceleration</p>
+    <p class="normal_text">DECEL[1-100] - Deceleration</p>
+    <p class="normal_text">HOME[0-6] - HOME-related setting</p>
+
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">SET SPEED[50]</p>
+    <p class="normal_text">SET ACCEL[75]</p>
+    <p class="normal_text">SET DECEL[25]</p>
+    <p class="normal_text">HOME[3]</p>
+
+    <h3 class="undertitle_text">HOME - Homing Command</h3>
+    <p class="normal_text">
+        HOME is a separate command used to initiate a homing operation.
+        It accepts the range 0 to 6, where 0 can represent a homing
+        operation involving all axes, depending on the controller
+        implementation.
+    </p>
+    <p class="normal_text"><strong>Syntax:</strong> HOME[0-6]</p>
+    <p class="normal_text"><strong>Examples:</strong></p>
+    <p class="normal_text">HOME[0]</p>
+    <p class="normal_text">HOME[1]</p>
+    <p class="normal_text">HOME[6]</p>
+
+    <h2 class="undertitle_text">5. Chamber Control</h2>
+
+    <h3 class="undertitle_text">CHAMBER - Peripheral Control</h3>
+    <p class="normal_text">
+        CHAMBER controls the peripheral components of the robotic
+        system, including the ventilation fan, lighting and power supply.
+        It also provides access to sensor readings.
+    </p>
+
+    <p class="normal_text"><strong>Fan control:</strong></p>
+    <p class="normal_text">CHAMBER FAN ON - Enables the fan</p>
+    <p class="normal_text">CHAMBER FAN OFF - Disables the fan</p>
+    <p class="normal_text">CHAMBER FAN SPEED+ - Increases fan speed</p>
+    <p class="normal_text">CHAMBER FAN SPEED- - Decreases fan speed</p>
+    <p class="normal_text">CHAMBER FAN AUTO - Enables automatic fan control</p>
+
+    <p class="normal_text"><strong>Lighting:</strong></p>
+    <p class="normal_text">CHAMBER LIGHTS ON - Turns the lights on</p>
+    <p class="normal_text">CHAMBER LIGHTS OFF - Turns the lights off</p>
+
+    <p class="normal_text"><strong>Power supply:</strong></p>
+    <p class="normal_text">CHAMBER PSU ON - Enables the power supply</p>
+    <p class="normal_text">CHAMBER PSU OFF - Disables the power supply</p>
+
+    <p class="normal_text"><strong>Sensor readings:</strong></p>
+    <p class="normal_text">CHAMBER READ - HUM - Reads humidity</p>
+    <p class="normal_text">CHAMBER READ - PRESS - Reads pressure</p>
+    <p class="normal_text">CHAMBER READ - TEMP - Reads temperature</p>
+    <p class="normal_text">CHAMBER READ - CONTROLER TEMP - Reads controller temperature</p>
+
+    <h2 class="undertitle_text">6. Command Syntax & Validation</h2>
+
+    <p class="normal_text">
+        All commands are validated using regular expressions.
+        Invalid commands or incorrectly formatted parameters
+        will not be accepted by the command parser.
+    </p>
+
+    <p class="normal_text">
+        General syntax rules:
+    </p>
+    <p class="normal_text">
+        -&gt; Commands are case-sensitive unless explicitly handled otherwise.
+    </p>
+    <p class="normal_text">
+        -&gt; Parameters must follow the defined command order.
+    </p>
+    <p class="normal_text">
+        -&gt; Multiple axis selections can be separated by commas or spaces.
+    </p>
+    <p class="normal_text">
+        -&gt; Numeric movement values may be positive or negative.
+    </p>
+    <p class="normal_text">
+        -&gt; Decimal values are supported by MOVE commands.
+    </p>
+    <p class="normal_text">
+        -&gt; Commands must match their defined syntax.
+    </p>
+
+
     
 </body>
 </html>
-)GUIHTML";
+)GUIMAIN";
 
 const char PAGE_CONTROLS[] PROGMEM = R"GUICONTROLS(<!DOCTYPE html>
 <html lang="en">
@@ -143,38 +384,89 @@ const char PAGE_CONTROLS[] PROGMEM = R"GUICONTROLS(<!DOCTYPE html>
     <h1 class="titels">Manual Robot Control</h1>
 
     <div class="control-container">
-        
-        <!-- Gruppe 1: System-Befehle -->
-        <h3 class="undertitle_text">System Commands</h3>
+        <h3 class="undertitle_text">Program & Safety</h3>
         <div class="control-group">
-            <button class="cmd-btn_send-command" data-cmd="HAA">Home All Axes</button>
-            <button class="cmd-btn_send-command" data-cmd="ENAM">Enable Motors</button>
-            <button class="cmd-btn_send-command" data-cmd="DISM">Disable Motors</button>
-            <button class="cmd-btn_send-command" data-cmd="ENAC">Enable Axis Controller</button>
-            <button class="cmd-btn_send-command" data-cmd="DISC">Disable Axis Controller</button>
-
+            <button class="cmd-btn_send-command" data-cmd="XSTOPX" style="background-color: red; color: #000;">EMERGENCY STOP</button>
+            <button class="cmd-btn_send-command" data-cmd="XENDX">End Program</button>
         </div>
 
-        <h2 class="undertitle_text">Jogging (Manual Motion)</h2>
-        <div class="jogging-grid">
-            <button class="main-options send-command" data-cmd="MOVE X10">X +10mm</button>
-            <button class="main-options send-command" data-cmd="MOVE X-10">X -10mm</button>
-            <button class="main-options send-command" data-cmd="MOVE Y10">Y +10mm</button>
-            <button class="main-options send-command" data-cmd="MOVE Y-10">Y -10mm</button>
-            <button class="main-options send-command" data-cmd="MOVE Z10">Z +10mm</button>
-            <button class="main-options send-command" data-cmd="MOVE Z-10">Z -10mm</button>
+        <h3 class="undertitle_text">Axis & Motor Control</h3>
+        <div class="control-group" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <label for="axis-target" class="normal_text">Target axes:</label>
+            <select id="axis-target" class="main-options" style="width:auto;">
+                <option value="ALL">ALL</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                <option value="1,2">1,2</option><option value="1,2,3">1,2,3</option>
+                <option value="4,5,6">4,5,6</option>
+            </select>
+            <button class="main-options axis-command" data-axis-command="ENAM">Enable Motors</button>
+            <button class="main-options axis-command" data-axis-command="DISM">Disable Motors</button>
+            <button class="main-options axis-command" data-axis-command="ENAC">Enable Controllers</button>
+            <button class="main-options axis-command" data-axis-command="DISC">Disable Controllers</button>
         </div>
 
-
-
-        <!-- Gruppe 3: Sicherheit -->
-        <h3 class="undertitle_text" style="color: red;">Safety</h3>
-        <div class="control-group">
-            <button class="cmd-btn_send-command" data-cmd="XSTOPX" style="background-color: red; color: rgb(0, 0, 0);">EMERGENCY STOP</button>
+        <div class="control-group" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:12px;">
+            <label for="home-target" class="normal_text">Home selection:</label>
+            <select id="home-target" class="main-options" style="width:auto;">
+                <option value="0">0 (all, if supported by controller)</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+            </select>
+            <button id="send-home" class="main-options">Send HOME</button>
         </div>
 
+        <h2 class="undertitle_text">Motion Control</h2>
+        <p class="normal_text">MOVE requires six numeric values in the order X Y Z Rx Ry Rz.</p>
+        <div class="control-group" style="display:flex; gap:10px; flex-wrap:wrap;">
+            <label class="normal_text">X <input id="move-x" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Y <input id="move-y" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Z <input id="move-z" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Rx <input id="move-rx" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Ry <input id="move-ry" type="number" step="any" required style="width:90px;"></label>
+            <label class="normal_text">Rz <input id="move-rz" type="number" step="any" required style="width:90px;"></label>
+            <button id="send-move" class="main-options">Send MOVE</button>
+        </div>
+
+        <h3 class="undertitle_text">Single Joint Movement</h3>
+        <div class="control-group" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <label for="joint-target" class="normal_text">Joint:</label>
+            <select id="joint-target" class="main-options" style="width:auto;">
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option>
+            </select>
+            <label for="joint-value" class="normal_text">Target value:</label>
+            <input id="joint-value" type="number" step="any" style="width:120px;">
+            <button id="send-single-joint" class="main-options">Send Joint Move</button>
+        </div>
+
+        <h3 class="undertitle_text">Repeat Movement</h3>
+        <p class="normal_text">Six initial values, repetition count, then change X, Y and Z. The values in the current grammar are integers.</p>
+        <div class="control-group" style="display:flex; gap:8px; flex-wrap:wrap;">
+            <label class="normal_text">X <input id="repeat-x" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Y <input id="repeat-y" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Z <input id="repeat-z" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Rx <input id="repeat-rx" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Ry <input id="repeat-ry" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Rz <input id="repeat-rz" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">Count <input id="repeat-count" type="number" min="1" step="1" style="width:76px;"></label>
+            <label class="normal_text">ΔX <input id="repeat-dx" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">ΔY <input id="repeat-dy" type="number" step="1" style="width:76px;"></label>
+            <label class="normal_text">ΔZ <input id="repeat-dz" type="number" step="1" style="width:76px;"></label>
+            <button id="send-repeat" class="main-options">Send REPEAT</button>
+        </div>
+
+        <h3 class="undertitle_text">Motion Settings</h3>
+        <div class="control-group" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <select id="setting-name" class="main-options" style="width:auto;">
+                <option value="SPEED">SPEED</option><option value="ACCEL">ACCEL</option><option value="DECEL">DECEL</option>
+            </select>
+            <input id="setting-value" type="number" min="1" max="100" step="1" value="50" style="width:100px;">
+            <button id="send-setting" class="main-options">Send SET</button>
+        </div>
+
+        <p class="normal_text" style="margin-top:15px;">Check the target values and keep the robot's movement area clear before sending motion commands.</p>
     </div>
-
     <!-- Statusanzeige für die USB-Verbindung -->
     <p id="response" class="normal_text" style="color: grey; margin-top: 20px; ">Status: Not Connected</p>
 
@@ -553,6 +845,77 @@ commandButtons.forEach(button => {
         }
     );
 
+});
+
+
+
+
+
+
+
+
+// Build command arguments exactly as defined by the C++ command grammar.
+document.querySelectorAll('.axis-command').forEach(button => {
+    button.addEventListener('click', () => {
+        const target = document.getElementById('axis-target').value;
+        sendCommand(`${button.dataset.axisCommand} ${target}`);
+    });
+});
+
+document.getElementById('send-home').addEventListener('click', () => {
+    const target = document.getElementById('home-target').value;
+    sendCommand(`HOME[${target}]`);
+});
+
+document.getElementById('send-move').addEventListener('click', () => {
+    const ids = ['move-x', 'move-y', 'move-z', 'move-rx', 'move-ry', 'move-rz'];
+    const values = ids.map(id => document.getElementById(id).value.trim());
+    if (values.some(value => value === '' || !Number.isFinite(Number(value)))) {
+        document.getElementById('response').innerText = 'Enter all six numeric MOVE values.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    sendCommand(`MOVE ${values.join(' ')}`);
+});
+
+document.getElementById('send-single-joint').addEventListener('click', () => {
+    const axis = document.getElementById('joint-target').value;
+    const value = document.getElementById('joint-value').value.trim();
+    if (value === '' || !Number.isFinite(Number(value))) {
+        document.getElementById('response').innerText = 'Enter a numeric joint target value.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    sendCommand(`SINGLE JOINT MOVE ${axis} ${value}`);
+});
+
+document.getElementById('send-repeat').addEventListener('click', () => {
+    const ids = ['repeat-x', 'repeat-y', 'repeat-z', 'repeat-rx', 'repeat-ry', 'repeat-rz', 'repeat-count', 'repeat-dx', 'repeat-dy', 'repeat-dz'];
+    const values = ids.map(id => document.getElementById(id).value.trim());
+    const numbers = values.map(Number);
+    if (values.some(value => value === '' || !Number.isFinite(Number(value)) || !Number.isInteger(Number(value)))) {
+        document.getElementById('response').innerText = 'Enter all ten REPEAT values as integers.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    if (numbers[6] < 1) {
+        document.getElementById('response').innerText = 'REPEAT count must be at least 1.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    sendCommand(`REPEAT ${values.join(' ')}`);
+});
+
+document.getElementById('send-setting').addEventListener('click', () => {
+    const setting = document.getElementById('setting-name').value;
+    const valueText = document.getElementById('setting-value').value.trim();
+    const value = Number(valueText);
+    if (valueText === '' || !Number.isInteger(value) || value < 1 || value > 100) {
+        document.getElementById('response').innerText = 'SET value must be an integer from 1 to 100.';
+        document.getElementById('response').style.color = 'red';
+        return;
+    }
+    sendCommand(`SET ${setting}[${value}]`);
 });
 
 </script>
@@ -1268,39 +1631,10 @@ const char PAGE_RSD[] PROGMEM = R"GUIRSD(<!DOCTYPE html>
             Connect Serial
         </button>
 
-        <button
-            id="readSensorBtn"
-            class="cmd-btn_send-command">
-            Read Sensor Data
-        </button>
-
-        <div
-            style="
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                margin-left: auto;
-            ">
-
-            <label for="axisSelect">
-                Achsen:
-            </label>
-
-            <select
-                id="axisSelect"
-                class="main-options"
-                style="height: 40px; min-width: 100px;">
-
-                <option value="ALL">ALL</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-
-            </select>
-        </div>
+        <p class="normal_text" style="margin-left:auto; max-width:520px;">
+            Live telemetry is displayed when the PC application sends AXIS data lines.
+            There is currently no RSD request command in the supplied COMMAND_GRAMMAR.
+        </p>
     </div>
 
     <!-- AXIS DATA -->
@@ -1508,49 +1842,6 @@ const char PAGE_RSD[] PROGMEM = R"GUIRSD(<!DOCTYPE html>
 
                     alert(
                         "Serielle Verbindung fehlgeschlagen."
-                    );
-                }
-            });
-
-
-        /* =========================================================
-           SENSOR-DATEN ANFORDERN
-           ========================================================= */
-
-        document
-            .getElementById("readSensorBtn")
-            .addEventListener("click", async () => {
-
-                const selectedVal =
-                    document.getElementById("axisSelect").value;
-
-                const command =
-                    `READ SENSOR DATA ${selectedVal}\n`;
-
-                if (writer) {
-
-                    try {
-
-                        const encoder =
-                            new TextEncoder();
-
-                        await writer.write(
-                            encoder.encode(command)
-                        );
-
-                    } catch (error) {
-
-                        console.error(
-                            "Fehler beim Senden:",
-                            error
-                        );
-
-                    }
-
-                } else {
-
-                    alert(
-                        `Nicht verbunden! Befehl: "${command.trim()}"`
                     );
                 }
             });
@@ -1953,78 +2244,13 @@ const char PAGE_CHAMBER[] PROGMEM = R"GUICHAMBER(
         </h3>
 
 
-        <div
-            class="control-group"
-            style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;"
-        >
-
-            <select
-                id="fan-select"
-                class="main-options"
-                style="width: auto; padding: 0 15px; background-color: white; color: black; border: 2px solid #111111;"
-            >
-
-                <option value="1">
-                    Fan 1
-                </option>
-
-                <option value="2">
-                    Fan 2
-                </option>
-
-                <option value="3">
-                    Fan 3
-                </option>
-
-                <option value="4">
-                    Fan 4
-                </option>
-
-            </select>
-
-
-            <button
-                class="main-options fan-command"
-                data-base-cmd="CHAMBER FAN ON"
-            >
-                Fan On
-            </button>
-
-
-            <button
-                class="main-options fan-command"
-                data-base-cmd="CHAMBER FAN OFF"
-            >
-                Fan Off
-            </button>
-
-
-            <button
-                class="main-options fan-command"
-                data-base-cmd="CHAMBER FAN SPEED +"
-            >
-                Speed +
-            </button>
-
-
-            <button
-                class="main-options fan-command"
-                data-base-cmd="CHAMBER FAN SPEED -"
-            >
-                Speed -
-            </button>
-
-
-            <button
-                class="main-options fan-command"
-                data-base-cmd="CHAMBER FAN AUTO"
-            >
-                Automatic Speed Control
-            </button>
-
+        <div class="control-group" style="display:flex; gap:15px; margin-bottom:20px; flex-wrap:wrap;">
+            <button class="main-options send-command" data-cmd="CHAMBER FAN ON">Fan On</button>
+            <button class="main-options send-command" data-cmd="CHAMBER FAN OFF">Fan Off</button>
+            <button class="main-options send-command" data-cmd="CHAMBER FAN SPEED+">Speed +</button>
+            <button class="main-options send-command" data-cmd="CHAMBER FAN SPEED-">Speed -</button>
+            <button class="main-options send-command" data-cmd="CHAMBER FAN AUTO">Automatic Speed Control</button>
         </div>
-
-
 
         <!-- =====================================================
              OTHER CHAMBER CONTROLS
@@ -2058,7 +2284,7 @@ const char PAGE_CHAMBER[] PROGMEM = R"GUICHAMBER(
 
             <button
                 class="main-options send-command"
-                data-cmd="CHAMBER PSU OFF +"
+                data-cmd="CHAMBER PSU OFF"
             >
                 Power down PSU
             </button>
@@ -2066,7 +2292,7 @@ const char PAGE_CHAMBER[] PROGMEM = R"GUICHAMBER(
 
             <button
                 class="main-options send-command"
-                data-cmd="CHAMBER PSU ON -"
+                data-cmd="CHAMBER PSU ON"
             >
                 Power up PSU
             </button>
@@ -2093,7 +2319,7 @@ const char PAGE_CHAMBER[] PROGMEM = R"GUICHAMBER(
 
             <button
                 class="main-options send-command"
-                data-cmd="CHAMBER READ TEMP"
+                data-cmd="CHAMBER READ - TEMP"
             >
                 Read Temperature ONLY AIR
             </button>
@@ -2103,7 +2329,7 @@ const char PAGE_CHAMBER[] PROGMEM = R"GUICHAMBER(
 
             <button
                 class="main-options send-command"
-                data-cmd="CHAMBER READ HUM"
+                data-cmd="CHAMBER READ - HUM"
             >
                 Read Humidity
             </button>
@@ -2113,7 +2339,7 @@ const char PAGE_CHAMBER[] PROGMEM = R"GUICHAMBER(
 
             <button
                 class="main-options send-command"
-                data-cmd="CHAMBER READ PRESS"
+                data-cmd="CHAMBER READ - PRESS"
             >
                 Read Pressure
             </button>
@@ -2123,7 +2349,7 @@ const char PAGE_CHAMBER[] PROGMEM = R"GUICHAMBER(
 
             <button
                 class="main-options send-command"
-                data-cmd="CHAMBER READ CONTROLER TEMP"
+                data-cmd="CHAMBER READ - CONTROLER TEMP"
             >
                 Read Controller Temperature
             </button>
@@ -2695,91 +2921,6 @@ const char PAGE_CHAMBER[] PROGMEM = R"GUICHAMBER(
 
 
 
-        /* =========================================================
-           FAN COMMAND BUTTONS
-        ========================================================== */
-
-        const fanButtons =
-            document.querySelectorAll(
-                ".fan-command"
-            );
-
-
-        fanButtons.forEach(
-            button => {
-
-                button.addEventListener(
-                    "click",
-                    async () => {
-
-                        const isConnected =
-                            await connectSerial();
-
-
-                        if (!isConnected) {
-
-                            return;
-
-                        }
-
-
-                        const baseCmd =
-                            button.getAttribute(
-                                "data-base-cmd"
-                            );
-
-
-                        const fanNumber =
-                            document.getElementById(
-                                "fan-select"
-                            ).value;
-
-
-                        const finalCommand =
-                            baseCmd + fanNumber;
-
-
-                        try {
-
-                            await writer.write(
-                                finalCommand + "\n"
-                            );
-
-
-                            document.getElementById(
-                                "response"
-                            ).innerText =
-                                `Status: Sent "${finalCommand}"`;
-
-
-                            document.getElementById(
-                                "response"
-                            ).style.color =
-                                "green";
-
-                        }
-
-                        catch (error) {
-
-                            document.getElementById(
-                                "response"
-                            ).innerText =
-                                "Transmission Error: "
-                                + error.message;
-
-
-                            document.getElementById(
-                                "response"
-                            ).style.color =
-                                "red";
-
-                        }
-
-                    }
-                );
-
-            }
-        );
 
 
     </script>
@@ -2790,7 +2931,7 @@ const char PAGE_CHAMBER[] PROGMEM = R"GUICHAMBER(
 
 )GUICHAMBER";
 
-const char PAGE_TEXT_EDITOR[] PROGMEM = R"GUITEXTEDIT(
+const char PAGE_TEXT_EDITOR[] PROGMEM = R"GUITEXTEDITOR(
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2885,13 +3026,6 @@ const char PAGE_TEXT_EDITOR[] PROGMEM = R"GUITEXTEDIT(
     </button>
 
 
-    <button
-        id="save-gcode->PC"
-        class="main-options"
-        style="margin-top: 15px; width: auto; padding: 0 20px;"
-    >
-        Save G-Code to arm
-    </button>
 
 
     <!-- =====================================================
@@ -2927,6 +3061,10 @@ const char PAGE_TEXT_EDITOR[] PROGMEM = R"GUITEXTEDIT(
         Clear G-Code
     </button>
 
+    <button id="block-execute" class="main-options" style="margin-top: 15px; width: auto; padding: 0 20px;">
+        Block Execute
+    </button>
+
 
     <!-- =====================================================
          STATUS
@@ -2958,6 +3096,7 @@ const char PAGE_TEXT_EDITOR[] PROGMEM = R"GUITEXTEDIT(
 
         let port;
         let writer;
+        let reader = null;
         let textEncoder;
 
 
@@ -2975,9 +3114,53 @@ const char PAGE_TEXT_EDITOR[] PROGMEM = R"GUITEXTEDIT(
                 // Direkter und stabiler Aufbau des Writers ohne Streams-Pipe
                 textEncoder = new TextEncoder();
                 writer = port.writable.getWriter();
+                startSerialReader(status);
             }
         }
 
+
+
+        // Receive newline-delimited status and telemetry lines from the PC.
+        async function startSerialReader(status) {
+            if (!port || !port.readable || reader) return;
+
+            const decoder = new TextDecoderStream();
+            const pipeClosed = port.readable.pipeTo(decoder.writable);
+            pipeClosed.catch(error => console.error("Serial receive stream:", error));
+            reader = decoder.readable.getReader();
+            let buffer = "";
+
+            try {
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (done) break;
+                    if (!value) continue;
+
+                    buffer += value;
+                    const lines = buffer.split("\n");
+                    buffer = lines.pop();
+
+                    for (const rawLine of lines) {
+                        const line = rawLine.trim();
+                        if (!line) continue;
+
+                        console.log("ROBOT -> WEB:", line);
+                        status.innerText = "Robot: " + line;
+                        status.style.color =
+                            line.startsWith("ERR:") || line.startsWith("UNKNOWN:") ? "red" : "green";
+                    }
+                }
+            } catch (error) {
+                console.error("Serial receive error:", error);
+                status.innerText = "Receive Error: " + error.message;
+                status.style.color = "red";
+            } finally {
+                if (reader) {
+                    reader.releaseLock();
+                    reader = null;
+                }
+            }
+        }
 
         /* =====================================================
            SEND G-CODE
@@ -3150,105 +3333,7 @@ const char PAGE_TEXT_EDITOR[] PROGMEM = R"GUITEXTEDIT(
 
 
 
-        /* =====================================================
-           SAVE G-CODE -> PC / ARM (Über USB Senden)
-        ====================================================== */
-
-        document
-            .getElementById('save-gcode->PC')
-            .addEventListener('click', async () => {
-
-                const status =
-                    document.getElementById('response');
-
-                const fileNameInput =
-                    document.getElementById('gcode-name');
-
-                let fileName =
-                    fileNameInput.value.trim();
-
-
-                if (fileName === "") {
-
-                    fileName = "G-Code";
-
-                }
-
-
-                // Der Befehl: SAVE "NAME" mit Zeilenumbruch
-                const befehl = 'SAVE "' + fileName + '"\n';
-
-
-                try {
-
-                    // Nutzt die zentrale Verbindungsfunktion
-                    await stelleVerbindungHer(status);
-
-
-                    status.innerText =
-                        "Status: Sende Speicherbefehl...";
-
-                    status.style.color =
-                        "orange";
-
-
-                    // Text in Byte-Array umwandeln und senden
-                    const daten = textEncoder.encode(befehl);
-                    await writer.write(daten);
-
-
-                    status.innerText =
-                        'Status: Befehl erfolgreich gesendet: ' + befehl.trim();
-
-                    status.style.color =
-                        "green";
-
-                }
-
-
-                catch (error) {
-
-                    status.innerText =
-                        "Status Fehler: "
-                        + error.message;
-
-                    status.style.color =
-                        "red";
-
-                }
-
-            });
-
-
-
-        /* =====================================================
-           CLEAR G-CODE
-        ====================================================== */
-
-        document
-            .getElementById('clear-gcode')
-            .addEventListener('click', () => {
-
-                const gcodeInput =
-                    document.getElementById('gcode-input');
-
-
-                gcodeInput.value =
-                    "";
-
-
-                const status =
-                    document.getElementById('response');
-
-
-                status.innerText =
-                    "Status: G-Code Editor geleert.";
-
-
-                status.style.color =
-                    "grey";
-
-            });
+        // Remote SAVE is intentionally not sent: SAVE is not part of the supplied COMMAND_GRAMMAR.
 
     </script>
 
@@ -3257,7 +3342,7 @@ const char PAGE_TEXT_EDITOR[] PROGMEM = R"GUITEXTEDIT(
 </body>
 </html>
 
-)GUITEXTEDIT";
+)GUITEXTEDITOR";
 
 const char PAGE_CSS[] PROGMEM = R"GUICSS(/* --- BASIS LAYOUT --- */
 body {
@@ -3502,3 +3587,4 @@ body.dark-theme .settings-select {
 
 
 /* ========================================================= BASIS LAYOUT ========================================================= */ body { border: 2px solid #111111; border-radius: 6px; padding: 35px; margin: 20px; background-color: #fafafa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e1e1e; } /* ========================================================= NAVIGATION & BUTTONS ========================================================= */ .button-row { display: flex; justify-content: flex-start; gap: 15px; margin-bottom: 40px; align-items: center; flex-wrap: wrap; } .main-options { height: 40px; min-width: 140px; padding: 0 20px; color: #ffffff; background-color: #4a4a4a; border: 2px solid #111111; border-radius: 4px; cursor: pointer; font-weight: 600; text-align: center; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; box-sizing: border-box; transition: background-color 0.2s ease, color 0.2s ease; } .main-options:hover { background-color: #222222; color: #ffffff; } /* ========================================================= TEXTE & TITEL ========================================================= */ .titels { font-size: 28px; font-weight: bold; margin-bottom: 20px; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; letter-spacing: 0.5px; } .under_main_titels { font-size: 18px; color: #555555; margin-bottom: 15px; text-align: center; } .undertitle_text { font-size: 18px; font-weight: 600; margin-top: 30px; margin-bottom: 10px; text-align: left; } .normal_text { font-size: 15px; color: #333333; margin-bottom: 12px; text-align: left; line-height: 1.6; } /* ========================================================= SETTINGS ========================================================= */ .settings-section { margin-bottom: 35px; } .settings-table { width: 100%; border-collapse: collapse; border: 2px solid #111111; margin-top: 15px; margin-bottom: 20px; background-color: #ffffff; } .settings-table th, .settings-table td { border: 1px solid #cccccc; padding: 12px 16px; text-align: left; vertical-align: middle; } .settings-table th { background-color: #4a4a4a; color: #ffffff; font-weight: 600; border-bottom: 2px solid #111111; } .settings-table tr:nth-child(even) { background-color: #f8f9fa; } /* ========================================================= SETTINGS INPUTS ========================================================= */ .settings-input, .settings-select { height: 40px; min-width: 220px; padding: 0 10px; background-color: #ffffff; color: #111111; border: 2px solid #111111; border-radius: 4px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; box-sizing: border-box; } .settings-input:focus, .settings-select:focus { outline: none; border-color: #4a4a4a; } /* ========================================================= SETTINGS BUTTON ========================================================= */ .settings-save { height: 40px; min-width: 180px; padding: 0 20px; color: #ffffff; background-color: #2b2b2b; border: 2px solid #111111; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; transition: background-color 0.2s ease; } .settings-save:hover { background-color: #555555; } /* ========================================================= STATUS ========================================================= */ .settings-status { margin-top: 15px; padding: 10px 15px; border: 2px solid #111111; border-radius: 4px; background-color: #f0f0f0; font-size: 15px; display: none; } .settings-status.visible { display: block; } /* ========================================================= RESPONSIVE ========================================================= */ @media (max-width: 700px) { body { padding: 20px; margin: 10px; } .settings-table { display: block; overflow-x: auto; } .settings-input, .settings-select { min-width: 180px; } })GUICSS";
+
