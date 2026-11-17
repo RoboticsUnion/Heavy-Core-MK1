@@ -30,42 +30,7 @@ class DataPrep {
         std::vector<std::string> g_code_buffer; //buffer for the g-code data that is being read from the serial port
 
         std::string current_line = ""; //current line of data that is being read from the serial port
-
-<<<<<<< Updated upstream
-        const std::unordered_map<std::string, std::regex> COMMAND_GRAMMAR = { //COMMAND list for checking
-            {"HAA",            std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")}, // old unused
-            {"XSTOPX",         std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
-            {"XENDX",          std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
-
-            {"ENAM",         std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},
-            {"DISM",         std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},
-            {"ENAC",         std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},
-            {"DISC",         std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},
-
-            {"MOVE",         std::regex(R"(^\s*(-?\d+\.?\d*([,\s]+-?\d+\.?\d*){5})\s*$)")},
-    
-            {"CHAMBER",      std::regex(R"(^\s*(FAN (ON|OFF|SPEED\+|SPEED-|AUTO)|LIGHTS (ON|OFF)|PSU (ON|OFF)|READ - (HUM|PRESS|TEMP|CONTROLER TEMP))\s*$)")},
-    
-            {"SINGLE JOINT", std::regex(R"(^\s*MOVE[,\s]+[1-7][,\s]+-?\d+\.?\d*\s*$)")},
-    
-            {"REPEAT", std::regex(
-                R"(^\s*REPEAT[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+[,\s]+[1-9]\d*[,\s]+-?\d+[,\s]+-?\d+[,\s]+-?\d+\s*$)"
-                )},
-
-            {"SET",  std::regex(R"(^\s*(SPEED\[1-100\]|ACCEL\[1-100\]|DECEL\[1-100\]|HOME\[0-6\])\s*$)")},
-
-            {"HOME", std::regex(R"(^\s*HOME\[0\s*-\s*6\]\s*$)")}
-
-
-        };
-
-};
-
-extern DataPrep data_prep;
-=======
-<<<<<<< Updated upstream
-};
-=======
+        
         const std::unordered_map<std::string, std::regex> COMMAND_GRAMMAR = {
 
             // Commands without arguments
@@ -114,5 +79,4 @@ extern DataPrep data_prep;
 };
 
 extern DataPrep data_prep;
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+
