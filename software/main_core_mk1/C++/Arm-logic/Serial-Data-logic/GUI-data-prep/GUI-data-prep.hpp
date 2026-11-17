@@ -31,6 +31,7 @@ class DataPrep {
 
         std::string current_line = ""; //current line of data that is being read from the serial port
 
+<<<<<<< Updated upstream
         const std::unordered_map<std::string, std::regex> COMMAND_GRAMMAR = { //COMMAND list for checking
             {"HAA",            std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")}, // old unused
             {"XSTOPX",         std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
@@ -61,3 +62,57 @@ class DataPrep {
 };
 
 extern DataPrep data_prep;
+=======
+<<<<<<< Updated upstream
+};
+=======
+        const std::unordered_map<std::string, std::regex> COMMAND_GRAMMAR = {
+
+            // Commands without arguments
+            {"HAA",    std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
+            {"XSTOPX", std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
+            {"XENDX",  std::regex(R"(^\s*(#|1|DUMMY)?\s*$)")},
+
+            // Enable / Disable motors and controllers
+            {"ENAM", std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},
+            {"DISM", std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},
+            {"ENAC", std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},
+            {"DISC", std::regex(R"(^\s*(ALL|[1-6]([,\s]+[1-6])*)\s*$)")},
+
+            // Movement: exactly six numeric values
+            {"MOVE", std::regex(
+                R"(^\s*-?[0-9]+([.][0-9]+)?([,\s]+-?[0-9]+([.][0-9]+)?){5}\s*$)"
+            )},
+
+            // Chamber commands
+            {"CHAMBER", std::regex(
+                R"(^\s*(FAN (ON|OFF|SPEED\+|SPEED-|AUTO)|LIGHTS (ON|OFF)|PSU (ON|OFF)|READ - (HUM|PRESS|TEMP|CONTROLER TEMP))\s*$)"
+            )},
+
+            // Single joint movement
+            // Example: SINGLE JOINT MOVE 1 90
+            {"SINGLE JOINT", std::regex(
+                R"(^\s*MOVE[,\s]+[1-7][,\s]+-?[0-9]+([.][0-9]+)?\s*$)"
+            )},
+
+            // Repeat command: ten numeric arguments
+            {"REPEAT", std::regex(
+                R"(^\s*-?[0-9]+([,\s]+-?[0-9]+){5}[,\s]+[1-9][0-9]*([,\s]+-?[0-9]+){3}\s*$)"
+            )},
+
+            // Settings
+            {"SET", std::regex(
+                R"(^\s*(SPEED|ACCEL|DECEL)\[(100|[1-9][0-9]?)\]|HOME\[[0-6]\]\s*$)"
+            )},
+
+            // Standalone HOME command
+            {"HOME", std::regex(
+                R"(^\s*\[[0-6]\]\s*$)"
+            )}
+};
+
+};
+
+extern DataPrep data_prep;
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
