@@ -25,6 +25,20 @@
 using namespace std;
 
 namespace{
+<<<<<<< Updated upstream
+=======
+    string join_tokens(const vector<string>& tokens, size_t start) {
+        string result;
+
+        for (size_t i = start; i < tokens.size(); i++) {
+            if (!result.empty()) result += " ";
+            result += tokens[i];
+        }
+
+    return result;
+}
+
+>>>>>>> Stashed changes
     vector<string> split(string line){ // splits the input for handeling
         istringstream iss(line);
         vector<string> split((istream_iterator<string>(iss)), istream_iterator<string>());
@@ -32,7 +46,10 @@ namespace{
         return split;
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     DeCode::CommandResult parser(const string&line) { // parser function
         logger.log_to("parser function");
         vector<string> tokens = split(line);
@@ -44,10 +61,17 @@ namespace{
 
         // checks which command exist
 
+<<<<<<< Updated upstream
         if(command == "MOVE" && tokens.size() >= 7) {
             DeCode::MOVE m{
                 stoi(tokens[1]), stoi(tokens[2]), stoi(tokens[3]), stoi(tokens[4]),
                 stoi(tokens[5]), stoi(tokens[6])
+=======
+        if(command == "MOVE" && tokens.size() == 7) {
+            DeCode::MOVE m{
+                stod(tokens[1]), stod(tokens[2]), stod(tokens[3]), stod(tokens[4]),
+                stod(tokens[5]), stod(tokens[6])
+>>>>>>> Stashed changes
             };
 
             logger.log_to("[DialogiXMOVE] MOVE-Command");
@@ -56,7 +80,11 @@ namespace{
 
         } else if(command == "ENAM" && tokens.size() >= 2){
             DeCode::ENAM ea{
+<<<<<<< Updated upstream
                 tokens[1]
+=======
+                join_tokens(tokens, 1)
+>>>>>>> Stashed changes
             };
 
             logger.log_to("[DialogiXMOVE] ENAM-Command");
@@ -65,7 +93,11 @@ namespace{
 
         } else if(command == "DISM" && tokens.size() >= 2){
             DeCode::DISM dm{
+<<<<<<< Updated upstream
                 tokens[1]
+=======
+                join_tokens(tokens, 1)
+>>>>>>> Stashed changes
             };
 
             logger.log_to("[DialogiXMOVE] DISM-Command");
@@ -74,7 +106,11 @@ namespace{
 
         } else if(command == "DISC" && tokens.size() >= 2){
             DeCode::DISC dc{
+<<<<<<< Updated upstream
                 tokens[1]
+=======
+                join_tokens(tokens, 1)
+>>>>>>> Stashed changes
             };
 
             logger.log_to("[DialogiXMOVE] DISC-Command");
@@ -83,7 +119,11 @@ namespace{
 
         } else if(command == "ENAC" && tokens.size() >= 2){
             DeCode::ENAC ec{
+<<<<<<< Updated upstream
                 tokens[1]
+=======
+                join_tokens(tokens, 1)
+>>>>>>> Stashed changes
             };
 
             logger.log_to("[DialogiXMOVE] ENAC-Command");
@@ -92,7 +132,11 @@ namespace{
 
         } else if(command == "CHAMBER" && tokens.size() >= 2){
             DeCode::CHAMBER chber{
+<<<<<<< Updated upstream
                 tokens[1]
+=======
+                join_tokens(tokens, 1)
+>>>>>>> Stashed changes
             };
 
             logger.log_to("[DialogiXMOVE] CHAMBER-Command");
@@ -109,7 +153,11 @@ namespace{
 
             return rep;
 
+<<<<<<< Updated upstream
         } else if(command == "JOINT" && tokens.size() >= 3){
+=======
+        } else if(command == "SINGLE JOINT MOVE" && tokens.size() >= 3){
+>>>>>>> Stashed changes
             DeCode::JOINT jn{
                 stoi(tokens[1]), stoi(tokens[2])
             };
@@ -118,6 +166,58 @@ namespace{
 
             return jn;
 
+<<<<<<< Updated upstream
+=======
+        } else if(command == "SET" && tokens.size() == 2){
+
+            regex pattern(R"((\w+)\[(\d+)\])");
+            smatch match;
+
+            if (!regex_match(tokens[1], match, pattern)) {
+            throw invalid_argument("Invalid SET syntax: " + tokens[1]);
+            }
+
+            DeCode::SET st{
+                match[1].str(),
+                stoi(match[2].str())
+            };
+
+            logger.log_to("[DialogiXMOVE] SET-Command");
+
+            return st;
+
+        } else if(command.rfind("HOME[", 0) == 0 && tokens.size() == 1){
+
+            regex pattern(R"(HOME\[(\d+)\])");
+            smatch match;
+
+            if (!regex_match(command, match, pattern)) {
+                throw invalid_argument("Invalid HOME syntax: " + command);
+            }
+
+            DeCode::HOME hm{
+                stoi(match[1].str())
+            };
+
+            logger.log_to("[DialogiXMOVE] HOME-Command");
+
+            return hm;
+
+        } else if(command == "XSTOPX" && tokens.size() == 1){
+            DeCode::XSTOPX xs;
+
+            logger.log_to("[DialogiXMOVE] XSTOPX-Command");
+
+            return xs;
+
+        } else if(command == "XENDX" && tokens.size() == 1){
+            DeCode::XENDX xe;
+
+            logger.log_to("[DialogiXMOVE] XENDX-Command");
+
+            return xe;
+
+>>>>>>> Stashed changes
         } else {
             logger.log_to("[DialogiXMOVE] Command does not exists");
             terminal_out.terminal_custom_output(terminal_out.terminal_error_output("DiXM_ER_!cm"), ansi_color_chart::red);
@@ -144,6 +244,20 @@ vector<DeCode::CommandResult> DeCode::DeCode_code_line(string code_line) { // fu
         else if (holds_alternative<DeCode::CHAMBER>(result)) active_functions.chamber.push_back(get<DeCode::CHAMBER>(result));
         else if (holds_alternative<DeCode::REPEAT>(result)) active_functions.repeat.push_back(get<DeCode::REPEAT>(result));
         else if (holds_alternative<DeCode::JOINT>(result)) active_functions.joint.push_back(get<DeCode::JOINT>(result));
+<<<<<<< Updated upstream
+=======
+        else if (holds_alternative<DeCode::SET>(result))
+            active_functions.set.push_back(get<DeCode::SET>(result));
+
+        else if (holds_alternative<DeCode::HOME>(result))
+            active_functions.home.push_back(get<DeCode::HOME>(result));
+
+        else if (holds_alternative<DeCode::XSTOPX>(result))
+            active_functions.xstopx.push_back(get<DeCode::XSTOPX>(result));
+
+        else if (holds_alternative<DeCode::XENDX>(result))
+            active_functions.xendx.push_back(get<DeCode::XENDX>(result));
+>>>>>>> Stashed changes
     }
 
     return single_line_vec;
