@@ -5,12 +5,12 @@
 
 class PresetLoader {
     public:
-        bool load_user_preset(std::string user, std::string db_file); 
-        void reset_to_standard_user_preset(std::string user, std::string db_file);
-        void change_user_preset(std::map<std::string, std::string> changes, std::string db_file); 
+        std::string load_user_preset(std::string user, std::string db_file, std::string preset_name); 
+        bool change_user_preset(std::string user, std::string db_file, std::string preset_name, std::string preset_value); 
 
-        // loaded variables
-        std::map<std::string, std::string> active_presets;
+        
+    private:
+        std::string db_file = "Terminal/Login-Register-Presetloading/preset-user.json";
 };
 
 extern PresetLoader prset_loader;

@@ -325,11 +325,95 @@ bool UserManager::login_user(string user_name, string password) {
 
     string user_name_lower = to_lower(user_name);
 
-    if(!presetLoader.load_user_preset(user_name_lower, db_file)){
-        return false;
-    }
-
     logger.log_to("[INFO] Login function");
+
+    loaded_preset = {
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "standard_l1_lenght"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "standard_l2_lenght"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "standard_l3_lenght"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "standard_l4_lenght"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "standard_l5_lenght"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "standard_l6_lenght"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "product"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_speed"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_acceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_acceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_acceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_acceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_acceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_acceleration"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_deceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_deceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_deceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_deceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_deceleration"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_deceleration"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_max_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_max_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_max_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_max_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_max_speed"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_max_speed"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_min_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_min_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_min_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_min_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_min_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_min_angle"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_max_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_max_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_max_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_max_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_max_angle"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_max_angle"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_ΔISTR_max"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_ΔISTR_max"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_ΔISTR_max"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_ΔISTR_max"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_ΔISTR_max"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_ΔISTR_max"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_ΔISTR_min"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_ΔISTR_min"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_ΔISTR_min"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_ΔISTR_min"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_ΔISTR_min"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_ΔISTR_min"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_x_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_x_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_x_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_x_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_x_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_x_ofset"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_y_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_y_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_y_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_y_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_y_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_y_ofset"),
+
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_1_z_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_2_z_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_3_z_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_4_z_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_5_z_ofset"),
+        presetLoader.load_user_preset(to_lower(user_name), db_file, "axis_6_z_ofset")
+    };
+
     return true;
 
 }

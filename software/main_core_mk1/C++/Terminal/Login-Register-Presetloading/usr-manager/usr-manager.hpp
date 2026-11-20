@@ -11,18 +11,19 @@ class UserManager {
 
         std::string time();
 
-        PresetLoader presetLoader;
+        std::vector<std::string> loaded_preset = {};
 
+        PresetLoader presetLoader;
     private:
     
         std::string db_file = "Terminal/Login-Register-Presetloading/preset-user.json";
 
 
         const std::string robotics_union = R"(
-   ___       __        __  _           __  __     _         
-  / _ \___  / /  ___  / /_(_)______   / / / /__  (_)__  ___ 
- / , _/ _ \/ _ \/ _ \/ __/ / __(_-<  / /_/ / _ \/ / _ \/ _ \
-/_/|_|\___/_.__/\___/\__/_/\__/___/  \____/_//_/_/\___/_//_/
+           ___       __        __  _           __  __     _         
+          / _ \___  / /  ___  / /_(_)______   / / / /__  (_)__  ___ 
+         / , _/ _ \/ _ \/ _ \/ __/ / __(_-<  / /_/ / _ \/ / _ \/ _ \
+        /_/|_|\___/_.__/\___/\__/_/\__/___/  \____/_//_/_/\___/_//_/
                                                             
 )";
 
