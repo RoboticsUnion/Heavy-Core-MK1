@@ -8,21 +8,12 @@
 		(symbol "Connector:Screw_Terminal_01x04"
 			(pin_names
 				(offset 1.016)
-<<<<<<< Updated upstream
-				(hide yes)
-=======
->>>>>>> Stashed changes
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-<<<<<<< Updated upstream
-			(property "Reference" "J"
-				(at 0 5.08 0)
-=======
 			(property "Reference" "J2"
 				(at 3.81 -1.27 90)
->>>>>>> Stashed changes
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -30,11 +21,7 @@
 				)
 			)
 			(property "Value" "Screw_Terminal_01x04"
-<<<<<<< Updated upstream
-				(at 0 -7.62 0)
-=======
 				(at 6.35 -1.27 90)
->>>>>>> Stashed changes
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -241,11 +228,7 @@
 				(pin passive line
 					(at -5.08 2.54 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_1"
-=======
 					(name "A+"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -263,11 +246,7 @@
 				(pin passive line
 					(at -5.08 0 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_2"
-=======
 					(name "A-"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -285,11 +264,7 @@
 				(pin passive line
 					(at -5.08 -2.54 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_3"
-=======
 					(name "B+"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -307,11 +282,7 @@
 				(pin passive line
 					(at -5.08 -5.08 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_4"
-=======
 					(name "B-"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -332,21 +303,12 @@
 		(symbol "Connector:Screw_Terminal_01x16"
 			(pin_names
 				(offset 1.016)
-<<<<<<< Updated upstream
-				(hide yes)
-=======
->>>>>>> Stashed changes
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-<<<<<<< Updated upstream
-			(property "Reference" "J"
-				(at 0 20.32 0)
-=======
 			(property "Reference" "J4"
 				(at 6.35 -1.27 90)
->>>>>>> Stashed changes
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -354,11 +316,7 @@
 				)
 			)
 			(property "Value" "Screw_Terminal_01x16"
-<<<<<<< Updated upstream
-				(at 0 -22.86 0)
-=======
 				(at 3.81 -1.27 90)
->>>>>>> Stashed changes
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -985,11 +943,7 @@
 				(pin passive line
 					(at -5.08 17.78 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_1"
-=======
 					(name "VCC"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1007,11 +961,7 @@
 				(pin passive line
 					(at -5.08 15.24 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_2"
-=======
 					(name "OUT"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1029,11 +979,7 @@
 				(pin passive line
 					(at -5.08 12.7 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_3"
-=======
 					(name "GND"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1051,11 +997,7 @@
 				(pin passive line
 					(at -5.08 10.16 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_4"
-=======
 					(name "DIR"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1073,11 +1015,7 @@
 				(pin passive line
 					(at -5.08 7.62 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_5"
-=======
 					(name "SCL"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1095,11 +1033,7 @@
 				(pin passive line
 					(at -5.08 5.08 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_6"
-=======
 					(name "SDA"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1117,11 +1051,7 @@
 				(pin passive line
 					(at -5.08 2.54 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_7"
-=======
 					(name "GND"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1139,11 +1069,7 @@
 				(pin passive line
 					(at -5.08 0 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_8"
-=======
 					(name "DT"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1161,11 +1087,7 @@
 				(pin passive line
 					(at -5.08 -2.54 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_9"
-=======
 					(name "SCK"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1183,11 +1105,7 @@
 				(pin passive line
 					(at -5.08 -5.08 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_10"
-=======
 					(name "VCC"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1205,11 +1123,7 @@
 				(pin passive line
 					(at -5.08 -7.62 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_11"
-=======
 					(name "GND"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1227,11 +1141,7 @@
 				(pin passive line
 					(at -5.08 -10.16 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_12"
-=======
 					(name "VCC"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1249,11 +1159,7 @@
 				(pin passive line
 					(at -5.08 -12.7 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_13"
-=======
 					(name "TEMP-DATA"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1271,11 +1177,7 @@
 				(pin passive line
 					(at -5.08 -15.24 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_14"
-=======
 					(name "GND"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1293,11 +1195,7 @@
 				(pin passive line
 					(at -5.08 -17.78 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_15"
-=======
 					(name "VCC-LED-Signal"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1315,11 +1213,7 @@
 				(pin passive line
 					(at -5.08 -20.32 0)
 					(length 3.81)
-<<<<<<< Updated upstream
-					(name "Pin_16"
-=======
 					(name "NA"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1337,51 +1231,29 @@
 			)
 			(embedded_fonts no)
 		)
-<<<<<<< Updated upstream
-		(symbol "Connector_Generic:Conn_02x08_Odd_Even"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-=======
 		(symbol "Connector_Generic:Conn_02x06_Odd_Even"
 			(pin_names
 				(offset 1.016)
->>>>>>> Stashed changes
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-<<<<<<< Updated upstream
-			(property "Reference" "J"
-				(at 1.27 10.16 0)
-=======
 			(property "Reference" "J1"
 				(at 2.5401 -10.16 90)
->>>>>>> Stashed changes
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-<<<<<<< Updated upstream
-				)
-			)
-			(property "Value" "Conn_02x08_Odd_Even"
-				(at 1.27 -12.7 0)
-=======
 					(justify right)
 				)
 			)
 			(property "Value" "Conn_02x06_Odd_Even"
 				(at 0.0001 -10.16 90)
->>>>>>> Stashed changes
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-<<<<<<< Updated upstream
-=======
 					(justify right)
->>>>>>> Stashed changes
 				)
 			)
 			(property "Footprint" ""
@@ -1402,11 +1274,7 @@
 					(hide yes)
 				)
 			)
-<<<<<<< Updated upstream
-			(property "Description" "Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
-=======
 			(property "Description" "Generic connector, double row, 02x06, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
->>>>>>> Stashed changes
 				(at 0 0 0)
 				(effects
 					(font
@@ -1433,17 +1301,10 @@
 					(hide yes)
 				)
 			)
-<<<<<<< Updated upstream
-			(symbol "Conn_02x08_Odd_Even_1_1"
-				(rectangle
-					(start -1.27 8.89)
-					(end 3.81 -11.43)
-=======
 			(symbol "Conn_02x06_Odd_Even_1_1"
 				(rectangle
 					(start -1.27 6.35)
 					(end 3.81 -8.89)
->>>>>>> Stashed changes
 					(stroke
 						(width 0.254)
 						(type default)
@@ -1453,20 +1314,6 @@
 					)
 				)
 				(rectangle
-<<<<<<< Updated upstream
-					(start -1.27 7.747)
-					(end 0 7.493)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-=======
->>>>>>> Stashed changes
 					(start -1.27 5.207)
 					(end 0 4.953)
 					(stroke
@@ -1533,31 +1380,6 @@
 					)
 				)
 				(rectangle
-<<<<<<< Updated upstream
-					(start -1.27 -10.033)
-					(end 0 -10.287)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.81 7.747)
-					(end 2.54 7.493)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-=======
->>>>>>> Stashed changes
 					(start 3.81 5.207)
 					(end 2.54 4.953)
 					(stroke
@@ -1623,28 +1445,10 @@
 						(type none)
 					)
 				)
-<<<<<<< Updated upstream
-				(rectangle
-					(start 3.81 -10.033)
-					(end 2.54 -10.287)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 7.62 0)
-					(length 3.81)
-					(name "Pin_1"
-=======
 				(pin passive line
 					(at -5.08 5.08 0)
 					(length 3.81)
 					(name "GND"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1660,15 +1464,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at -5.08 5.08 0)
-					(length 3.81)
-					(name "Pin_3"
-=======
 					(at -5.08 2.54 0)
 					(length 3.81)
 					(name "DIR"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1684,15 +1482,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "Pin_5"
-=======
 					(at -5.08 0 0)
 					(length 3.81)
 					(name "SDA"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1708,15 +1500,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_7"
-=======
 					(at -5.08 -2.54 0)
 					(length 3.81)
 					(name "SCK"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1732,15 +1518,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_9"
-=======
 					(at -5.08 -5.08 0)
 					(length 3.81)
 					(name "VCC-LED-Signal"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1756,15 +1536,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "Pin_11"
-=======
 					(at -5.08 -7.62 0)
 					(length 3.81)
 					(name "VCC-5"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1780,51 +1554,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at -5.08 -7.62 0)
-					(length 3.81)
-					(name "Pin_13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -10.16 0)
-					(length 3.81)
-					(name "Pin_15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 7.62 180)
-					(length 3.81)
-					(name "Pin_2"
-=======
 					(at 7.62 5.08 180)
 					(length 3.81)
 					(name "OUT"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1840,15 +1572,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at 7.62 5.08 180)
-					(length 3.81)
-					(name "Pin_4"
-=======
 					(at 7.62 2.54 180)
 					(length 3.81)
 					(name "SCL"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1864,15 +1590,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at 7.62 2.54 180)
-					(length 3.81)
-					(name "Pin_6"
-=======
 					(at 7.62 0 180)
 					(length 3.81)
 					(name "DT"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1888,15 +1608,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at 7.62 0 180)
-					(length 3.81)
-					(name "Pin_8"
-=======
 					(at 7.62 -2.54 180)
 					(length 3.81)
 					(name "TEMP-DATA"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1912,15 +1626,9 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at 7.62 -2.54 180)
-					(length 3.81)
-					(name "Pin_10"
-=======
 					(at 7.62 -5.08 180)
 					(length 3.81)
 					(name "VCC-3.3"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1936,11 +1644,7 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at 7.62 -5.08 180)
-=======
 					(at 7.62 -7.62 180)
->>>>>>> Stashed changes
 					(length 3.81)
 					(name "Pin_12"
 						(effects
@@ -1957,12 +1661,6 @@
 						)
 					)
 				)
-<<<<<<< Updated upstream
-				(pin passive line
-					(at 7.62 -7.62 180)
-					(length 3.81)
-					(name "Pin_14"
-=======
 			)
 			(embedded_fonts no)
 		)
@@ -2114,18 +1812,13 @@
 					(at -3.81 0 0)
 					(length 2.54)
 					(name "K"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-<<<<<<< Updated upstream
-					(number "14"
-=======
 					(number "1"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2134,24 +1827,15 @@
 					)
 				)
 				(pin passive line
-<<<<<<< Updated upstream
-					(at 7.62 -10.16 180)
-					(length 3.81)
-					(name "Pin_16"
-=======
 					(at 3.81 0 180)
 					(length 2.54)
 					(name "A"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-<<<<<<< Updated upstream
-					(number "16"
-=======
 					(number "2"
 						(effects
 							(font
@@ -2572,7 +2256,6 @@
 						)
 					)
 					(number "4"
->>>>>>> Stashed changes
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2584,9 +2267,6 @@
 			(embedded_fonts no)
 		)
 	)
-<<<<<<< Updated upstream
-	(symbol
-=======
 	(junction
 		(at 82.55 59.69)
 		(diameter 0)
@@ -3570,7 +3250,6 @@
 	)
 	(symbol
 		(lib_name "Screw_Terminal_01x04_1")
->>>>>>> Stashed changes
 		(lib_id "Connector:Screw_Terminal_01x04")
 		(at 105.41 41.91 90)
 		(unit 1)
@@ -3596,11 +3275,7 @@
 				)
 			)
 		)
-<<<<<<< Updated upstream
-		(property "Footprint" ""
-=======
 		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-4-5.08_1x04_P5.08mm_Horizontal"
->>>>>>> Stashed changes
 			(at 105.41 41.91 0)
 			(effects
 				(font
@@ -3674,11 +3349,7 @@
 				)
 			)
 		)
-<<<<<<< Updated upstream
-		(property "Footprint" ""
-=======
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical"
->>>>>>> Stashed changes
 			(at 74.93 41.91 0)
 			(effects
 				(font
@@ -3763,121 +3434,6 @@
 		)
 	)
 	(symbol
-<<<<<<< Updated upstream
-		(lib_id "Connector_Generic:Conn_02x08_Odd_Even")
-		(at 82.55 80.01 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f56bf707-61cd-4aa2-a392-898bc9b7739c")
-		(property "Reference" "J1"
-			(at 72.39 77.4699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_02x08_Odd_Even"
-			(at 72.39 80.0099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 82.55 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 82.55 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 82.55 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "534aac82-31f9-46c6-b8db-70c932b9e9d5")
-		)
-		(pin "10"
-			(uuid "6568fd3e-1a89-4623-b2fa-39ae36edfb89")
-		)
-		(pin "9"
-			(uuid "15834859-2a98-4aef-8456-879e7cd6cab7")
-		)
-		(pin "14"
-			(uuid "2ddaaf85-a758-4142-870d-c66ff829cd3b")
-		)
-		(pin "6"
-			(uuid "155dec04-18ff-442d-94e2-873e134047e9")
-		)
-		(pin "16"
-			(uuid "c6829db3-263c-4690-baf4-ec61ea5e2678")
-		)
-		(pin "1"
-			(uuid "e5ab2750-9ba2-489a-87d7-05fd73288df6")
-		)
-		(pin "8"
-			(uuid "a18f6d7b-852d-4500-8287-9416e6414dd7")
-		)
-		(pin "7"
-			(uuid "6c1884b5-90a0-4d3b-9d87-d1f80d1c1d27")
-		)
-		(pin "4"
-			(uuid "8749f792-7200-4380-8219-07350943bf51")
-		)
-		(pin "13"
-			(uuid "e7fe101a-6798-41e4-98d1-e6d61400f31e")
-		)
-		(pin "12"
-			(uuid "fa2143de-d015-4ca4-80ab-9589ce880e45")
-		)
-		(pin "3"
-			(uuid "17b0f071-9600-4009-aac5-d8c4e637734a")
-		)
-		(pin "11"
-			(uuid "a8a5db36-3bdf-4503-9a2d-2a331bee25a6")
-		)
-		(pin "15"
-			(uuid "f66c8066-9417-4db2-928b-4c7fa1deb580")
-		)
-		(pin "5"
-			(uuid "db7821f0-0fe1-4c4d-ba3d-da04a4bb591b")
-		)
-		(instances
-			(project "HC_MK1_mainboard_axis"
-				(path "/58feb867-5c3e-4ba3-a657-c65080efafcf"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-=======
->>>>>>> Stashed changes
 		(lib_id "Connector:Screw_Terminal_01x04")
 		(at 109.22 80.01 270)
 		(unit 1)
@@ -3903,11 +3459,7 @@
 				)
 			)
 		)
-<<<<<<< Updated upstream
-		(property "Footprint" ""
-=======
 		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-4-5.08_1x04_P5.08mm_Horizontal"
->>>>>>> Stashed changes
 			(at 109.22 80.01 0)
 			(effects
 				(font
