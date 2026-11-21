@@ -14,6 +14,10 @@ class UserManager {
         std::vector<std::string> loaded_preset = {};
 
         PresetLoader presetLoader;
+
+        std::string loaded_user = "";
+        std::string loaded_password = "";
+        
     private:
     
         std::string db_file = "Terminal/Login-Register-Presetloading/preset-user.json";
@@ -24,7 +28,8 @@ class UserManager {
           / _ \___  / /  ___  / /_(_)______   / / / /__  (_)__  ___ 
          / , _/ _ \/ _ \/ _ \/ __/ / __(_-<  / /_/ / _ \/ / _ \/ _ \
         /_/|_|\___/_.__/\___/\__/_/\__/___/  \____/_//_/_/\___/_//_/
-                                                            
+        ------------------------------------------------------------
+        V.0.1.0 alpha                                           
 )";
 
 };

@@ -13,6 +13,7 @@
 #include "../Arm-logic/DialogiXMove_dekodierer/DialogiXMove_dekodierer.hpp"
 #include "../Arm-logic/Serial-Data-logic/Data-send-back/Data-send-back.hpp"
 #include "../Arm-logic/Serial-Data-logic/read-serial-con1-2/read-serial-con1-2.hpp"
+#include "../Terminal/Login-Register-Presetloading/preset-manager/preset-manager.hpp"
 
 #include <windows.h>
 
@@ -20,18 +21,20 @@
 
 using namespace std;
 
+
 TerminalOUT terminal_out;
 
 DeCode de_code;
+UserManager usr_manager;
 
 bool run = true;
 
 int main()
 {
-    UserManager system;
-    TerminalIN terminal_in;
+   while (true){
 
-    system.startup_terminal("David");
+
+    usr_manager.startup_terminal("David");
 
     terminal_out.terminal_custom_output(
         "Menu option:",
@@ -54,7 +57,7 @@ int main()
         );
         string user_pas = terminal_in.terminal_read_password();
 
-        if (system.register_user(user_name, user_pas))
+        if (usr_manager.register_user(user_name, user_pas))
         {
             terminal_out.terminal_custom_output(
                 "Registration saved successfully.",
@@ -76,7 +79,7 @@ int main()
         );
         string password = terminal_in.terminal_read_password();
 
-        if (system.login_user(user_name, password))
+        if (usr_manager.login_user(user_name, password))
         {
             terminal_out.terminal_custom_output(
                 "Login successful.",
@@ -98,7 +101,7 @@ int main()
         );
         string password = terminal_in.terminal_read_password();
 
-        if (system.delete_user(user_name, password))
+        if (usr_manager.delete_user(user_name, password))
         {
             terminal_out.terminal_custom_output(
                 "User deleted successfully.",
@@ -117,7 +120,7 @@ int main()
                 "No serial ports found.",
                 ansi_color_chart::red
             );
-            return 0;
+            continue;
         }
 
         for (const string& port : serial_ports)
@@ -194,7 +197,7 @@ else if (num == 5)
             ansi_color_chart::red
         );
 
-        return 0;
+        continue;
     }
 
     terminal_out.terminal_custom_output(
@@ -240,7 +243,7 @@ else if (num == 5)
             ansi_color_chart::red
         );
 
-        return 0;
+        continue;
     }
 
     com = com.substr(first);
@@ -255,7 +258,7 @@ else if (num == 5)
             ansi_color_chart::red
         );
 
-        return 0;
+        continue;
     }
 
 
@@ -277,7 +280,7 @@ else if (num == 5)
             ansi_color_chart::red
         );
 
-        return 0;
+        continue;
     }
 
 
@@ -301,7 +304,7 @@ else if (num == 5)
             ansi_color_chart::red
         );
 
-        return 0;
+        continue;
     }
 
     terminal_out.terminal_custom_output(
@@ -336,7 +339,7 @@ else if (num == 5)
 
         serial.disconnect_serial_GUI();
 
-        return 0;
+        continue;
     }
 
     terminal_out.terminal_custom_output(
@@ -381,7 +384,7 @@ else if (num == 5)
 
         serial.disconnect_serial_GUI();
 
-        return 0;
+        continue;
     }
 
     terminal_out.terminal_custom_output(
@@ -436,6 +439,25 @@ else if (num == 5)
         "Serial connection closed.",
         ansi_color_chart::green
     );
+} else if (num == 6){
+    terminal_out.terminal_custom_output(usr_manager.time(), ansi_color_chart::white);
+    if(usr_manager.login_user(usr_manager.loaded_user, usr_manager.loaded_password) == true){
+        
+        for (const auto& item : usr_manager.loaded_preset) {
+            terminal_out.terminal_custom_output(item, ansi_color_chart::green);
+        }
+
+        if(prset_loader.change_user_preset("rbu-main", "product", "HC-MK1") == true){
+            terminal_out.terminal_custom_output("config changed", ansi_color_chart::green);
+            
+        } else{
+            terminal_out.terminal_custom_output("err changing config", ansi_color_chart::red);
+        }
+
+        
+    }
+    terminal_out.terminal_custom_output(usr_manager.time(), ansi_color_chart::green);
+
 }
 
     else
@@ -446,5 +468,9 @@ else if (num == 5)
         );
     }
 
-    return 0;
+    continue;
 }
+}
+
+
+

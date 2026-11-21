@@ -58,7 +58,7 @@ namespace {
     }
 }
 
-string PresetLoader::load_user_preset(std::string user, std::string db_file, std::string preset_name) {
+string PresetLoader::load_user_preset(std::string user, std::string preset_name) {
     logger.log_to("[INFO] Load user preset function");
     json db;
     const string database_path = resolve_database_path(db_file);
@@ -75,16 +75,26 @@ string PresetLoader::load_user_preset(std::string user, std::string db_file, std
         }
     }
 
-    if (db.contains("users") && db["users"].contains(to_lower(user))){
-        const auto& user_json = db["users"][to_lower(user)];
+    const string user_lower = to_lower(user);
+    if (db.contains("users") && db["users"].contains(user_lower) && db["users"][user_lower].contains("presets")) {
+        const auto& presets_json = db["users"][user_lower]["presets"];
 
-        return user_json.value(preset_name, ""); // Return the preset value or an empty string if not found
-        logger.log_to("[INFO] Preset loaded");
+        if (presets_json.contains(preset_name)) {
+            logger.log_to("[INFO] Preset loaded");
+            
+            
+            if (presets_json[preset_name].is_string()) {
+                return presets_json[preset_name].get<std::string>();
+            }
+            
+            return presets_json[preset_name].dump();
+        }
     }
 
+    return ""; // Return an empty string if the user or preset is not found
 }
 
-bool PresetLoader::change_user_preset(std::string user, std::string db_file, std::string preset_name, std::string preset_value) {
+bool PresetLoader::change_user_preset(std::string user, std::string preset_name, std::string preset_value) {
     logger.log_to("[INFO] Change user preset function");
     json db;
     const std::string database_path = resolve_database_path(db_file);
@@ -110,7 +120,7 @@ bool PresetLoader::change_user_preset(std::string user, std::string db_file, std
     if (db.contains("users") && db["users"].contains(user_lower) && db["users"][user_lower].contains("presets")) {
         auto& presets = db["users"][user_lower]["presets"];
 
-        // Optional: Zahlentypen erhalten, falls der ursprüngliche Wert eine Zahl war
+        
         if (presets.contains(preset_name) && presets[preset_name].is_number_integer()) {
             presets[preset_name] = std::stoi(preset_value);
             logger.log_to("[INFO] Preset changed to integer");

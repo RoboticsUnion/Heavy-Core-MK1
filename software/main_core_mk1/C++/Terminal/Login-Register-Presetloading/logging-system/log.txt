@@ -114,3 +114,3227 @@
 [07-11-2026 00:43:07] [INFO] Startup terminal function
 [07-11-2026 00:57:11] [INFO] Startup terminal function
 [07-11-2026 00:57:35] [INFO] login register
+[20-11-2026 19:57:35] [INFO] Startup terminal function
+[20-11-2026 19:59:36] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[20-11-2026 19:59:36] [DEBUG] Username to find: david
+[20-11-2026 19:59:36] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "david": {
+            "created_at": "22-10-2026 19:52:26",
+            "password": "MK1-HC",
+            "presets": {
+                "axis_1_speed": 50,
+                "axis_2_speed": 50,
+                "axis_3_speed": 50,
+                "axis_4_speed": 50,
+                "axis_5_speed": 50,
+                "axis_6_speed": 50,
+                "product": "####",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        },
+        "user": {
+            "created_at": "07-11-2026 00:57:35",
+            "password": "User1234",
+            "presets": {
+                "axis_1_speed": 50,
+                "axis_2_speed": 50,
+                "axis_3_speed": 50,
+                "axis_4_speed": 50,
+                "axis_5_speed": 50,
+                "axis_6_speed": 50,
+                "product": "####",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[20-11-2026 19:59:36] DEBUG] Contains david: 
+[20-11-2026 19:59:36] [INFO] Usr del function
+[20-11-2026 19:59:40] [INFO] Startup terminal function
+[20-11-2026 19:59:56] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[20-11-2026 19:59:56] [DEBUG] Username to find: user
+[20-11-2026 19:59:56] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "user": {
+            "created_at": "07-11-2026 00:57:35",
+            "password": "User1234",
+            "presets": {
+                "axis_1_speed": 50,
+                "axis_2_speed": 50,
+                "axis_3_speed": 50,
+                "axis_4_speed": 50,
+                "axis_5_speed": 50,
+                "axis_6_speed": 50,
+                "product": "####",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[20-11-2026 19:59:56] [DEBUG] Contains david: 
+[20-11-2026 19:59:56] [INFO] Usr del function
+[20-11-2026 20:00:04] [INFO] Startup terminal function
+[20-11-2026 20:00:48] [INFO] login register
+[20-11-2026 20:14:44] [INFO] Startup terminal function
+[20-11-2026 20:14:48] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[20-11-2026 20:14:48] [DEBUG] Username to find: rbu-main
+[20-11-2026 20:14:48] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "####",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[20-11-2026 20:14:48] [DEBUG] Contains david: 
+[20-11-2026 20:14:48] [INFO] Login function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:14:48] [INFO] Load user preset function
+[20-11-2026 20:15:49] [INFO] Startup terminal function
+[20-11-2026 20:15:50] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[20-11-2026 20:15:50] [DEBUG] Username to find: rbu-main
+[20-11-2026 20:15:50] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "####",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[20-11-2026 20:15:50] [DEBUG] Contains david: 
+[20-11-2026 20:15:50] [INFO] Login function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:15:50] [INFO] Load user preset function
+[20-11-2026 20:19:33] [INFO] Startup terminal function
+[20-11-2026 20:19:46] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[20-11-2026 20:19:46] [DEBUG] Username to find: rbu-main
+[20-11-2026 20:19:46] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "####",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[20-11-2026 20:19:46] [DEBUG] Contains david: 
+[20-11-2026 20:19:46] [INFO] Login function
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[20-11-2026 20:19:46] [INFO] Load user preset function
+[20-11-2026 20:19:46] [INFO] Preset loaded
+[21-11-2026 13:01:30] [INFO] Startup terminal function
+[21-11-2026 13:01:37] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 13:01:37] [DEBUG] Username to find: rbu-main
+[21-11-2026 13:01:37] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "####",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 13:01:37] [DEBUG] Contains david: 
+[21-11-2026 13:01:37] [INFO] Login function
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Load user preset function
+[21-11-2026 13:01:37] [INFO] Preset loaded
+[21-11-2026 13:01:37] [INFO] Change user preset function
+[21-11-2026 13:01:37] [INFO] Preset changed to string
+[21-11-2026 13:42:01] [INFO] Startup terminal function
+[21-11-2026 13:42:04] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 13:42:04] [DEBUG] Username to find: rbu-main
+[21-11-2026 13:42:04] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 13:42:04] [DEBUG] Contains david: 
+[21-11-2026 13:42:04] [INFO] Login function
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:04] [INFO] Load user preset function
+[21-11-2026 13:42:04] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Load user preset function
+[21-11-2026 13:42:05] [INFO] Preset loaded
+[21-11-2026 13:42:05] [INFO] Change user preset function
+[21-11-2026 13:42:05] [INFO] Preset changed to string
+[21-11-2026 13:55:54] [INFO] Startup terminal function
+[21-11-2026 13:56:20] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 13:56:20] [DEBUG] Username to find: rbu-main
+[21-11-2026 13:56:20] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 13:56:20] [DEBUG] Contains david: 
+[21-11-2026 13:56:20] [INFO] Login function
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:56:20] [INFO] Load user preset function
+[21-11-2026 13:56:20] [INFO] Preset loaded
+[21-11-2026 13:57:04] [INFO] Startup terminal function
+[21-11-2026 13:57:52] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 13:57:52] [DEBUG] Username to find: rbu-main
+[21-11-2026 13:57:52] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 13:57:52] [DEBUG] Contains david: 
+[21-11-2026 13:57:52] [INFO] Login function
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:57:52] [INFO] Load user preset function
+[21-11-2026 13:57:52] [INFO] Preset loaded
+[21-11-2026 13:58:03] [INFO] Startup terminal function
+[21-11-2026 13:58:05] [INFO] error output
+[21-11-2026 13:58:05] [ERROR] database/data error
+[21-11-2026 14:00:28] [INFO] Startup terminal function
+[21-11-2026 14:01:06] [INFO] Startup terminal function
+[21-11-2026 14:01:49] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 14:01:49] [DEBUG] Username to find: rbu-main
+[21-11-2026 14:01:49] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 14:01:49] [DEBUG] Contains david: 
+[21-11-2026 14:01:49] [INFO] Login function
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Load user preset function
+[21-11-2026 14:01:49] [INFO] Preset loaded
+[21-11-2026 14:01:49] [INFO] Startup terminal function
+[21-11-2026 14:02:05] [INFO] error output
+[21-11-2026 14:02:05] [ERROR] database/data error
+[21-11-2026 14:02:05] [INFO] Startup terminal function
+[21-11-2026 14:02:23] [INFO] Startup terminal function
+[21-11-2026 14:02:28] [INFO] Startup terminal function
+[21-11-2026 14:02:29] [INFO] error output
+[21-11-2026 14:02:29] [ERROR] database/data error
+[21-11-2026 14:02:29] [INFO] Startup terminal function
+[21-11-2026 14:02:30] [INFO] error output
+[21-11-2026 14:02:30] [ERROR] database/data error
+[21-11-2026 14:02:30] [INFO] Startup terminal function
+[21-11-2026 14:02:30] [INFO] error output
+[21-11-2026 14:02:30] [ERROR] database/data error
+[21-11-2026 14:02:30] [INFO] Startup terminal function
+[21-11-2026 14:02:30] [INFO] error output
+[21-11-2026 14:02:30] [ERROR] database/data error
+[21-11-2026 14:02:30] [INFO] Startup terminal function
+[21-11-2026 14:02:30] [INFO] error output
+[21-11-2026 14:02:30] [ERROR] database/data error
+[21-11-2026 14:02:30] [INFO] Startup terminal function
+[21-11-2026 14:02:30] [INFO] error output
+[21-11-2026 14:02:30] [ERROR] database/data error
+[21-11-2026 14:02:30] [INFO] Startup terminal function
+[21-11-2026 14:02:30] [INFO] error output
+[21-11-2026 14:02:30] [ERROR] database/data error
+[21-11-2026 14:02:30] [INFO] Startup terminal function
+[21-11-2026 14:02:31] [INFO] error output
+[21-11-2026 14:02:31] [ERROR] database/data error
+[21-11-2026 14:02:31] [INFO] Startup terminal function
+[21-11-2026 14:02:31] [INFO] error output
+[21-11-2026 14:02:31] [ERROR] database/data error
+[21-11-2026 14:02:31] [INFO] Startup terminal function
+[21-11-2026 14:02:31] [INFO] error output
+[21-11-2026 14:02:31] [ERROR] database/data error
+[21-11-2026 14:02:31] [INFO] Startup terminal function
+[21-11-2026 14:02:31] [INFO] error output
+[21-11-2026 14:02:31] [ERROR] database/data error
+[21-11-2026 14:02:31] [INFO] Startup terminal function
+[21-11-2026 14:02:31] [INFO] Startup terminal function
+[21-11-2026 14:02:32] [INFO] error output
+[21-11-2026 14:02:32] [ERROR] database/data error
+[21-11-2026 14:02:32] [INFO] Startup terminal function
+[21-11-2026 14:02:43] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 14:02:43] [DEBUG] Username to find: rbu-main
+[21-11-2026 14:02:43] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 14:02:43] [DEBUG] Contains david: 
+[21-11-2026 14:02:43] [INFO] Login function
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Load user preset function
+[21-11-2026 14:02:43] [INFO] Preset loaded
+[21-11-2026 14:02:43] [INFO] Startup terminal function
+[21-11-2026 14:02:46] [INFO] error output
+[21-11-2026 14:02:46] [ERROR] database/data error
+[21-11-2026 14:02:46] [INFO] Startup terminal function
+[21-11-2026 14:03:16] [INFO] login register
+[21-11-2026 14:03:16] [INFO] Startup terminal function
+[21-11-2026 14:03:28] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 14:03:28] [DEBUG] Username to find: rbu-test
+[21-11-2026 14:03:28] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        },
+        "rbu-test": {
+            "created_at": "21-11-2026 14:03:16",
+            "password": "1",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "####",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 14:03:28] [DEBUG] Contains david: 
+[21-11-2026 14:03:28] [INFO] Usr del function
+[21-11-2026 14:03:28] [INFO] Startup terminal function
+[21-11-2026 14:05:37] [INFO] Startup terminal function
+[21-11-2026 14:06:04] [INFO] Startup terminal function
+[21-11-2026 14:06:23] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 14:06:23] [DEBUG] Username to find: rbu-main
+[21-11-2026 14:06:23] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 14:06:23] [DEBUG] Contains david: 
+[21-11-2026 14:06:23] [INFO] Login function
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:23] [INFO] Load user preset function
+[21-11-2026 14:06:23] [INFO] Preset loaded
+[21-11-2026 14:06:24] [INFO] Load user preset function
+[21-11-2026 14:06:24] [INFO] Preset loaded
+[21-11-2026 14:06:24] [INFO] Load user preset function
+[21-11-2026 14:06:24] [INFO] Preset loaded
+[21-11-2026 14:06:24] [INFO] Load user preset function
+[21-11-2026 14:06:24] [INFO] Preset loaded
+[21-11-2026 14:06:24] [INFO] Load user preset function
+[21-11-2026 14:06:24] [INFO] Preset loaded
+[21-11-2026 14:06:24] [INFO] Load user preset function
+[21-11-2026 14:06:24] [INFO] Preset loaded
+[21-11-2026 14:06:24] [INFO] Load user preset function
+[21-11-2026 14:06:24] [INFO] Preset loaded
+[21-11-2026 14:06:24] [INFO] Load user preset function
+[21-11-2026 14:06:24] [INFO] Preset loaded
+[21-11-2026 14:06:24] [INFO] Startup terminal function
+[21-11-2026 14:06:25] [INFO] error output
+[21-11-2026 14:06:25] [ERROR] database/data error
+[21-11-2026 14:06:25] [INFO] Startup terminal function
+[21-11-2026 14:18:07] [INFO] Startup terminal function
+[21-11-2026 14:18:24] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 14:18:24] [DEBUG] Username to find: rbu-main
+[21-11-2026 14:18:24] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 14:18:24] [DEBUG] Contains david: 
+[21-11-2026 14:18:24] [INFO] Login function
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Load user preset function
+[21-11-2026 14:18:24] [INFO] Preset loaded
+[21-11-2026 14:18:24] [INFO] Startup terminal function
+[21-11-2026 14:18:26] [INFO] error output
+[21-11-2026 14:18:26] [ERROR] database/data error
+[21-11-2026 14:18:26] [INFO] Startup terminal function
+[21-11-2026 14:22:45] [INFO] Startup terminal function
+[21-11-2026 14:23:03] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 14:23:03] [DEBUG] Username to find: rbu-main
+[21-11-2026 14:23:03] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 14:23:03] [DEBUG] Contains david: 
+[21-11-2026 14:23:03] [INFO] Login function
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:03] [INFO] Preset loaded
+[21-11-2026 14:23:03] [INFO] Load user preset function
+[21-11-2026 14:23:04] [INFO] Preset loaded
+[21-11-2026 14:23:04] [INFO] Load user preset function
+[21-11-2026 14:23:04] [INFO] Preset loaded
+[21-11-2026 14:23:04] [INFO] Load user preset function
+[21-11-2026 14:23:04] [INFO] Preset loaded
+[21-11-2026 14:23:04] [INFO] Load user preset function
+[21-11-2026 14:23:04] [INFO] Preset loaded
+[21-11-2026 14:23:04] [INFO] Load user preset function
+[21-11-2026 14:23:04] [INFO] Preset loaded
+[21-11-2026 14:23:04] [INFO] Load user preset function
+[21-11-2026 14:23:04] [INFO] Preset loaded
+[21-11-2026 14:23:04] [INFO] Startup terminal function
+[21-11-2026 14:23:07] [DEBUG] Database path: ../Terminal/Login-Register-Presetloading/preset-user.json
+[21-11-2026 14:23:07] [DEBUG] Username to find: rbu-main
+[21-11-2026 14:23:07] [DEBUG] Loaded JSON:
+{
+    "users": {
+        "rbu-main": {
+            "created_at": "20-11-2026 20:00:48",
+            "password": "rbu200",
+            "presets": {
+                "axis_1_acceleration": 50,
+                "axis_1_deceleration": 50,
+                "axis_1_max_angle": 180,
+                "axis_1_max_speed": 50,
+                "axis_1_min_angle": -180,
+                "axis_1_speed": 50,
+                "axis_1_x_ofset": 0,
+                "axis_1_y_ofset": 0,
+                "axis_1_z_ofset": 0,
+                "axis_1_ΔISTR_max": 0.2,
+                "axis_1_ΔISTR_min": 0.2,
+                "axis_2_acceleration": 50,
+                "axis_2_deceleration": 50,
+                "axis_2_max_angle": 180,
+                "axis_2_max_speed": 50,
+                "axis_2_min_angle": -180,
+                "axis_2_speed": 50,
+                "axis_2_x_ofset": 0,
+                "axis_2_y_ofset": 0,
+                "axis_2_z_ofset": 0,
+                "axis_2_ΔISTR_max": 0.2,
+                "axis_2_ΔISTR_min": 0.2,
+                "axis_3_acceleration": 50,
+                "axis_3_deceleration": 50,
+                "axis_3_max_angle": 180,
+                "axis_3_max_speed": 50,
+                "axis_3_min_angle": -180,
+                "axis_3_speed": 50,
+                "axis_3_x_ofset": 0,
+                "axis_3_y_ofset": 0,
+                "axis_3_z_ofset": 0,
+                "axis_3_ΔISTR_max": 0.2,
+                "axis_3_ΔISTR_min": 0.2,
+                "axis_4_acceleration": 50,
+                "axis_4_deceleration": 50,
+                "axis_4_max_angle": 180,
+                "axis_4_max_speed": 50,
+                "axis_4_min_angle": -180,
+                "axis_4_speed": 50,
+                "axis_4_x_ofset": 0,
+                "axis_4_y_ofset": 0,
+                "axis_4_z_ofset": 0,
+                "axis_4_ΔISTR_max": 0.2,
+                "axis_4_ΔISTR_min": 0.2,
+                "axis_5_acceleration": 50,
+                "axis_5_deceleration": 50,
+                "axis_5_max_angle": 180,
+                "axis_5_max_speed": 50,
+                "axis_5_min_angle": -180,
+                "axis_5_speed": 50,
+                "axis_5_x_ofset": 0,
+                "axis_5_y_ofset": 0,
+                "axis_5_z_ofset": 0,
+                "axis_5_ΔISTR_max": 0.2,
+                "axis_5_ΔISTR_min": 0.2,
+                "axis_6_acceleration": 50,
+                "axis_6_deceleration": 50,
+                "axis_6_max_angle": 180,
+                "axis_6_max_speed": 50,
+                "axis_6_min_angle": -180,
+                "axis_6_speed": 50,
+                "axis_6_x_ofset": 0,
+                "axis_6_y_ofset": 0,
+                "axis_6_z_ofset": 0,
+                "axis_6_ΔISTR_max": 0.2,
+                "axis_6_ΔISTR_min": 0.2,
+                "product": "HC-MK1",
+                "standard_l1_lenght": 210,
+                "standard_l2_lenght": 210,
+                "standard_l3_lenght": 210,
+                "standard_l4_lenght": 210,
+                "standard_l5_lenght": 210,
+                "standard_l6_lenght": 210
+            }
+        }
+    }
+}
+[21-11-2026 14:23:07] [DEBUG] Contains david: 
+[21-11-2026 14:23:07] [INFO] Login function
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Load user preset function
+[21-11-2026 14:23:07] [INFO] Preset loaded
+[21-11-2026 14:23:07] [INFO] Change user preset function
+[21-11-2026 14:23:07] [INFO] Preset changed to string
+[21-11-2026 14:23:07] [INFO] Startup terminal function
